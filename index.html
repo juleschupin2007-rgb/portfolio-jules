@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Jules</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#f5efe6;
+--accent:#b89b5e;
+--text:#000;
+--border:#e0d6c8;
+}
+
+*{
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+}
+
+/* HEADER */
+
+.topHeader{
+background:#000;
+padding:15px 30px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.headerContent{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+}
+
+.leftHeader{
+display:flex;
+gap:15px;
+}
+
+.catBtn{
+padding:8px 16px;
+background:#000;
+border:1px solid var(--accent);
+color:#fff;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.catBtn:hover,
+.catBtn.active{
+background:var(--accent);
+}
+
+/* SEARCH */
+
+.searchBox input{
+padding:7px 12px;
+border-radius:8px;
+border:1px solid var(--accent);
+}
+
+/* BACK BUTTON */
+
+.backArrow{
+max-width:1200px;
+margin:15px auto 0 auto;
+display:none;
+}
+
+.backArrow button{
+background:none;
+border:none;
+font-size:16px;
+color:var(--accent);
+cursor:pointer;
+}
+
+/* MAIN */
+
+.main{
+max-width:1200px;
+margin:auto;
+padding:50px 25px;
+}
+
+.page{display:none;}
+.page.active{display:block;}
+
+.banner{
+background:#fff;
+padding:18px;
+border-radius:10px;
+border:1px solid var(--border);
+text-align:center;
+font-weight:600;
+font-size:22px;
+margin-bottom:30px;
+}
+
+/* CTA BLOCK */
+
+.ctaBlock{
+background:#fff;
+border:1px solid var(--border);
+border-radius:12px;
+padding:20px;
+margin:30px 0;
+}
+
+.ctaRow{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.cta{
+padding:10px 20px;
+background:#eee3d0;
+border:1px solid var(--accent);
+border-radius:8px;
+text-decoration:none;
+color:#000;
+cursor:pointer;
+transition:.3s;
+}
+
+.cta:hover{
+background:var(--accent);
+color:#fff;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#fff;
+border:1px solid var(--border);
+border-radius:10px;
+padding:20px;
+text-align:center;
+cursor:pointer;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#eee3d0;
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+/* TEXT PAGE */
+
+.pageText{
+background:#fff;
+border:1px solid var(--border);
+border-radius:12px;
+padding:40px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+.headerContent{
+flex-direction:column;
+gap:15px;
+}
+.leftHeader{
+flex-wrap:wrap;
+justify-content:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="topHeader">
+<div class="headerContent">
+<div class="leftHeader">
+<button class="catBtn active" onclick="showPage('home',this)">Accueil</button>
+<button class="catBtn" onclick="showPage('projects',this)">Projets</button>
+<button class="catBtn" onclick="showPage('skills',this)">Compétences</button>
+<button class="catBtn" onclick="showPage('contact',this)">Contact</button>
+</div>
+
+<div class="searchBox">
+<input type="text" placeholder="Rechercher..." onkeyup="searchContent(this.value)">
+</div>
+</div>
+</div>
+
+<div class="backArrow" id="backArrow">
+<button onclick="goBack()">← Retour</button>
+</div>
+
+<div class="main">
+
+<!-- ACCUEIL -->
+
+<div id="home" class="page active">
+
+<div class="banner">Bienvenue sur mon portfolio</div>
+
+<h1 style="text-align:center">
+Je crée des projets numériques mêlant web, design et audiovisuel.
+</h1>
+
+<div class="ctaBlock">
+
+<p style="text-align:center; opacity:.8; max-width:700px; margin:auto;">
+Portfolio étudiant orienté création numérique, web, design et audiovisuel.
+Je présente ici mes projets, mes compétences et ma progression.
+</p>
+
+<br>
+
+<div class="ctaRow">
+
+<a class="cta" href="documents/CV_Jules.pdf" download>
+📄 Télécharger mon CV
+</a>
+
+<a class="cta" onclick="showPage('projects')">
+🚀 Mes projets
+</a>
+
+<a class="cta" onclick="showPage('contact')">
+✉️ Me contacter
+</a>
+
+</div>
+</div>
+
+<div class="banner">Objectifs</div>
+
+<div class="grid">
+<div class="card"><h3>Développement Web</h3><p>Créer des sites modernes et responsives.</p></div>
+<div class="card"><h3>Design</h3><p>Améliorer l'identité visuelle.</p></div>
+<div class="card"><h3>Audiovisuel</h3><p>Produire des montages dynamiques.</p></div>
+<div class="card"><h3>Communication</h3><p>Présenter des projets impactants.</p></div>
+</div>
+
+<div class="banner" style="margin-top:50px;">Projets Phares</div>
+
+<div class="grid">
+<div class="card" onclick="showPage('dessin')"><img src="images/dessin.jpg"><h3>Dessin</h3></div>
+<div class="card" onclick="showPage('siteweb')"><img src="images/site.jpg"><h3>Site Web</h3></div>
+<div class="card" onclick="showPage('video')"><img src="images/video.jpg"><h3>Montage Vidéo</h3></div>
+<div class="card" onclick="showPage('autre')"><img src="images/autre.jpg"><h3>Autre Projet</h3></div>
+</div>
+
+</div>
+
+<!-- PROJETS -->
+
+<div id="projects" class="page">
+<div class="banner">Mes Projets</div>
+<div class="grid">
+<div class="card" onclick="showPage('dessin')"><img src="images/dessin.jpg"><h3>Dessin</h3></div>
+<div class="card" onclick="showPage('siteweb')"><img src="images/site.jpg"><h3>Site Web</h3></div>
+<div class="card" onclick="showPage('video')"><img src="images/video.jpg"><h3>Montage Vidéo</h3></div>
+<div class="card" onclick="showPage('autre')"><img src="images/autre.jpg"><h3>Autre Projet</h3></div>
+</div>
+</div>
+
+<!-- SOUS PAGES -->
+
+<div id="dessin" class="page pageText"><h2>Dessin</h2><p>Illustrations numériques.</p></div>
+<div id="siteweb" class="page pageText"><h2>Site Web</h2><p>Développement web moderne.</p></div>
+<div id="video" class="page pageText"><h2>Montage Vidéo</h2><p>Création audiovisuelle.</p></div>
+<div id="autre" class="page pageText"><h2>Autre Projet</h2><p>Expérimentations numériques.</p></div>
+
+<div id="skills" class="page pageText">
+<h2>Compétences</h2>
+<p>Développement web, design graphique et montage vidéo.</p>
+</div>
+
+<div id="contact" class="page pageText">
+<h2>Contact</h2>
+<p>Email : tonemail@email.com</p>
+</div>
+
+</div>
+
+<script>
+let historyStack = [];
+
+function showPage(pageId, button = null){
+
+// Sauvegarde page actuelle
+let currentPage = document.querySelector(".page.active");
+if(currentPage && currentPage.id !== pageId){
+historyStack.push(currentPage.id);
+}
+
+// Cacher toutes les pages
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+
+// Afficher la nouvelle
+document.getElementById(pageId).classList.add("active");
+
+// Gestion flèche retour (uniquement sous-projets)
+document.getElementById("backArrow").style.display =
+["dessin","siteweb","video","autre"].includes(pageId) ? "block" : "none";
+
+// Mise à jour header actif
+document.querySelectorAll(".catBtn").forEach(b=>b.classList.remove("active"));
+
+if(button){
+button.classList.add("active");
+}else{
+if(pageId === "home"){
+document.querySelectorAll(".catBtn")[0].classList.add("active");
+}
+if(pageId === "projects" || ["dessin","siteweb","video","autre"].includes(pageId)){
+document.querySelectorAll(".catBtn")[1].classList.add("active");
+}
+if(pageId === "skills"){
+document.querySelectorAll(".catBtn")[2].classList.add("active");
+}
+if(pageId === "contact"){
+document.querySelectorAll(".catBtn")[3].classList.add("active");
+}
+}
+}
+
+function goBack(){
+if(historyStack.length>0){
+let prev = historyStack.pop();
+showPage(prev);
+}
+}
+
+function searchContent(value){
+value = value.toLowerCase();
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display =
+card.innerText.toLowerCase().includes(value) ? "block" : "none";
+});
+}
+</script>
+
+</body>
+</html>
