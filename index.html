@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Jules</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#f5efe6;
+--accent:#b89b5e;
+--text:#000;
+--border:#e0d6c8;
+}
+*{box-sizing:border-box;font-family:Poppins,sans-serif;}
+body{margin:0;background:var(--bg);color:var(--text);}
+
+/* HEADER */
+.topHeader{background:#000;padding:15px 30px;position:sticky;top:0;z-index:1000;}
+.headerContent{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto;}
+.leftHeader{display:flex;gap:15px;}
+.catBtn{padding:8px 16px;background:#000;border:1px solid var(--accent);color:#fff;border-radius:8px;cursor:pointer;transition:.3s;}
+.catBtn:hover,.catBtn.active{background:var(--accent);}
+
+/* SEARCH */
+.searchBox input{padding:7px 12px;border-radius:8px;border:1px solid var(--accent);}
+
+/* BACK */
+.backArrow{max-width:1200px;margin:15px auto 0 auto;display:none;}
+.backArrow button{background:none;border:none;font-size:16px;color:var(--accent);cursor:pointer;}
+
+/* MAIN */
+.main{max-width:1200px;margin:auto;padding:50px 25px;}
+.page{display:none;}
+.page.active{display:block;}
+.banner{background:#fff;padding:18px;border-radius:10px;border:1px solid var(--border);text-align:center;font-weight:600;font-size:22px;margin-bottom:30px;}
+
+/* CTA */
+.ctaBlock{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin:30px 0;}
+.ctaRow{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;}
+.cta{padding:10px 20px;background:#eee3d0;border:1px solid var(--accent);border-radius:8px;text-decoration:none;color:#000;cursor:pointer;transition:.3s;}
+.cta:hover{background:var(--accent);color:#fff;}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;cursor:pointer;transition:.3s;}
+.card:hover{transform:translateY(-5px);background:#eee3d0;}
+.card img{width:100%;border-radius:8px;margin-bottom:10px;}
+
+/* TEXT PAGE */
+.pageText{background:#fff;border:1px solid var(--border);border-radius:12px;padding:40px;}
+
+/* MODAL ZOOM */
+.modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;}
+.modal img{max-width:90%;max-height:90%;border-radius:10px;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.headerContent{flex-direction:column;gap:15px;}
+.leftHeader{flex-wrap:wrap;justify-content:center;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="topHeader">
+<div class="headerContent">
+<div class="leftHeader">
+<button class="catBtn active" onclick="showPage('home',this)">Accueil</button>
+<button class="catBtn" onclick="showPage('projects',this)">Projets</button>
+<button class="catBtn" onclick="showPage('skills',this)">Compétences</button>
+<button class="catBtn" onclick="showPage('contact',this)">Contact</button>
+</div>
+
+<div class="searchBox">
+<input type="text" placeholder="Rechercher..." onkeyup="searchContent(this.value)">
+</div>
+</div>
+</div>
+
+<div class="backArrow" id="backArrow">
+<button onclick="goBack()">← Retour</button>
+</div>
+
+<div class="main">
+
+<!-- ACCUEIL -->
+<div id="home" class="page active">
+<div class="banner">Bienvenue sur mon portfolio</div>
+<h1 style="text-align:center">Je crée des projets numériques mêlant web, design et audiovisuel.</h1>
+
+<div class="ctaBlock">
+<p style="text-align:center; opacity:.8; max-width:700px; margin:auto;">
+Portfolio étudiant orienté création numérique, web, design et audiovisuel.
+</p>
+<br>
+<div class="ctaRow">
+<a class="cta" href="documents/CV_Jules.pdf" download>Télécharger mon CV</a>
+<a class="cta" onclick="showPage('projects')">Mes projets</a>
+<a class="cta" onclick="showPage('contact')">Me contacter</a>
+</div>
+</div>
+
+<div class="banner">Objectifs</div>
+<div class="grid">
+<div class="card"><h3>Développement Web</h3><p>Créer des sites modernes.</p></div>
+<div class="card"><h3>Design</h3><p>Améliorer l'identité visuelle.</p></div>
+<div class="card"><h3>Audiovisuel</h3><p>Produire des montages dynamiques.</p></div>
+<div class="card"><h3>Communication</h3><p>Présenter des projets impactants.</p></div>
+</div>
+
+<div class="banner" style="margin-top:50px;">Projets Phares</div>
+<div class="grid">
+<div class="card" onclick="showPage('dessin')"><img src="images/dessin16.jpg"><h3>Dessin</h3></div>
+<div class="card" onclick="showPage('siteweb')"><img src="images/site.jpg"><h3>Site Web</h3></div>
+<div class="card" onclick="showPage('video')"><img src="images/video.jpg"><h3>Montage Vidéo</h3></div>
+<div class="card" onclick="showPage('troisD')"><img src="images/3d.jpg"><h3>3D</h3></div>
+<div class="card" onclick="showPage('autre')"><img src="images/autre.jpg"><h3>Autres projets</h3></div>
+</div>
+</div>
+
+<!-- PAGE PROJETS -->
+<div id="projects" class="page">
+<div class="banner">Mes Projets</div>
+<div class="grid">
+<div class="card" onclick="showPage('dessin')"><h3>Dessin</h3></div>
+<div class="card" onclick="showPage('siteweb')"><h3>Sites Web</h3></div>
+<div class="card" onclick="showPage('video')"><h3>Montage Vidéo</h3></div>
+<div class="card" onclick="showPage('troisD')"><h3>3D</h3></div>
+<div class="card" onclick="showPage('autre')"><h3>Autres projets</h3></div>
+</div>
+</div>
+
+<!-- DESSINS -->
+<div id="dessin" class="page">
+<div class="banner">Dessins</div>
+<div class="grid">
+<!-- Tous les dessins 1 à 37 -->
+<script>
+for(let i=1;i<=37;i++){
+document.write(`<div class="card"><img src="images/dessin${i}.jpg" onclick="openModal(this)"><h3>Dessin ${i}</h3></div>`);
+}
+</script>
+</div>
+</div>
+
+<!-- SITES WEB -->
+<div id="siteweb" class="page">
+<div class="banner">Sites Web</div>
+<div class="grid">
+<div class="card"><h3>Portfolio</h3></div>
+<div class="card"><h3>Site vitrine</h3></div>
+<div class="card"><h3>Projet scolaire</h3></div>
+<div class="card"><h3>Application Web</h3></div>
+</div>
+</div>
+
+<!-- VIDEO -->
+<div id="video" class="page">
+<div class="banner">Montages Vidéo</div>
+<div class="grid">
+<div class="card"><h3>Montage 1</h3></div>
+<div class="card"><h3>Montage 2</h3></div>
+<div class="card"><h3>Montage 3</h3></div>
+<div class="card"><h3>Montage 4</h3></div>
+</div>
+</div>
+
+<!-- 3D -->
+<div id="troisD" class="page">
+<div class="banner">Projets 3D</div>
+<div class="grid">
+<div class="card"><h3>Modélisation</h3></div>
+<div class="card"><h3>Animation</h3></div>
+<div class="card"><h3>Scène 3D</h3></div>
+<div class="card"><h3>Rendu réaliste</h3></div>
+</div>
+</div>
+
+<!-- AUTRES -->
+<div id="autre" class="page">
+<div class="banner">Autres projets</div>
+<div class="grid">
+<div class="card"><h3>Projet 1</h3></div>
+<div class="card"><h3>Projet 2</h3></div>
+<div class="card"><h3>Projet 3</h3></div>
+</div>
+</div>
+
+<!-- COMPETENCES -->
+<div id="skills" class="page pageText">
+<h2>Compétences</h2>
+<p>HTML, CSS, design graphique, montage vidéo.</p>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page pageText">
+<h2>Contact</h2>
+<p>Email : tonemail@email.com</p>
+</div>
+
+</div>
+
+<!-- MODAL ZOOM -->
+<div id="modal" class="modal" onclick="closeModal()"><img id="modalImg"></div>
+
+<script>
+let historyStack=[];
+function showPage(pageId,button=null){
+let currentPage=document.querySelector(".page.active");
+if(currentPage && currentPage.id!==pageId){historyStack.push(currentPage.id);}
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById(pageId).classList.add("active");
+document.getElementById("backArrow").style.display=
+["dessin","siteweb","video","troisD","autre"].includes(pageId)?"block":"none";
+document.querySelectorAll(".catBtn").forEach(b=>b.classList.remove("active"));
+if(button){button.classList.add("active");}
+else{
+if(pageId==="home")document.querySelectorAll(".catBtn")[0].classList.add("active");
+if(pageId==="projects"||["dessin","siteweb","video","troisD","autre"].includes(pageId))document.querySelectorAll(".catBtn")[1].classList.add("active");
+if(pageId==="skills")document.querySelectorAll(".catBtn")[2].classList.add("active");
+if(pageId==="contact")document.querySelectorAll(".catBtn")[3].classList.add("active");
+}
+}
+
+function goBack(){if(historyStack.length>0){let prev=historyStack.pop();showPage(prev);}}
+function searchContent(value){value=value.toLowerCase();document.querySelectorAll(".card").forEach(card=>{card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";});}
+
+// ZOOM IMAGE
+function openModal(img){
+document.getElementById("modalImg").src=img.src;
+document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
