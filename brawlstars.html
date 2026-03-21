@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Brawl Stars</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#020617;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 40px;
+position:relative;
+border-bottom:2px solid #1e293b;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav li{
+margin-right:12px;
+}
+
+nav a{
+color:#cbd5e1;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+padding:6px 10px;
+border-radius:6px;
+}
+
+nav a:hover{
+background:#1e293b;
+}
+
+#logo{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+height:60px;
+}
+
+#searchBar{
+padding:6px;
+border-radius:6px;
+border:none;
+}
+
+main{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.card{
+display:flex;
+align-items:center;
+background:#1e293b;
+margin:20px auto;
+padding:20px;
+border-radius:10px;
+gap:20px;
+max-width:800px;
+cursor:pointer;
+}
+
+.card:hover{
+background:#334155;
+}
+
+.card img{
+height:110px;
+}
+
+.detail{
+background:#1e293b;
+padding:30px;
+border-radius:10px;
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.detail img{
+width:200px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:6px;
+background:#3b82f6;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+section{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+border-top:1px solid #1e293b;
+color:#94a3b8;
+}
+
+</style>
+
+<script>
+
+function showPage(id){
+let sections=document.querySelectorAll("section")
+sections.forEach(s=>s.classList.remove("active"))
+document.getElementById(id).classList.add("active")
+}
+
+function searchBrawler(){
+let input=document.getElementById("searchBar").value.toLowerCase()
+let cards=document.querySelectorAll(".brawler")
+
+cards.forEach(card=>{
+let name=card.dataset.name
+if(name.includes(input)){
+card.style.display="flex"
+}else{
+card.style.display="none"
+}
+})
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+<ul>
+<li><a href="#" onclick="showPage('accueil')">Accueil</a></li>
+<li><a href="#" onclick="showPage('brawlers')">Brawlers</a></li>
+<li><a href="#" onclick="showPage('modes')">Modes</a></li>
+<li><a href="#" onclick="showPage('recompenses')">Récompenses</a></li>
+<li><a href="#" onclick="showPage('contact')">Contact</a></li>
+</ul>
+</nav>
+
+<img id="logo" src="Brawl Stars Logo.png">
+
+<input type="text" id="searchBar" placeholder="Rechercher..." onkeyup="searchBrawler()">
+
+</header>
+
+<!-- ACCUEIL -->
+
+<section id="accueil" class="active">
+
+<main>
+
+<h2>Bienvenue sur Brawl Stars</h2>
+
+<center>
+
+<iframe width="700" height="400"
+src="https://www.youtube.com/embed/CaryjOdYFa0"
+allowfullscreen
+style="border-radius:10px;">
+</iframe>
+
+</center>
+
+</main>
+
+</section>
+
+<!-- BRAWLERS -->
+
+<section id="brawlers">
+
+<main>
+
+<h2>Brawlers</h2>
+
+<div class="card brawler" data-name="shelly" onclick="showPage('shelly')">
+<img src="shelly_default_001.png">
+<div>
+<h3>Shelly</h3>
+<p>Brawler de départ spécialisée dans le combat rapproché.</p>
+</div>
+</div>
+
+<div class="card brawler" data-name="colt" onclick="showPage('colt')">
+<img src="colt_default_001.png">
+<div>
+<h3>Colt</h3>
+<p>Tireur rapide infligeant de gros dégâts à distance.</p>
+</div>
+</div>
+
+<div class="card brawler" data-name="poco" onclick="showPage('poco')">
+<img src="poco_default_001.png">
+<div>
+<h3>Poco</h3>
+<p>Brawler support qui soigne ses alliés.</p>
+</div>
+</div>
+
+<div class="card brawler" data-name="crow" onclick="showPage('crow')">
+<img src="crow_default_001.png">
+<div>
+<h3>Crow</h3>
+<p>Brawler légendaire rapide utilisant du poison.</p>
+</div>
+</div>
+
+</main>
+
+</section>
+
+<!-- DETAILS BRAWLERS -->
+
+<section id="shelly">
+<div class="detail">
+<h2>Shelly</h2>
+<img src="shelly_default_001.png">
+<p>Shelly est le premier brawler obtenu dans Brawl Stars. Elle utilise un fusil à pompe qui inflige de gros dégâts à courte distance.</p>
+<p>Son Super tire une explosion massive qui détruit les murs et repousse les ennemis.</p>
+<button onclick="showPage('brawlers')">Retour</button>
+</div>
+</section>
+
+<section id="colt">
+<div class="detail">
+<h2>Colt</h2>
+<img src="colt_default_001.png">
+<p>Colt utilise deux revolvers pour tirer une rafale rapide de balles.</p>
+<p>Son Super lance une rafale plus longue capable de détruire les obstacles.</p>
+<button onclick="showPage('brawlers')">Retour</button>
+</div>
+</section>
+
+<section id="poco">
+<div class="detail">
+<h2>Poco</h2>
+<img src="poco_default_001.png">
+<p>Poco attaque avec des ondes musicales.</p>
+<p>Son Super soigne tous les alliés dans sa zone.</p>
+<button onclick="showPage('brawlers')">Retour</button>
+</div>
+</section>
+
+<section id="crow">
+<div class="detail">
+<h2>Crow</h2>
+<img src="crow_default_001.png">
+<p>Crow lance trois dagues empoisonnées.</p>
+<p>Son poison inflige des dégâts dans le temps et empêche les ennemis de se soigner.</p>
+<button onclick="showPage('brawlers')">Retour</button>
+</div>
+</section>
+
+<!-- MODES -->
+
+<section id="modes">
+
+<main>
+
+<h2>Modes de jeu</h2>
+
+<div class="card">
+<img src="duo-showdown.png">
+<div>
+<h3>Survivant</h3>
+<p>Battle royale où le dernier joueur ou duo survivant gagne.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="Vector-Smart-Object-6.png">
+<div>
+<h3>Razzia de Gemmes</h3>
+<p>Collectez 10 gemmes et protégez-les pour gagner.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="brawl_ball_icon.png">
+<div>
+<h3>Brawl Ball</h3>
+<p>Mode football en 3 contre 3.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="icon_knockedout.png">
+<div>
+<h3>Hors Jeu</h3>
+<p>Mode stratégique où chaque joueur n'a qu'une vie par manche.</p>
+</div>
+</div>
+
+</main>
+
+</section>
+
+<!-- RECOMPENSES -->
+
+<section id="recompenses">
+
+<main>
+
+<h2>Star Drops</h2>
+
+<div class="card">
+<img src="hqdefault.jpg">
+<div>
+<h3>Rare</h3>
+<p>Contient pièces et points de pouvoir.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="maxresdefault.jpg">
+<div>
+<h3>Super Rare</h3>
+<p>Donne plus de ressources.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="maxresdefault2.jpg">
+<div>
+<h3>Épique</h3>
+<p>Peut contenir skins ou ressources rares.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="sddefault2.jpg">
+<div>
+<h3>Mythique</h3>
+<p>Récompenses très rares.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="sddefault.jpg">
+<div>
+<h3>Légendaire</h3>
+<p>Star Drop le plus rare avec les meilleures récompenses.</p>
+</div>
+</div>
+
+</main>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<main>
+
+<h2>Contact</h2>
+
+<textarea rows="6" style="width:100%;border-radius:10px;padding:10px;"></textarea>
+
+<br><br>
+
+<button>Envoyer</button>
+
+</main>
+
+</section>
+
+<footer>
+© 2026 Site Brawl Stars
+</footer>
+
+</body>
+</html>
