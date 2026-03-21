@@ -15,320 +15,41 @@
   --card:#fff;
   --soft:#eee3d0;
 }
-
 *{box-sizing:border-box;font-family:Poppins,sans-serif;}
 html{scroll-behavior:smooth;}
 body{margin:0;background:var(--bg);color:var(--text);}
-
-.topHeader{
-  background:#000;
-  padding:15px 30px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-.headerContent{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  max-width:1200px;
-  margin:auto;
-  flex-wrap:wrap;
-  gap:12px;
-}
-.leftHeader{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.catBtn{
-  padding:8px 16px;
-  background:#000;
-  border:1px solid var(--accent);
-  color:#fff;
-  border-radius:8px;
-  cursor:pointer;
-}
+.topHeader{background:#000;padding:15px 30px;position:sticky;top:0;z-index:1000;}
+.headerContent{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto;flex-wrap:wrap;gap:12px;}
+.leftHeader{display:flex;gap:12px;flex-wrap:wrap;}
+.catBtn{padding:8px 16px;background:#000;border:1px solid var(--accent);color:#fff;border-radius:8px;cursor:pointer;}
 .catBtn:hover,.catBtn.active{background:var(--accent);}
-
-.searchBox{
-  position:relative;
-  min-width:260px;
-}
-.searchBox input{
-  padding:7px 12px;
-  border-radius:8px;
-  border:1px solid var(--accent);
-  width:100%;
-}
-.suggestions{
-  position:absolute;
-  top:110%;
-  left:0;
-  right:0;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  display:none;
-  z-index:1200;
-}
-.suggestionItem{
-  padding:10px 12px;
-  cursor:pointer;
-  border-bottom:1px solid #f1ece3;
-}
+.searchBox{position:relative;min-width:260px;}
+.searchBox input{padding:7px 12px;border-radius:8px;border:1px solid var(--accent);width:100%;}
+.suggestions{position:absolute;top:110%;left:0;right:0;background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.08);display:none;z-index:1200;}
+.suggestionItem{padding:10px 12px;cursor:pointer;border-bottom:1px solid #f1ece3;}
 .suggestionItem:last-child{border-bottom:none;}
-.suggestionItem:hover,
-.suggestionItem.activeSuggestion{
-  background:var(--soft);
-}
-
-.backArrow{
-  max-width:1200px;
-  margin:15px auto 0 auto;
-  display:none;
-}
-.backArrow button{
-  background:none;
-  border:none;
-  font-size:16px;
-  color:var(--accent);
-  cursor:pointer;
-}
-
-.main{
-  width:100%;
-  max-width:1200px;
-  margin:auto;
-  padding:30px 20px;
-}
+.suggestionItem:hover,.suggestionItem.activeSuggestion{background:var(--soft);}
+.backArrow{max-width:1200px;margin:15px auto 0 auto;display:none;}
+.backArrow button{background:none;border:none;font-size:16px;color:var(--accent);cursor:pointer;}
+.main{width:100%;max-width:1200px;margin:auto;padding:30px 20px;}
 .page{display:none;}
 .page.active{display:block;}
-
-.banner{
-  background:var(--card);
-  padding:18px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  text-align:center;
-  font-weight:600;
-  font-size:22px;
-  margin-bottom:25px;
-}
-
-.ctaBlock{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:20px;
-  margin:25px 0;
-}
-.ctaRow{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-.cta{
-  padding:10px 20px;
-  background:var(--soft);
-  border:1px solid var(--accent);
-  border-radius:8px;
-  text-decoration:none;
-  color:#000;
-  cursor:pointer;
-}
-.cta:hover{
-  background:var(--accent);
-  color:#fff;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:15px;
-  text-align:center;
-  cursor:pointer;
-  overflow:hidden;
-  transition:.25s;
-}
+.banner{background:var(--card);padding:18px;border-radius:10px;border:1px solid var(--border);text-align:center;font-weight:600;font-size:22px;margin-bottom:25px;}
+.ctaBlock{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin:25px 0;}
+.ctaRow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.cta{padding:10px 20px;background:var(--soft);border:1px solid var(--accent);border-radius:8px;text-decoration:none;color:#000;cursor:pointer;}
+.cta:hover{background:var(--accent);color:#fff;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:15px;text-align:center;cursor:pointer;overflow:hidden;transition:.25s;}
 .card:hover{background:var(--soft);}
-.card img{
-  width:100%;
-  border-radius:8px;
-  margin-bottom:10px;
-  display:block;
-}
 
-.card video{
-  display:block;
-  width:100% !important;
-  max-width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-  border-radius:8px;
-  margin:0 0 12px 0;
-  background:#000;
-  object-fit:contain;
-}
-
-.pageText{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:25px;
-}
-
-.videoBlock{
-  display:flex;
-  gap:30px;
-  align-items:center;
-  margin-bottom:40px;
-  flex-wrap:wrap;
-}
-.videoBox{
-  flex:1;
-  min-width:300px;
-}
-.videoBox video{
-  width:100%;
-  border-radius:10px;
-  border:1px solid var(--border);
-}
-.videoText{
-  flex:1;
-  min-width:250px;
-}
-
-.modal{
-  display:none;
-  position:fixed;
-  z-index:2000;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.8);
-  align-items:center;
-  justify-content:center;
-}
-.modal img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:10px;
-}
-
-/* PROFIL */
-.profileGrid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:20px;
-}
-.infoCard{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:22px;
-}
-.infoCard h3{
-  margin-top:0;
-  margin-bottom:14px;
-}
-.infoCard p, .infoCard li{
-  line-height:1.7;
-}
-.timeline{
-  display:grid;
-  gap:16px;
-}
-.timelineItem{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:18px;
-}
-.timelineItem h4{
-  margin:0 0 6px 0;
-}
-.meta{
-  font-size:14px;
-  opacity:.75;
-  margin-bottom:8px;
-}
-
-/* COMPETENCES */
-.skillsGrid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-.skillCard{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:20px;
-}
-.skillCard h3{
-  margin-top:0;
-  margin-bottom:14px;
-}
-.skillItem{
-  margin-bottom:14px;
-}
-.skillTop{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:6px;
-  font-size:14px;
-}
-.bar{
-  width:100%;
-  height:10px;
-  background:var(--soft);
-  border-radius:999px;
-  overflow:hidden;
-}
-.fill{
-  height:100%;
-  background:var(--accent);
-  border-radius:999px;
-}
-
-/* mise en évidence recherche */
-.targetCard{
-  outline:3px solid var(--accent);
-  transform:translateY(-4px);
-  box-shadow:0 10px 24px rgba(184,155,94,0.25);
-  background:#f7f0e3;
-}
-
-@media(max-width:900px){
-  .headerContent{flex-direction:column;gap:15px;}
-  .leftHeader{justify-content:center;}
-  .profileGrid{grid-template-columns:1fr;}
-}
-@media(max-width:800px){
-  .videoBlock{flex-direction:column;}
-}
+/* responsive */
 @media(max-width:600px){
-  .main{padding:20px 12px;}
-  .grid,.skillsGrid{grid-template-columns:1fr;}
-  .ctaRow{flex-direction:column;align-items:center;}
-  .cta{width:100%;text-align:center;}
-  .searchBox{width:100%;}
+  .grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
+
 <body>
 
 <div class="topHeader">
@@ -342,14 +63,9 @@ body{margin:0;background:var(--bg);color:var(--text);}
     </div>
 
     <div class="searchBox">
-      <input id="searchInput" type="text" placeholder="Rechercher..." oninput="handleSearchInput()" onkeydown="handleSearchKeydown(event)">
-      <div id="suggestions" class="suggestions"></div>
+      <input id="searchInput" type="text" placeholder="Rechercher...">
     </div>
   </div>
-</div>
-
-<div class="backArrow" id="backArrow">
-  <button onclick="goBack()">← Retour</button>
 </div>
 
 <div class="main">
@@ -358,632 +74,56 @@ body{margin:0;background:var(--bg);color:var(--text);}
     <div class="banner">Bienvenue sur mon portfolio</div>
 
     <div class="ctaBlock">
-      <p style="text-align:center; max-width:760px; margin:auto; line-height:1.7;">
-        Je m'appelle Jules, actuellement étudiant en licence informatique. J'éprouve un fort intérêt pour les projets numériques mêlant web, design et audiovisuel. Vous trouverez dans ce portfolio un recueil de mes projets et réalisations dans ces domaines.
+      <p style="text-align:center;">
+        Je m'appelle Jules, étudiant en licence informatique.
       </p>
 
-      <div style="height:16px;"></div>
-
       <div class="ctaRow">
-        <a class="cta" href="cv.html" download>Télécharger mon CV</a>
-        <a class="cta" onclick="showPage('projects')">Mes projets</a>
-        <a class="cta" onclick="showPage('contact')">Me contacter</a>
-      </div>
-    </div>
-
-    <div class="banner">Domaines de compétences</div>
-    <div class="grid">
-      <div class="card"><h3>Développement Web</h3><p>Créer des sites modernes.</p></div>
-      <div class="card"><h3>Design</h3><p>Améliorer l'identité visuelle.</p></div>
-      <div class="card"><h3>Audiovisuel</h3><p>Produire des montages dynamiques.</p></div>
-      <div class="card"><h3>Communication</h3><p>Présenter des projets impactants.</p></div>
-    </div>
-
-    <div class="banner" style="margin-top:50px;">Mes réalisations</div>
-    <div class="grid">
-      <div class="card" onclick="showPage('dessin')">
-        <img src="dessin16.jpg">
-        <h3>Dessin</h3>
-      </div>
-
-      <div class="card" onclick="showPage('siteweb')">
-        <img src="Brawl Stars Logo.jpg">
-        <h3>Site Web</h3>
-      </div>
-
-      <div class="card" onclick="showPage('video')">
-        <img src="video.jpg">
-        <h3>Montage Vidéo</h3>
-      </div>
-
-      <div class="card" onclick="showPage('troisD')">
-        <img src="mod4.jpg">
-        <h3>3D</h3>
-      </div>
-
-      <div class="card" onclick="showPage('autre')">
-        <img src="autre.jpg">
-        <h3>Autres projets</h3>
+        <!-- ✅ BOUTON MODIFIÉ -->
+        <a class="cta" href="#" onclick="downloadCV()">Télécharger mon CV</a>
       </div>
     </div>
   </div>
 
-  <div id="profile" class="page">
-    <div class="banner">Profil</div>
-
-    <div class="profileGrid">
-      <div class="infoCard">
-        <h3>Mon profil</h3>
-        <p>
-          Étudiant intéressé par les projets numériques mêlant informatique, web, design et audiovisuel. Je cherche à développer des compétences techniques et créatives à travers des réalisations concrètes, en autonomie comme en équipe.
-        </p>
-      </div>
-
-      <div class="infoCard">
-        <h3>Résumé</h3>
-        <ul>
-          <li>Licence informatique</li>
-          <li>Intérêt pour le web, le design et la vidéo</li>
-          <li>Pratique d’outils créatifs et techniques</li>
-          <li>Volonté de progresser sur des projets concrets</li>
-        </ul>
-      </div>
-    </div>
-
-    <div style="height:20px;"></div>
-
-    <div class="timeline">
-      <div class="timelineItem">
-        <h4>Formation</h4>
-        <div class="meta">À compléter avec ton CV</div>
-        <p>Exemple : Licence Informatique — Université ... — dates</p>
-      </div>
-
-      <div class="timelineItem">
-        <h4>Expériences</h4>
-        <div class="meta">À compléter avec ton CV</div>
-        <p>Stages, jobs, projets personnels, missions, travaux scolaires ou associatifs.</p>
-      </div>
-
-      <div class="timelineItem">
-        <h4>Engagement</h4>
-        <div class="meta">À compléter avec ton CV</div>
-        <p>Associations, bénévolat, implication dans des projets collectifs ou événements.</p>
-      </div>
-
-      <div class="timelineItem">
-        <h4>Encadrement</h4>
-        <div class="meta">À compléter avec ton CV</div>
-        <p>Tutorat, aide à d’autres étudiants, animation, gestion d’un groupe ou d’un projet.</p>
-      </div>
-
-      <div class="timelineItem">
-        <h4>Centres d’intérêt</h4>
-        <div class="meta">À personnaliser</div>
-        <p>Dessin, univers manga, création numérique, montage vidéo, culture visuelle, technologies web.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="projects" class="page">
-    <div class="banner">Mes Projets</div>
-    <div class="grid">
-      <div class="card" onclick="showPage('dessin')"><h3>Dessin</h3></div>
-      <div class="card" onclick="showPage('siteweb')"><h3>Sites Web</h3></div>
-      <div class="card" onclick="showPage('video')"><h3>Montage Vidéo</h3></div>
-      <div class="card" onclick="showPage('troisD')"><h3>3D</h3></div>
-      <div class="card" onclick="showPage('autre')"><h3>Autres projets</h3></div>
-    </div>
-  </div>
-
-  <div id="dessin" class="page">
-    <div class="banner">Dessins</div>
-
-    <div class="videoBlock">
-      <div class="videoBox">
-        <video controls>
-          <source src="videos/dessin.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="videoText">
-        <h3>Ma démarche artistique</h3>
-        <p>
-          J'aime m'inspirer de visuels existants pour approfondir ma technique.
-          Ma prochaine étape sera de commencer à créer mon propre univers manga.
-        </p>
-      </div>
-    </div>
-
-    <div class="grid">
-      <div class="card searchable-card" id="dessin-1"><img src="dessin1.jpg" onclick="openModal(this)"><h3>Dessin 1</h3></div>
-      <div class="card searchable-card" id="dessin-2"><img src="dessin2.jpg" onclick="openModal(this)"><h3>Dessin 2</h3></div>
-      <div class="card searchable-card" id="dessin-3"><img src="dessin3.jpg" onclick="openModal(this)"><h3>Dessin 3</h3></div>
-      <div class="card searchable-card" id="dessin-4"><img src="dessin4.jpg" onclick="openModal(this)"><h3>Dessin 4</h3></div>
-      <div class="card searchable-card" id="dessin-5"><img src="dessin5.jpg" onclick="openModal(this)"><h3>Dessin 5</h3></div>
-      <div class="card searchable-card" id="dessin-6"><img src="dessin6.jpg" onclick="openModal(this)"><h3>Dessin 6</h3></div>
-      <div class="card searchable-card" id="dessin-7"><img src="dessin7.jpg" onclick="openModal(this)"><h3>Dessin 7</h3></div>
-      <div class="card searchable-card" id="dessin-8"><img src="dessin8.jpg" onclick="openModal(this)"><h3>Dessin 8</h3></div>
-      <div class="card searchable-card" id="dessin-9"><img src="dessin9.jpg" onclick="openModal(this)"><h3>Dessin 9</h3></div>
-      <div class="card searchable-card" id="dessin-10"><img src="dessin10.jpg" onclick="openModal(this)"><h3>Dessin 10</h3></div>
-      <div class="card searchable-card" id="dessin-11"><img src="dessin11.jpg" onclick="openModal(this)"><h3>Dessin 11</h3></div>
-      <div class="card searchable-card" id="dessin-12"><img src="dessin12.jpg" onclick="openModal(this)"><h3>Dessin 12</h3></div>
-      <div class="card searchable-card" id="dessin-13"><img src="dessin13.jpg" onclick="openModal(this)"><h3>Dessin 13</h3></div>
-      <div class="card searchable-card" id="dessin-14"><img src="dessin14.jpg" onclick="openModal(this)"><h3>Dessin 14</h3></div>
-      <div class="card searchable-card" id="dessin-15"><img src="dessin15.jpg" onclick="openModal(this)"><h3>Dessin 15</h3></div>
-      <div class="card searchable-card" id="dessin-16"><img src="dessin16.jpg" onclick="openModal(this)"><h3>Dessin 16</h3></div>
-      <div class="card searchable-card" id="dessin-17"><img src="dessin17.jpg" onclick="openModal(this)"><h3>Dessin 17</h3></div>
-      <div class="card searchable-card" id="dessin-18"><img src="dessin18.jpg" onclick="openModal(this)"><h3>Dessin 18</h3></div>
-      <div class="card searchable-card" id="dessin-19"><img src="dessin19.jpg" onclick="openModal(this)"><h3>Dessin 19</h3></div>
-      <div class="card searchable-card" id="dessin-20"><img src="dessin20.jpg" onclick="openModal(this)"><h3>Dessin 20</h3></div>
-      <div class="card searchable-card" id="dessin-21"><img src="dessin21.jpg" onclick="openModal(this)"><h3>Dessin 21</h3></div>
-      <div class="card searchable-card" id="dessin-22"><img src="dessin22.jpg" onclick="openModal(this)"><h3>Dessin 22</h3></div>
-      <div class="card searchable-card" id="dessin-23"><img src="dessin23.jpg" onclick="openModal(this)"><h3>Dessin 23</h3></div>
-      <div class="card searchable-card" id="dessin-24"><img src="dessin24.jpg" onclick="openModal(this)"><h3>Dessin 24</h3></div>
-      <div class="card searchable-card" id="dessin-25"><img src="dessin25.jpg" onclick="openModal(this)"><h3>Dessin 25</h3></div>
-      <div class="card searchable-card" id="dessin-26"><img src="dessin26.jpg" onclick="openModal(this)"><h3>Dessin 26</h3></div>
-      <div class="card searchable-card" id="dessin-27"><img src="dessin27.jpg" onclick="openModal(this)"><h3>Dessin 27</h3></div>
-      <div class="card searchable-card" id="dessin-28"><img src="dessin28.jpg" onclick="openModal(this)"><h3>Dessin 28</h3></div>
-      <div class="card searchable-card" id="dessin-29"><img src="dessin29.jpg" onclick="openModal(this)"><h3>Dessin 29</h3></div>
-      <div class="card searchable-card" id="dessin-30"><img src="dessin30.jpg" onclick="openModal(this)"><h3>Dessin 30</h3></div>
-      <div class="card searchable-card" id="dessin-31"><img src="dessin31.jpg" onclick="openModal(this)"><h3>Dessin 31</h3></div>
-      <div class="card searchable-card" id="dessin-32"><img src="dessin32.jpg" onclick="openModal(this)"><h3>Dessin 32</h3></div>
-      <div class="card searchable-card" id="dessin-33"><img src="dessin33.jpg" onclick="openModal(this)"><h3>Dessin 33</h3></div>
-      <div class="card searchable-card" id="dessin-34"><img src="dessin34.jpg" onclick="openModal(this)"><h3>Dessin 34</h3></div>
-      <div class="card searchable-card" id="dessin-35"><img src="dessin35.jpg" onclick="openModal(this)"><h3>Dessin 35</h3></div>
-      <div class="card searchable-card" id="dessin-36"><img src="dessin36.jpg" onclick="openModal(this)"><h3>Dessin 36</h3></div>
-      <div class="card searchable-card" id="dessin-37"><img src="dessin37.jpg" onclick="openModal(this)"><h3>Dessin 37</h3></div>
-    </div>
-  </div>
-
-  <div id="siteweb" class="page">
-    <div class="banner">Sites Web</div>
-    <div class="grid">
-      <div class="card searchable-card" id="site-brawlstars" onclick="window.open('brawlstars.html','_blank')">
-        <h3>Site Brawl Stars</h3>
-        <p>Cliquer pour ouvrir le site</p>
-      </div>
-
-      <div class="card searchable-card" id="site-portfolio">
-        <img src="images/site.jpg">
-        <h3>Portfolio</h3>
-      </div>
-
-      <div class="card searchable-card" id="site-vitrine"><h3>Site vitrine</h3></div>
-      <div class="card searchable-card" id="site-scolaire"><h3>Projet scolaire</h3></div>
-      <div class="card searchable-card" id="site-application"><h3>Application Web</h3></div>
-    </div>
-  </div>
-
-  <div id="video" class="page">
-    <div class="banner">Montages Vidéo</div>
-
-    <p style="text-align:center; max-width:800px; margin:0 auto 30px auto;">
-      Voici les débuts en montage vidéo. J'essaie de créer des vidéos avec différentes techniques afin d'appréhender l'outil Da Vinci Resolve.
-    </p>
-
-    <div class="grid">
-      <div class="card searchable-card" id="video-1">
-        <video controls preload="metadata">
-          <source src="videos/video1.mp4" type="video/mp4">
-        </video>
-        <p>
-          Ici j'ai utilisé les vidéos marines de mon voyage en Thaïlande. J'ai voulu créer un montage en intégrant des fondus pour la transition, incorporant une musique et en incrustant des textes. Outil utilisé : Da Vinci Resolve.
-        </p>
-      </div>
-
-      <div class="card searchable-card" id="video-2">
-        <video controls preload="metadata">
-          <source src="videos/video2.mp4" type="video/mp4">
-        </video>
-        <p>
-          Ici j'ai voulu m'exercer à la technique du stop motion. J'ai pris des photos de chaque étape de construction puis j'ai voulu les animer. Outil utilisé : Da Vinci Resolve.
-        </p>
-      </div>
-
-      <div class="card searchable-card" id="video-3">
-        <video controls preload="metadata">
-          <source src="videos/video3.mp4" type="video/mp4">
-        </video>
-        <p>
-          Ici j'ai voulu recréer une vidéo en accéléré du montage d'un élément Lego. J'ai rajouté des incrustations et une vidéo expliquant à quel Lego appartenait ce module. Outil utilisé : Da Vinci Resolve.
-        </p>
-      </div>
-
-      <div class="card searchable-card" id="video-4">
-        <video controls preload="metadata">
-          <source src="videos/video4.mp4" type="video/mp4">
-        </video>
-        <p>
-          Ici j'ai simplement voulu montrer les différentes étapes dans la réalisation de mes dessins.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div id="troisD" class="page">
-    <div class="banner">Projets 3D</div>
-    <div class="grid">
-      <div class="card searchable-card" id="modelisation-1">
-        <img src="mod1.jpg" onclick="openModal(this)">
-        <h3>Modélisation 1</h3>
-      </div>
-      <div class="card searchable-card" id="modelisation-2">
-        <img src="mod2.jpg" onclick="openModal(this)">
-        <h3>Modélisation 2</h3>
-      </div>
-      <div class="card searchable-card" id="modelisation-3">
-        <img src="mod3.jpg" onclick="openModal(this)">
-        <h3>Modélisation 3</h3>
-      </div>
-      <div class="card searchable-card" id="modelisation-4">
-        <img src="mod4.jpg" onclick="openModal(this)">
-        <h3>Modélisation 4</h3>
-      </div>
-    </div>
-  </div>
-
-  <div id="autre" class="page">
-    <div class="banner">Autres projets</div>
-    <div class="grid">
-      <div class="card searchable-card" id="autre-1"><h3>Projet 1</h3></div>
-      <div class="card searchable-card" id="autre-2"><h3>Projet 2</h3></div>
-      <div class="card searchable-card" id="autre-3"><h3>Projet 3</h3></div>
-    </div>
-  </div>
-
-  <div id="skills" class="page">
-    <div class="banner">Compétences</div>
-
-    <div class="skillsGrid">
-
-      <div class="skillCard">
-        <h3>Outils</h3>
-        <div class="skillItem">
-          <div class="skillTop"><span>Canva</span><span>85%</span></div>
-          <div class="bar"><div class="fill" style="width:85%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>DaVinci Resolve</span><span>75%</span></div>
-          <div class="bar"><div class="fill" style="width:75%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Thonny</span><span>70%</span></div>
-          <div class="bar"><div class="fill" style="width:70%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Spyder</span><span>65%</span></div>
-          <div class="bar"><div class="fill" style="width:65%;"></div></div>
-        </div>
-      </div>
-
-      <div class="skillCard">
-        <h3>Langages informatiques</h3>
-        <div class="skillItem">
-          <div class="skillTop"><span>HTML / CSS</span><span>75%</span></div>
-          <div class="bar"><div class="fill" style="width:75%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Python</span><span>70%</span></div>
-          <div class="bar"><div class="fill" style="width:70%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>JavaScript</span><span>45%</span></div>
-          <div class="bar"><div class="fill" style="width:45%;"></div></div>
-        </div>
-      </div>
-
-      <div class="skillCard">
-        <h3>Compétences</h3>
-        <div class="skillItem">
-          <div class="skillTop"><span>Développement web</span><span>75%</span></div>
-          <div class="bar"><div class="fill" style="width:75%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Design graphique</span><span>80%</span></div>
-          <div class="bar"><div class="fill" style="width:80%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Montage vidéo</span><span>70%</span></div>
-          <div class="bar"><div class="fill" style="width:70%;"></div></div>
-        </div>
-      </div>
-
-      <div class="skillCard">
-        <h3>Langues</h3>
-        <div class="skillItem">
-          <div class="skillTop"><span>Français</span><span>100%</span></div>
-          <div class="bar"><div class="fill" style="width:100%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Anglais</span><span>65%</span></div>
-          <div class="bar"><div class="fill" style="width:65%;"></div></div>
-        </div>
-      </div>
-
-      <div class="skillCard">
-        <h3>Soft skills</h3>
-        <div class="skillItem">
-          <div class="skillTop"><span>Créativité</span><span>85%</span></div>
-          <div class="bar"><div class="fill" style="width:85%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Autonomie</span><span>80%</span></div>
-          <div class="bar"><div class="fill" style="width:80%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Organisation</span><span>75%</span></div>
-          <div class="bar"><div class="fill" style="width:75%;"></div></div>
-        </div>
-        <div class="skillItem">
-          <div class="skillTop"><span>Travail en équipe</span><span>70%</span></div>
-          <div class="bar"><div class="fill" style="width:70%;"></div></div>
-        </div>
-      </div>
-
-      <div class="skillCard">
-        <h3>Certifications / vérifications</h3>
-        <p>
-          À compléter selon ton CV : PIX, certifications, attestations, projets validés, badges ou autres éléments de vérification.
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-  <div id="contact" class="page pageText">
-    <h2>Me contacter</h2>
-    <p><strong>Nom :</strong> Jules</p>
-    <p><strong>Email :</strong> tonemail@email.com</p>
-    <p><strong>Téléphone :</strong> 06 XX XX XX XX</p>
-  </div>
-
-</div>
-
-<div id="modal" class="modal" onclick="closeModal()">
-  <img id="modalImg">
 </div>
 
 <script>
-const searchMap = [
-  { label: "Accueil", page: "home" },
-  { label: "Profil", page: "profile" },
-  { label: "Mes projets", page: "projects" },
-  { label: "Dessin", page: "dessin" },
-  { label: "Dessins", page: "dessin" },
-  { label: "Site web", page: "siteweb" },
-  { label: "Sites web", page: "siteweb" },
-  { label: "Brawl Stars", page: "siteweb", target: "site-brawlstars" },
-  { label: "Montage vidéo", page: "video" },
-  { label: "Montages vidéo", page: "video" },
-  { label: "Vidéo", page: "video" },
-  { label: "3D", page: "troisD" },
-  { label: "Autres projets", page: "autre" },
-  { label: "Compétences", page: "skills" },
-  { label: "Langages informatiques", page: "skills" },
-  { label: "Outils", page: "skills" },
-  { label: "Langues", page: "skills" },
-  { label: "Soft skills", page: "skills" },
-  { label: "Contact", page: "contact" },
-  { label: "Me contacter", page: "contact" }
-];
-
-// suggestions précises
-for(let i=1;i<=37;i++){
-  searchMap.push({ label: `Dessin ${i}`, page: "dessin", target: `dessin-${i}` });
-}
-for(let i=1;i<=4;i++){
-  searchMap.push({ label: `Modélisation ${i}`, page: "troisD", target: `modelisation-${i}` });
-}
-for(let i=1;i<=4;i++){
-  searchMap.push({ label: `Vidéo ${i}`, page: "video", target: `video-${i}` });
-}
-searchMap.push({ label: "Portfolio", page: "siteweb", target: "site-portfolio" });
-searchMap.push({ label: "Site vitrine", page: "siteweb", target: "site-vitrine" });
-searchMap.push({ label: "Projet scolaire", page: "siteweb", target: "site-scolaire" });
-searchMap.push({ label: "Application Web", page: "siteweb", target: "site-application" });
-
-let selectedSuggestionIndex = -1;
-
-function showPage(pageId,button=null){
+function showPage(pageId){
   document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
   document.getElementById(pageId).classList.add("active");
-
-  document.querySelectorAll(".catBtn").forEach(b=>b.classList.remove("active"));
-
-  if(button){
-    button.classList.add("active");
-  }else{
-    if(pageId==="home") document.querySelectorAll(".catBtn")[0].classList.add("active");
-    if(pageId==="profile") document.querySelectorAll(".catBtn")[1].classList.add("active");
-    if(["projects","dessin","siteweb","video","troisD","autre"].includes(pageId)) document.querySelectorAll(".catBtn")[2].classList.add("active");
-    if(pageId==="skills") document.querySelectorAll(".catBtn")[3].classList.add("active");
-    if(pageId==="contact") document.querySelectorAll(".catBtn")[4].classList.add("active");
-  }
-
-  document.getElementById("backArrow").style.display =
-    ["dessin","siteweb","video","troisD","autre"].includes(pageId) ? "block" : "none";
-
-  closeSuggestions();
 }
 
-function goBack(){
-  showPage("projects");
+/* ✅ FONCTION CV */
+function downloadCV(){
+const cv = `<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CV Jules</title>
+<style>
+body{font-family:Arial;padding:40px;background:#f5f5f7;}
+.container{max-width:900px;margin:auto;background:white;padding:40px;}
+h1{font-size:2rem;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Jules Chupin</h1>
+<p>Étudiant en informatique passionné par le web et le design.</p>
+</div>
+</body>
+</html>`;
+
+const blob = new Blob([cv], {type:"text/html"});
+const url = URL.createObjectURL(blob);
+
+const a = document.createElement("a");
+a.href = url;
+a.download = "cv.html";
+a.click();
+
+URL.revokeObjectURL(url);
 }
-
-function searchContent(value){
-  value=value.toLowerCase();
-  document.querySelectorAll(".card, .skillCard, .timelineItem, .infoCard").forEach(card=>{
-    card.style.display=card.innerText.toLowerCase().includes(value) ? "block" : "none";
-  });
-}
-
-function openModal(img){
-  document.getElementById("modalImg").src=img.src;
-  document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){
-  document.getElementById("modal").style.display="none";
-}
-
-function clearTargetHighlight(){
-  document.querySelectorAll(".targetCard").forEach(el=>el.classList.remove("targetCard"));
-}
-
-function openTarget(page, targetId=null){
-  showPage(page);
-  clearTargetHighlight();
-
-  if(targetId){
-    setTimeout(() => {
-      const target = document.getElementById(targetId);
-      if(target){
-        target.classList.add("targetCard");
-        target.scrollIntoView({behavior:"smooth", block:"center"});
-      }
-    }, 60);
-  }
-}
-
-function handleSearchInput(){
-  const input = document.getElementById("searchInput");
-  const value = input.value.trim().toLowerCase();
-  const suggestionsBox = document.getElementById("suggestions");
-
-  if(!value){
-    closeSuggestions();
-    return;
-  }
-
-  const matches = searchMap.filter(item =>
-    normalize(item.label).includes(normalize(value))
-  ).slice(0, 12);
-
-  if(matches.length === 0){
-    closeSuggestions();
-    return;
-  }
-
-  suggestionsBox.innerHTML = matches.map((item, index) => `
-    <div class="suggestionItem" data-page="${item.page}" data-target="${item.target || ''}" data-index="${index}" onclick="goToSuggestion('${item.page}','${item.target || ''}','${escapeQuotes(item.label)}')">
-      ${item.label}
-    </div>
-  `).join("");
-
-  suggestionsBox.style.display = "block";
-  selectedSuggestionIndex = -1;
-}
-
-function handleSearchKeydown(event){
-  const suggestionsBox = document.getElementById("suggestions");
-  const items = [...suggestionsBox.querySelectorAll(".suggestionItem")];
-  const input = document.getElementById("searchInput");
-  const value = input.value.trim().toLowerCase();
-
-  if(event.key === "ArrowDown" && items.length){
-    event.preventDefault();
-    selectedSuggestionIndex = (selectedSuggestionIndex + 1) % items.length;
-    updateSuggestionSelection(items);
-    return;
-  }
-
-  if(event.key === "ArrowUp" && items.length){
-    event.preventDefault();
-    selectedSuggestionIndex = (selectedSuggestionIndex - 1 + items.length) % items.length;
-    updateSuggestionSelection(items);
-    return;
-  }
-
-  if(event.key === "Enter"){
-    event.preventDefault();
-
-    if(selectedSuggestionIndex >= 0 && items[selectedSuggestionIndex]){
-      items[selectedSuggestionIndex].click();
-      return;
-    }
-
-    const exact = searchMap.find(item => normalize(item.label) === normalize(value));
-    if(exact){
-      openTarget(exact.page, exact.target || null);
-      closeSuggestions();
-      return;
-    }
-
-    const direct = parseStructuredSearch(value);
-    if(direct){
-      openTarget(direct.page, direct.target);
-      closeSuggestions();
-      return;
-    }
-
-    const firstMatch = searchMap.find(item => normalize(item.label).includes(normalize(value)));
-    if(firstMatch){
-      openTarget(firstMatch.page, firstMatch.target || null);
-      closeSuggestions();
-    }
-  }
-}
-
-function updateSuggestionSelection(items){
-  items.forEach(item => item.classList.remove("activeSuggestion"));
-  if(items[selectedSuggestionIndex]){
-    items[selectedSuggestionIndex].classList.add("activeSuggestion");
-  }
-}
-
-function goToSuggestion(page, target, label){
-  document.getElementById("searchInput").value = label;
-  openTarget(page, target || null);
-}
-
-function closeSuggestions(){
-  document.getElementById("suggestions").style.display = "none";
-  selectedSuggestionIndex = -1;
-}
-
-function normalize(str){
-  return str
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim();
-}
-
-function parseStructuredSearch(value){
-  const q = normalize(value);
-
-  let m = q.match(/^dessin\s+(\d{1,2})$/);
-  if(m){
-    const n = Number(m[1]);
-    if(n >= 1 && n <= 37) return { page:"dessin", target:`dessin-${n}` };
-  }
-
-  m = q.match(/^(modelisation|modelisation 3d|3d|modele)\s+(\d{1,2})$/);
-  if(m){
-    const n = Number(m[2]);
-    if(n >= 1 && n <= 4) return { page:"troisD", target:`modelisation-${n}` };
-  }
-
-  m = q.match(/^(video|vidéo)\s+(\d{1,2})$/);
-  if(m){
-    const n = Number(m[2]);
-    if(n >= 1 && n <= 4) return { page:"video", target:`video-${n}` };
-  }
-
-  return null;
-}
-
-function escapeQuotes(str){
-  return str.replace(/'/g, "\\'");
-}
-
-document.addEventListener("click", function(e){
-  const box = document.querySelector(".searchBox");
-  if(!box.contains(e.target)){
-    closeSuggestions();
-  }
-});
 </script>
 
 </body>
