@@ -169,6 +169,17 @@ body{margin:0;background:var(--bg);color:var(--text);}
   display:block;
 }
 
+/* AJOUT pour que les images des réalisations remplissent tout le bloc */
+.realisationCard img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:8px;
+  margin-bottom:10px;
+  display:block;
+}
+
 .card video{
   display:block;
   width:100% !important;
@@ -381,27 +392,27 @@ body{margin:0;background:var(--bg);color:var(--text);}
 
     <div class="banner" style="margin-top:50px;">Mes réalisations</div>
     <div class="grid">
-      <div class="card" onclick="showPage('dessin')">
+      <div class="card realisationCard" onclick="showPage('dessin')">
         <img src="dessin16.jpg">
         <h3>Dessin</h3>
       </div>
 
-      <div class="card" onclick="showPage('siteweb')">
+      <div class="card realisationCard" onclick="showPage('siteweb')">
         <img src="Brawl Stars Logo.jpg">
         <h3>Site Web</h3>
       </div>
 
-      <div class="card" onclick="showPage('video')">
+      <div class="card realisationCard" onclick="showPage('video')">
         <img src="video.jpg">
         <h3>Montage Vidéo</h3>
       </div>
 
-      <div class="card" onclick="showPage('troisD')">
+      <div class="card realisationCard" onclick="showPage('troisD')">
         <img src="mod4.jpg">
         <h3>3D</h3>
       </div>
 
-      <div class="card" onclick="showPage('autre')">
+      <div class="card realisationCard" onclick="showPage('autre')">
         <img src="autre.jpg">
         <h3>Autres projets</h3>
       </div>
