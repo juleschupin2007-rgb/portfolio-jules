@@ -1025,10 +1025,41 @@ function downloadCV(){
             box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
 
+        /* HEADER + PHOTO */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .photo-box {
+            width: 140px;
+            height: 180px;
+            border: 2px dashed #c7c7d1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+            overflow: hidden;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         h1 {
             font-size: 2.4rem;
             margin-bottom: 5px;
             font-weight: 800;
+            margin-top: 0;
         }
 
         h2 {
@@ -1065,6 +1096,34 @@ function downloadCV(){
             padding-left: 20px;
         }
 
+        .section {
+            margin-bottom: 25px;
+        }
+
+        /* BARRES DE COMPÉTENCES */
+        .skill {
+            margin-bottom: 12px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .skill-bar {
+            background: #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 8px;
+            margin-top: 5px;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4f46e5, #6366f1);
+            border-radius: 8px;
+        }
+
         .qr {
             text-align: center;
             margin-top: 40px;
@@ -1072,16 +1131,15 @@ function downloadCV(){
 
         .qr img {
             width: 180px;
-            filter: drop-shadow(0 0 12px #4f46e5);
-        }
-
-        .section {
-            margin-bottom: 25px;
         }
 
         @media(max-width: 700px) {
             .grid-2 {
                 grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
             }
         }
     </style>
@@ -1090,23 +1148,31 @@ function downloadCV(){
 <body>
 <div class="container">
 
-    <h1>Jules Chupin</h1>
-    <div class="subtitle">Création numérique · Communication digital · Développement web</div>
+    <div class="header">
+        <div class="header-text">
+            <h1>Jules Chupin</h1>
+            <div class="subtitle">Création numérique · Communication digitale · Développement web</div>
 
-    <div class="info">
-        📍 Cholet · 📧 <a href="mailto:juleschupin@outlook.fr">juleschupin@outlook.fr</a> · 📱 06 37 91 62 59  
-        <br>
-        🌐 Portfolio : <a href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">
-            juleschupin2007-rgb.github.io/portfolio-jules/
-        </a>
+            <div class="info">
+                📍 Cholet · 📧 <a href="mailto:juleschupin@outlook.fr">juleschupin@outlook.fr</a> · 📱 06 37 91 62 59
+                <br>
+                🌐 Portfolio :
+                <a href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">
+                    juleschupin2007-rgb.github.io/portfolio-jules/
+                </a>
+            </div>
+        </div>
+
+        <div class="photo-box">
+            <!-- Remplace par ta photo -->
+            <img src="photo.jpg" alt="Photo Jules Chupin">
+        </div>
     </div>
 
     <h2>Profil</h2>
     <p>
-        Étudiant de 18 ans en licence informatique, interessé par la création numérique, le design visuel et le développement web.
-        Je combine compétences techniques (programmation, web, montage vidéo, modélisation 3D) et sens créatif
-        (dessin manga, création d’univers, projets multimédias). Curieux, rigoureux et persévérant, je souhaite intégrer
-        une formation spécialisée en design digital, UI/UX, graphisme et multimédia.
+        Étudiant de 18 ans en licence informatique, intéressé par la création numérique, le design visuel et le développement web.
+        Curieux, rigoureux et créatif, je souhaite évoluer dans le design digital et le développement.
     </p>
 
     <h2>Compétences</h2>
@@ -1115,99 +1181,77 @@ function downloadCV(){
         <div class="section">
             <h3>Création & Design</h3>
             <ul>
-                <li>Dessin (manga, reproduction fidèle, création de personnages)</li>
-                <li>Création d’univers (Lego, Minecraft)</li>
-                <li>Modélisation 3D (SketchUp)</li>
-                <li>Montage vidéo (DaVinci Resolve)</li>
-                <li>Sens du détail et de la composition</li>
-                <li>conception visuel (canva)</li>
+                <li>Dessin manga</li>
+                <li>Création d’univers</li>
+                <li>Modélisation 3D</li>
+                <li>Montage vidéo</li>
+                <li>Canva</li>
             </ul>
         </div>
 
         <div class="section">
             <h3>Développement & Numérique</h3>
-            <ul>
-                <li>HTML / CSS</li>
-                <li>Python</li>
-                <li>C++</li>
-                <li>JSON</li>
-                <li>Javascript</li>
-                <li>Spyder, Thonny, Word, Excel, PowerPoint</li>
-                <li>Programation (jeu vidéo, mini-site)</li>
-                <li>Création sites webs (portfolio, brawlstars)</li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="grid-2">
-        <div class="section">
-            <h3>Langues</h3>
-            <ul>
-                <li>Anglais : B1+</li>
-                <li>Espagnol : niveau bac</li>
-            </ul>
-        </div>
+            <div class="skill">
+                <div class="skill-name">HTML — 35%</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 35%;"></div>
+                </div>
+            </div>
 
-        <div class="section">
-            <h3>Soft Skills</h3>
-            <ul>
-                <li>Autonomie</li>
-                <li>Rigueur</li>
-                <li>Créativité</li>
-                <li>Persévérance</li>
-                <li>Adaptabilité</li>
-                <li>Travail en équipe</li>
-            </ul>
+            <div class="skill">
+                <div class="skill-name">CSS — 35%</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 35%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">Python — 25%</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 25%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">JavaScript — 25%</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 25%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">C++ — 25%</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 25%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">JSON — 25%</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 25%;"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <h2>Formation</h2>
     <ul>
-        <li>2025–2026 — Licence Informatique, Faculté des Sciences, Nantes</li>
-        <li>2022–2025 — Baccalauréat Général (Maths, NSI), Lycée Renaudeau, Cholet</li>
-        <li>2021—2022 — Classe de 3eme Collège Colbert, Cholet</li>
-        <li>2019–2021 — Classe Triathlon, Collège Victor Hugo, Issy-les-Moulineaux</li>
+        <li>Licence Informatique — Nantes</li>
+        <li>Bac Général (Maths, NSI)</li>
     </ul>
 
-    <h2>Expériences professionnelles</h2>
+    <h2>Expérience</h2>
     <ul>
-        <li>
-            <strong>Préparateur de commandes & Manutentionnaire — B.Solfin (85)</strong>  
-            23–27 février 2026  
-            <ul>
-                <li>Préparation de commandes (picking, envois de colis)</li>
-                <li>Rangement et remise en stock</li>
-                <li>Manutention</li>
-            </ul>
-        </li>
-
-        <li>
-            <strong>Stage de 3e — Cabinet d’architecture Grégoire, Cholet</strong>  
-            Janvier 2022  
-            <ul>
-                <li>Modélisation 3D (SketchUp)</li>
-                <li>Réalisation de plans</li>
-                <li>Suivi de chantier</li>
-                <li>Découverte du processus architectural</li>
-            </ul>
-        </li>
+        <li>Préparateur de commandes — 2026</li>
+        <li>Stage architecture — 2022</li>
     </ul>
-
-    <h2>Certifications</h2>
-    <ul>
-        <li>2024 — Certification PIX resultat: 400</li>
-        <li>2024 — PSC1 – Formation aux premiers secours</li>
-    </ul>
-
-    <h2>Centres d’intérêt</h2>
-    <p>
-        Dessin (manga) · Création d’univers (Lego, Minecraft) · Jeux vidéo · Voyages (Stockholm, Hong Kong, New York,
-        Bangkok, Madrid, Tokyo) · Basket (6 ans) · Triathlon
-    </p>
 
     <div class="qr">
-        <h3>Accéder au Portfolio</h3>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://juleschupin2007-rgb.github.io/portfolio-jules/&color=4f46e5" alt="QR Code Portfolio">
+        <h3>Portfolio</h3>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://juleschupin2007-rgb.github.io/portfolio-jules/">
     </div>
 
 </div>
