@@ -169,12 +169,14 @@ body{margin:0;background:var(--bg);color:var(--text);}
   display:block;
 }
 
-/* AJOUT pour que les images des réalisations remplissent tout le bloc */
+/* AJOUT : toutes les images de "Mes réalisations" ont la même taille
+   tout en restant entières */
 .realisationCard img{
   width:100%;
   height:220px;
-  object-fit:cover;
+  object-fit:contain;
   object-position:center;
+  background:#fff;
   border-radius:8px;
   margin-bottom:10px;
   display:block;
