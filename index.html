@@ -1002,133 +1002,146 @@ function downloadCV(){
   const cvContent = `<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>CV – Jules Chupin</title>
+    <meta charset="UTF-8">
+    <title>CV – Jules Chupin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-* { box-sizing: border-box; }
+    <style>
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f7;
+            color: #222;
+            line-height: 1.6;
+        }
 
-@page { size: A4; margin: 0; }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
 
-body {
-    margin: 0;
-    background: #ececf1;
-    font-family: Arial, sans-serif;
-}
+        /* COLONNE GAUCHE */
+        .left {
+            background: linear-gradient(180deg, #4f46e5, #3730a3);
+            color: white;
+            padding: 30px;
+        }
 
-.cv-page {
-    width: 210mm;
-    height: 297mm;
-    margin: auto;
-    background: white;
-    display: grid;
-    grid-template-columns: 70mm 140mm;
-}
+        .photo-box {
+            width: 130px;
+            height: 160px;
+            margin: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
 
-/* GAUCHE */
-.left {
-    background: linear-gradient(#4338ca,#312e81);
-    color: white;
-    padding: 10mm 7mm;
-    display: flex;
-    flex-direction: column;
-}
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.photo-box {
-    width: 35mm;
-    height: 45mm;
-    margin: auto;
-    margin-bottom: 6mm;
-    border-radius: 8px;
-    overflow: hidden;
-}
+        .left h2 {
+            font-size: 1rem;
+            margin-top: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+            letter-spacing: 1px;
+        }
 
-.photo-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .left ul {
+            padding-left: 18px;
+        }
 
-.left-title {
-    font-size: 11px;
-    font-weight: bold;
-    margin-top: 5mm;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-}
+        .left li {
+            font-size: 0.9rem;
+        }
 
-ul {
-    padding-left: 15px;
-    margin: 2mm 0;
-}
+        /* BARRES */
+        .skill {
+            margin-bottom: 10px;
+        }
 
-li {
-    font-size: 10px;
-    margin-bottom: 1mm;
-}
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+        }
 
-/* BARRES */
-.skill-bar {
-    height: 5px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 10px;
-}
+        .skill-bar {
+            background: rgba(255,255,255,0.2);
+            height: 6px;
+            border-radius: 6px;
+            margin-top: 4px;
+        }
 
-.skill-fill {
-    height: 100%;
-    background: white;
-}
+        .skill-fill {
+            background: white;
+            height: 100%;
+            border-radius: 6px;
+        }
 
-/* PORTFOLIO */
-.portfolio {
-    margin-top: auto;
-    text-align: center;
-    background: rgba(255,255,255,0.08);
-    padding: 8px;
-    border-radius: 10px;
-}
+        /* QR */
+        .portfolio {
+            margin-top: 20px;
+            text-align: center;
+        }
 
-.portfolio a {
-    color: white;
-    font-size: 10px;
-    display: block;
-    margin-bottom: 5px;
-    text-decoration: none;
-}
+        .portfolio a {
+            color: white;
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 8px;
+            text-decoration: none;
+        }
 
-.qr img {
-    width: 65px;
-}
+        .qr img {
+            width: 90px;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
 
-/* DROITE */
-.right {
-    padding: 10mm;
-}
+        /* DROITE */
+        .right {
+            padding: 30px;
+        }
 
-h1 {
-    margin: 0;
-    font-size: 26px;
-}
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
 
-.subtitle {
-    color: #4338ca;
-    font-weight: bold;
-    margin-bottom: 5mm;
-}
+        .subtitle {
+            color: #4f46e5;
+            margin-bottom: 20px;
+        }
 
-.section {
-    font-weight: bold;
-    margin-top: 5mm;
-}
+        .section-title {
+            margin-top: 25px;
+            border-left: 5px solid #4f46e5;
+            padding-left: 10px;
+            font-weight: bold;
+        }
 
-p, li {
-    font-size: 10px;
-}
-</style>
+        ul {
+            padding-left: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="cv-page">
+<div class="container">
 
 <!-- GAUCHE -->
 <div class="left">
@@ -1137,33 +1150,45 @@ p, li {
 <img src="photocv.jpg" alt="Photo Jules Chupin">
 </div>
 
-<div class="left-title">Compétences et outils numériques</div>
+<h2>COMPÉTENCES ET OUTILS NUMÉRIQUES</h2>
 
-HTML 35%
+<div class="skill">
+<div class="skill-name">HTML <span>35%</span></div>
 <div class="skill-bar"><div class="skill-fill" style="width:35%"></div></div>
+</div>
 
-CSS 35%
+<div class="skill">
+<div class="skill-name">CSS <span>35%</span></div>
 <div class="skill-bar"><div class="skill-fill" style="width:35%"></div></div>
+</div>
 
-Python 25%
+<div class="skill">
+<div class="skill-name">Python <span>25%</span></div>
 <div class="skill-bar"><div class="skill-fill" style="width:25%"></div></div>
+</div>
 
-JavaScript 25%
+<div class="skill">
+<div class="skill-name">JSON <span>25%</span></div>
 <div class="skill-bar"><div class="skill-fill" style="width:25%"></div></div>
+</div>
 
-C++ 25%
+<div class="skill">
+<div class="skill-name">JavaScript <span>25%</span></div>
 <div class="skill-bar"><div class="skill-fill" style="width:25%"></div></div>
+</div>
 
-JSON 25%
+<div class="skill">
+<div class="skill-name">C++ <span>25%</span></div>
 <div class="skill-bar"><div class="skill-fill" style="width:25%"></div></div>
+</div>
 
 <ul>
-<li>Spyder</li>
-<li>Thonny</li>
-<li>Pack Office (Word, Excel, PowerPoint)</li>
+<li>Utilisation de Spyder</li>
+<li>Utilisation de Thonny</li>
+<li>Pack Office : Word, Excel, PowerPoint</li>
 </ul>
 
-<div class="left-title">Création & design</div>
+<h2>CRÉATION & DESIGN</h2>
 <ul>
 <li>Dessin (manga, reproduction fidèle, création de personnages)</li>
 <li>Création d’univers (Lego, Minecraft)</li>
@@ -1175,13 +1200,13 @@ JSON 25%
 <li>Création de sites web (portfolio, Brawl Stars)</li>
 </ul>
 
-<div class="left-title">Langues</div>
+<h2>LANGUES</h2>
 <ul>
 <li>Anglais : B1+</li>
 <li>Espagnol : niveau bac</li>
 </ul>
 
-<div class="left-title">Soft skills</div>
+<h2>SOFT SKILLS</h2>
 <ul>
 <li>Autonomie</li>
 <li>Rigueur</li>
@@ -1191,21 +1216,21 @@ JSON 25%
 <li>Travail en équipe</li>
 </ul>
 
-<div class="left-title">Certifications</div>
+<h2>CERTIFICATIONS</h2>
 <ul>
-<li>2025 — Certification PIX résultat : 400</li>
+<li>2025 — Certification PIX resultat: 400</li>
 <li>2024 — PSC1 – Formation aux premiers secours</li>
 </ul>
 
-<!-- PORTFOLIO -->
+<!-- ✅ AJOUT QR -->
 <div class="portfolio">
+<div class="qr">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://juleschupin2007-rgb.github.io/portfolio-jules/&color=4f46e5">
+</div>
+
 <a href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">
 juleschupin2007-rgb.github.io/portfolio-jules/
 </a>
-
-<div class="qr">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://juleschupin2007-rgb.github.io/portfolio-jules/">
-</div>
 </div>
 
 </div>
@@ -1216,30 +1241,34 @@ juleschupin2007-rgb.github.io/portfolio-jules/
 <h1>Jules Chupin</h1>
 <div class="subtitle">Création numérique · Communication digitale · Développement web</div>
 
-<div class="section">Profil</div>
 <p>
-Étudiant de 18 ans en licence informatique, intéressé par la création numérique,
-le design visuel et le développement web. Curieux, rigoureux et persévérant,
-je souhaite intégrer une formation spécialisée en design digital, UI/UX, graphisme et multimédia.
+📍 Cholet · 📧 juleschupin@outlook.fr · 📱 06 37 91 62 59<br>
+🌐 juleschupin2007-rgb.github.io/portfolio-jules/
 </p>
 
-<div class="section">Formation</div>
+<div class="section-title">Profil</div>
+<p>
+Étudiant de 18 ans en licence informatique, intéressé par la création numérique, le design visuel et le développement web.
+Je combine compétences techniques et sens créatif.
+</p>
+
+<div class="section-title">Formation</div>
 <ul>
 <li>2025–2026 — Licence Informatique, Nantes</li>
-<li>2022–2025 — Bac Général (Maths, NSI), Cholet</li>
-<li>2021–2022 — 3e, Collège Colbert</li>
+<li>2022–2025 — Bac Général (Maths, NSI)</li>
+<li>2021–2022 — 3e</li>
 <li>2019–2021 — Classe Triathlon</li>
 </ul>
 
-<div class="section">Expériences</div>
+<div class="section-title">Expériences</div>
 <ul>
-<li>Préparateur de commandes — 2026</li>
+<li>Préparateur commandes — 2026</li>
 <li>Stage architecture — 2022</li>
 </ul>
 
-<div class="section">Centres d’intérêt</div>
+<div class="section-title">Centres d’intérêt</div>
 <p>
-Dessin (manga) · Création d’univers · Jeux vidéo · Voyages · Basket · Triathlon
+Dessin · Jeux vidéo · Voyages · Basket · Triathlon
 </p>
 
 </div>
