@@ -18,32 +18,29 @@
 
 *{box-sizing:border-box;font-family:Poppins,sans-serif;}
 html{scroll-behavior:smooth;}
-body{margin:0;background:var(--bg);color:var(--text);}
-
-/* ===== FOND EXACT A PARTIR DE TON IMAGE ===== */
-
 body{
+  margin:0;
+  background:#d9d9d9;
+  color:var(--text);
   position:relative;
   overflow-x:hidden;
-  background:#d9d9d9;
 }
 
-/* image complète en fond */
+/* ===== FOND EXACT A PARTIR DE TON IMAGE ===== */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   z-index:0;
-  pointer-events:none;
+  pointer-events:none !important;
   background:url("fond-pixels.png") center center / cover no-repeat;
 }
 
-/* masque seulement le dessin du haut pour garder le design pixels + gris */
 body::after{
   content:"";
   position:fixed;
   z-index:0;
-  pointer-events:none;
+  pointer-events:none !important;
   top:110px;
   left:50%;
   transform:translateX(-50%);
@@ -56,12 +53,12 @@ body::after{
   border-radius:4px;
 }
 
-/* contenu au-dessus du fond */
 .topHeader,
 .backArrow,
-.main{
+.main,
+.suggestions,
+.modal{
   position:relative;
-  z-index:1;
 }
 
 .topHeader{
@@ -69,8 +66,17 @@ body::after{
   padding:15px 30px;
   position:sticky;
   top:0;
-  z-index:1000;
+  z-index:9999;
 }
+.suggestions,
+.modal{
+  z-index:9999;
+}
+.backArrow,
+.main{
+  z-index:2;
+}
+
 .headerContent{
   display:flex;
   justify-content:space-between;
@@ -116,7 +122,6 @@ body::after{
   overflow:hidden;
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
   display:none;
-  z-index:1200;
 }
 .suggestionItem{
   padding:10px 12px;
@@ -213,7 +218,7 @@ body::after{
   display:block;
 }
 
-/* toutes les images de Mes réalisations à la même taille */
+/* images de Mes réalisations à la même taille sans rogner */
 .realisationCard img{
   width:100%;
   height:220px;
@@ -268,7 +273,6 @@ body::after{
 .modal{
   display:none;
   position:fixed;
-  z-index:2000;
   left:0;
   top:0;
   width:100%;
@@ -1017,19 +1021,19 @@ function parseStructuredSearch(value){
   let m = q.match(/^dessin\s+(\d{1,2})$/);
   if(m){
     const n = Number(m[1]);
-    if(n >= 1 && n <= 37) return { page:"dessin", target:\`dessin-\${n}\` };
+    if(n >= 1 && n <= 37) return { page:"dessin", target:`dessin-${n}` };
   }
 
   m = q.match(/^(modelisation|modelisation 3d|3d|modele)\s+(\d{1,2})$/);
   if(m){
     const n = Number(m[2]);
-    if(n >= 1 && n <= 4) return { page:"troisD", target:\`modelisation-\${n}\` };
+    if(n >= 1 && n <= 4) return { page:"troisD", target:`modelisation-${n}` };
   }
 
   m = q.match(/^(video|vidéo)\s+(\d{1,2})$/);
   if(m){
     const n = Number(m[2]);
-    if(n >= 1 && n <= 4) return { page:"video", target:\`video-\${n}\` };
+    if(n >= 1 && n <= 4) return { page:"video", target:`video-${n}` };
   }
 
   return null;
