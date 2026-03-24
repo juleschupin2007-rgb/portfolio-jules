@@ -1012,36 +1012,35 @@ function downloadCV(){
 
 body {
   margin: 0;
-  background: #e7e9ef;
-  display: flex;
-  justify-content: center;
-  font-family: Arial;
+  background: #ececf1;
+  font-family: Arial, sans-serif;
 }
 
 .cv-page {
   width: 210mm;
   height: 297mm;
-  display: grid;
-  grid-template-columns: 72mm 138mm;
+  margin: auto;
   background: white;
+  display: grid;
+  grid-template-columns: 70mm 140mm;
 }
 
 /* GAUCHE */
 .left {
   background: linear-gradient(#4338ca,#312e81);
   color: white;
-  padding: 8mm;
+  padding: 10mm 7mm;
   display: flex;
   flex-direction: column;
 }
 
 .photo-box {
-  width: 36mm;
-  height: 46mm;
+  width: 35mm;
+  height: 45mm;
   margin: auto;
-  margin-bottom: 5mm;
-  overflow: hidden;
+  margin-bottom: 6mm;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .photo-box img {
@@ -1053,13 +1052,21 @@ body {
 .left-title {
   font-size: 11px;
   font-weight: bold;
-  margin-top: 4mm;
+  margin-top: 5mm;
   border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
-ul { padding-left: 15px; }
-li { font-size: 10px; }
+ul {
+  padding-left: 15px;
+  margin: 2mm 0;
+}
 
+li {
+  font-size: 10px;
+  margin-bottom: 1mm;
+}
+
+/* BARRES */
 .skill-bar {
   height: 5px;
   background: rgba(255,255,255,0.3);
@@ -1071,12 +1078,12 @@ li { font-size: 10px; }
   background: white;
 }
 
-/* PORTFOLIO FIXÉ EN BAS */
+/* 🔥 PORTFOLIO FIXÉ EN BAS */
 .portfolio {
   margin-top: auto;
   text-align: center;
   background: rgba(255,255,255,0.08);
-  padding: 10px;
+  padding: 8px;
   border-radius: 10px;
 }
 
@@ -1085,18 +1092,22 @@ li { font-size: 10px; }
   font-size: 10px;
   display: block;
   margin-bottom: 5px;
+  text-decoration: none;
 }
 
 .qr img {
-  width: 70px;
+  width: 65px;
 }
 
 /* DROITE */
 .right {
-  padding: 8mm;
+  padding: 10mm;
 }
 
-h1 { margin: 0; font-size: 24px; }
+h1 {
+  margin: 0;
+  font-size: 26px;
+}
 
 .subtitle {
   color: #4338ca;
@@ -1106,11 +1117,12 @@ h1 { margin: 0; font-size: 24px; }
 
 .section {
   font-weight: bold;
-  margin-top: 4mm;
+  margin-top: 5mm;
 }
 
-p, li { font-size: 10px; }
-
+p, li {
+  font-size: 10px;
+}
 </style>
 </head>
 
@@ -1142,13 +1154,14 @@ JS / JSON / C++ 25%
 <ul>
 <li>Spyder</li>
 <li>Thonny</li>
-<li>Pack Office</li>
+<li>Pack Office (Word, Excel, PowerPoint)</li>
 </ul>
 
 <div class="left-title">Création & design</div>
 <ul>
-<li>Dessin manga</li>
-<li>3D SketchUp</li>
+<li>Dessin (manga)</li>
+<li>Création d’univers</li>
+<li>Modélisation 3D (SketchUp)</li>
 <li>Montage vidéo</li>
 <li>Canva</li>
 <li>Programmation</li>
@@ -1157,7 +1170,7 @@ JS / JSON / C++ 25%
 
 <div class="left-title">Langues</div>
 <ul>
-<li>Anglais B1+</li>
+<li>Anglais : B1+</li>
 <li>Espagnol</li>
 </ul>
 
@@ -1166,15 +1179,16 @@ JS / JSON / C++ 25%
 <li>Autonomie</li>
 <li>Rigueur</li>
 <li>Créativité</li>
+<li>Persévérance</li>
 </ul>
 
 <div class="left-title">Certifications</div>
 <ul>
-<li>PIX 400</li>
+<li>PIX : 400</li>
 <li>PSC1</li>
 </ul>
 
-<!-- 🔥 PORTFOLIO BIEN VISIBLE -->
+<!-- ✅ AJOUT SANS CASSER -->
 <div class="portfolio">
 <a href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">
 juleschupin2007-rgb.github.io/portfolio-jules/
@@ -1191,25 +1205,30 @@ juleschupin2007-rgb.github.io/portfolio-jules/
 <div class="right">
 
 <h1>Jules Chupin</h1>
-<div class="subtitle">Création numérique · Développement web</div>
+<div class="subtitle">Création numérique · Communication digitale · Développement web</div>
 
 <div class="section">Profil</div>
-<p>Étudiant en informatique passionné par le design et le web.</p>
+<p>
+Étudiant de 18 ans en licence informatique, intéressé par la création numérique,
+le design et le développement web.
+</p>
 
 <div class="section">Formation</div>
 <ul>
-<li>Licence Informatique — Nantes</li>
-<li>Bac Général Maths NSI</li>
+<li>Licence Informatique — Nantes (2025–2026)</li>
+<li>Bac Général Maths NSI — Cholet</li>
 </ul>
 
 <div class="section">Expériences</div>
 <ul>
-<li>Préparateur commandes 2026</li>
-<li>Stage architecture 2022</li>
+<li>Préparateur commandes — 2026</li>
+<li>Stage architecture — 2022</li>
 </ul>
 
 <div class="section">Centres d’intérêt</div>
-<p>Dessin, voyages, basket, triathlon</p>
+<p>
+Dessin, création d’univers, jeux vidéo, voyages, basket, triathlon.
+</p>
 
 </div>
 
