@@ -20,27 +20,24 @@
 html{scroll-behavior:smooth;}
 body{
   margin:0;
-  background:#d9d9d9;
   color:var(--text);
-  position:relative;
+  background:#d9d9d9;
   overflow-x:hidden;
+  position:relative;
 }
 
-/* ===== FOND EXACT A PARTIR DE TON IMAGE ===== */
-body::before{
-  content:"";
+/* Fond exact basé sur ton image */
+.bgExact{
   position:fixed;
   inset:0;
-  z-index:0;
-  pointer-events:none !important;
   background:url("fond-pixels.png") center center / cover no-repeat;
+  pointer-events:none;
+  z-index:-2;
 }
 
-body::after{
-  content:"";
+/* Masque doux pour cacher seulement le dessin du haut de l'image */
+.bgMask{
   position:fixed;
-  z-index:0;
-  pointer-events:none !important;
   top:110px;
   left:50%;
   transform:translateX(-50%);
@@ -51,14 +48,8 @@ body::after{
   filter:blur(6px);
   opacity:0.98;
   border-radius:4px;
-}
-
-.topHeader,
-.backArrow,
-.main,
-.suggestions,
-.modal{
-  position:relative;
+  pointer-events:none;
+  z-index:-1;
 }
 
 .topHeader{
@@ -66,17 +57,8 @@ body::after{
   padding:15px 30px;
   position:sticky;
   top:0;
-  z-index:9999;
+  z-index:1000;
 }
-.suggestions,
-.modal{
-  z-index:9999;
-}
-.backArrow,
-.main{
-  z-index:2;
-}
-
 .headerContent{
   display:flex;
   justify-content:space-between;
@@ -122,6 +104,7 @@ body::after{
   overflow:hidden;
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
   display:none;
+  z-index:1200;
 }
 .suggestionItem{
   padding:10px 12px;
@@ -138,6 +121,8 @@ body::after{
   max-width:1200px;
   margin:15px auto 0 auto;
   display:none;
+  position:relative;
+  z-index:2;
 }
 .backArrow button{
   background:none;
@@ -152,6 +137,8 @@ body::after{
   max-width:1200px;
   margin:auto;
   padding:30px 20px;
+  position:relative;
+  z-index:2;
 }
 .page{display:none;}
 .page.active{display:block;}
@@ -218,7 +205,7 @@ body::after{
   display:block;
 }
 
-/* images de Mes réalisations à la même taille sans rogner */
+/* même zone d'affichage pour Mes réalisations */
 .realisationCard img{
   width:100%;
   height:220px;
@@ -273,6 +260,7 @@ body::after{
 .modal{
   display:none;
   position:fixed;
+  z-index:2000;
   left:0;
   top:0;
   width:100%;
@@ -376,7 +364,7 @@ body::after{
   .headerContent{flex-direction:column;gap:15px;}
   .leftHeader{justify-content:center;}
   .profileGrid{grid-template-columns:1fr;}
-  body::after{
+  .bgMask{
     width:72vw;
     height:120px;
     top:105px;
@@ -395,6 +383,9 @@ body::after{
 </style>
 </head>
 <body>
+
+<div class="bgExact"></div>
+<div class="bgMask"></div>
 
 <div class="topHeader">
   <div class="headerContent">
@@ -833,7 +824,6 @@ const searchMap = [
   { label: "Me contacter", page: "contact" }
 ];
 
-// suggestions précises
 for(let i=1;i<=37;i++){
   searchMap.push({ label: `Dessin ${i}`, page: "dessin", target: `dessin-${i}` });
 }
