@@ -20,6 +20,49 @@
 html{scroll-behavior:smooth;}
 body{margin:0;background:var(--bg);color:var(--text);}
 
+/* ===== FOND EXACT A PARTIR DE TON IMAGE ===== */
+
+body{
+  position:relative;
+  overflow-x:hidden;
+  background:#d9d9d9;
+}
+
+/* image complète en fond */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:url("fond-pixels.png") center center / cover no-repeat;
+}
+
+/* masque seulement le dessin du haut */
+body::after{
+  content:"";
+  position:fixed;
+  z-index:0;
+  pointer-events:none;
+  top:110px;
+  left:50%;
+  transform:translateX(-50%);
+  width:640px;
+  height:170px;
+  background:
+    radial-gradient(circle at center, rgba(245,245,245,0.96) 0%, rgba(232,232,232,0.98) 55%, rgba(220,220,220,0.98) 100%);
+  filter:blur(6px);
+  opacity:0.98;
+  border-radius:4px;
+}
+
+.topHeader,
+.backArrow,
+.main{
+  position:relative;
+  z-index:1;
+}
+
 .topHeader{
   background:#000;
   padding:15px 30px;
@@ -108,7 +151,7 @@ body{margin:0;background:var(--bg);color:var(--text);}
 .page.active{display:block;}
 
 .banner{
-  background:var(--card);
+  background:rgba(255,255,255,0.88);
   padding:18px;
   border-radius:10px;
   border:1px solid var(--border);
@@ -119,7 +162,7 @@ body{margin:0;background:var(--bg);color:var(--text);}
 }
 
 .ctaBlock{
-  background:var(--card);
+  background:rgba(255,255,255,0.88);
   border:1px solid var(--border);
   border-radius:12px;
   padding:20px;
@@ -152,7 +195,7 @@ body{margin:0;background:var(--bg);color:var(--text);}
 }
 
 .card{
-  background:var(--card);
+  background:rgba(255,255,255,0.88);
   border:1px solid var(--border);
   border-radius:10px;
   padding:15px;
@@ -169,8 +212,7 @@ body{margin:0;background:var(--bg);color:var(--text);}
   display:block;
 }
 
-/* AJOUT : toutes les images de "Mes réalisations" ont la même taille
-   tout en restant entières */
+/* toutes les images de Mes réalisations à la même taille */
 .realisationCard img{
   width:100%;
   height:220px;
@@ -195,7 +237,7 @@ body{margin:0;background:var(--bg);color:var(--text);}
 }
 
 .pageText{
-  background:var(--card);
+  background:rgba(255,255,255,0.88);
   border:1px solid var(--border);
   border-radius:12px;
   padding:25px;
@@ -247,7 +289,7 @@ body{margin:0;background:var(--bg);color:var(--text);}
   gap:20px;
 }
 .infoCard{
-  background:var(--card);
+  background:rgba(255,255,255,0.88);
   border:1px solid var(--border);
   border-radius:12px;
   padding:22px;
@@ -264,7 +306,7 @@ body{margin:0;background:var(--bg);color:var(--text);}
   gap:16px;
 }
 .timelineItem{
-  background:var(--card);
+  background:rgba(255,255,255,0.88);
   border:1px solid var(--border);
   border-radius:12px;
   padding:18px;
@@ -285,7 +327,7 @@ body{margin:0;background:var(--bg);color:var(--text);}
   gap:20px;
 }
 .skillCard{
-  background:var(--card);
+  background:rgba(255,255,255,0.88);
   border:1px solid var(--border);
   border-radius:12px;
   padding:20px;
@@ -329,6 +371,11 @@ body{margin:0;background:var(--bg);color:var(--text);}
   .headerContent{flex-direction:column;gap:15px;}
   .leftHeader{justify-content:center;}
   .profileGrid{grid-template-columns:1fr;}
+  body::after{
+    width:72vw;
+    height:120px;
+    top:105px;
+  }
 }
 @media(max-width:800px){
   .videoBlock{flex-direction:column;}
@@ -339,145 +386,6 @@ body{margin:0;background:var(--bg);color:var(--text);}
   .ctaRow{flex-direction:column;align-items:center;}
   .cta{width:100%;text-align:center;}
   .searchBox{width:100%;}
-}
-/* ===== FOND GRIS + TEXTURE + PIXELS ===== */
-
-body{
-  position:relative;
-  overflow-x:hidden;
-  background:
-    radial-gradient(circle at center, rgba(255,255,255,0.65) 0%, rgba(235,235,235,0.95) 45%, rgba(200,200,200,1) 100%),
-    linear-gradient(135deg, #e5e5e5 0%, #cfcfcf 100%);
-}
-
-/* texture granuleuse gris */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.02) 0px,
-      rgba(255,255,255,0.02) 2px,
-      rgba(0,0,0,0.015) 2px,
-      rgba(0,0,0,0.015) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,0.015) 0px,
-      rgba(255,255,255,0.015) 3px,
-      rgba(0,0,0,0.01) 3px,
-      rgba(0,0,0,0.01) 6px
-    ),
-    radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(0,0,0,0.05));
-  opacity:.6;
-}
-
-/* effet pixels blancs + bords sombres */
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-  background:
-    /* colonne pixels gauche */
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.7) 0 18px,
-      transparent 18px 36px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0 18px,
-      rgba(255,255,255,0.55) 18px 36px
-    ),
-
-    /* diagonales pixels */
-    repeating-linear-gradient(
-      45deg,
-      rgba(255,255,255,0.25) 0 10px,
-      transparent 10px 20px
-    ),
-    repeating-linear-gradient(
-      -35deg,
-      rgba(255,255,255,0.22) 0 10px,
-      transparent 10px 20px
-    ),
-
-    /* zones de pixels diffuses */
-    radial-gradient(circle at 15% 30%, rgba(255,255,255,0.18), transparent 18%),
-    radial-gradient(circle at 20% 70%, rgba(255,255,255,0.18), transparent 22%),
-    radial-gradient(circle at 85% 78%, rgba(255,255,255,0.16), transparent 18%),
-
-    /* assombrissement des bords */
-    radial-gradient(circle at top left, rgba(0,0,0,0.25), transparent 30%),
-    radial-gradient(circle at top right, rgba(0,0,0,0.2), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(0,0,0,0.25), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(0,0,0,0.25), transparent 35%);
-  
-  background-size:
-    40px 100%,
-    80px 100%,
-    420px 420px,
-    420px 420px,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-  
-  background-position:
-    0 0,
-    18px 0,
-    -80px 340px,
-    calc(100% + 120px) calc(100% - 120px),
-    0 0,
-    0 0,
-    0 0,
-    0 0,
-    0 0,
-    0 0,
-    0 0;
-
-  background-repeat:
-    repeat-y,
-    repeat-y,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat;
-
-  opacity:.85;
-}
-
-/* garder ton contenu au-dessus */
-.topHeader,
-.backArrow,
-.main{
-  position:relative;
-  z-index:1;
-}
-
-/* lisibilité des blocs */
-.banner,
-.ctaBlock,
-.card,
-.pageText,
-.infoCard,
-.timelineItem,
-.skillCard{
-  background:rgba(255,255,255,0.88);
 }
 </style>
 </head>
@@ -886,8 +794,8 @@ body::after{
   <div id="contact" class="page pageText">
     <h2>Me contacter</h2>
     <p><strong>Nom :</strong> Jules</p>
-    <p><strong>Email :</strong> juleschupin@outlook.fr</p>
-    <p><strong>Téléphone :</strong> 06 37 96 62 59</p>
+    <p><strong>Email :</strong> tonemail@email.com</p>
+    <p><strong>Téléphone :</strong> 06 XX XX XX XX</p>
   </div>
 
 </div>
@@ -1141,146 +1049,212 @@ function downloadCV(){
   const cvContent = `<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>CV – Jules Chupin</title>
+    <meta charset="UTF-8">
+    <title>CV – Jules Chupin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    <style>
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f7;
+            color: #222;
+            line-height: 1.6;
+        }
 
-@page {
-    size: A4 portrait;
-    margin: 0;
-}
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    background: #d9dde7;
-    font-family: "Inter", Arial, sans-serif;
-    color: #1f2937;
-}
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
 
-/* ✅ AJOUT ICI (solution pour tout faire tenir) */
-body {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    transform: scale(0.95);
-    transform-origin: top center;
-}
+        h2 {
+            margin-top: 40px;
+            font-size: 1.6rem;
+            border-left: 6px solid #4f46e5;
+            padding-left: 12px;
+            font-weight: 700;
+        }
 
-.cv-page {
-    width: 210mm;
-    height: 297mm;
-    background: #ffffff;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 72mm 138mm;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    position: relative;
-}
+        .subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
 
-.left {
-    background: linear-gradient(180deg, #4338ca 0%, #3730a3 50%, #312e81 100%);
-    color: white;
-    padding: 8mm 7mm 7mm 7mm;
-    display: flex;
-    flex-direction: column;
-    gap: 4mm;
-}
+        .info {
+            margin-bottom: 25px;
+        }
 
-.right {
-    padding: 8mm 9mm 8mm 9mm;
-    display: flex;
-    flex-direction: column;
-}
+        .info a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-.photo-box {
-    width: 36mm;
-    height: 46mm;
-    margin: auto;
-    border-radius: 10px;
-    overflow: hidden;
-}
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
 
-.photo-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        ul {
+            padding-left: 20px;
+        }
 
-.left-title {
-    font-size: 11px;
-    font-weight: bold;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-}
+        .qr {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-.skill-bar {
-    height: 5px;
-    background: rgba(255,255,255,0.3);
-}
+        .qr img {
+            width: 180px;
+            filter: drop-shadow(0 0 12px #4f46e5);
+        }
 
-.skill-fill {
-    height: 100%;
-    background: white;
-}
+        .section {
+            margin-bottom: 25px;
+        }
 
-.right h1 {
-    margin: 0;
-    font-size: 26px;
-}
-
-.subtitle {
-    color: #4338ca;
-    font-weight: bold;
-    margin-bottom: 5mm;
-}
-
-.section-title {
-    font-size: 11px;
-    font-weight: bold;
-    border-left: 4px solid #4f46e5;
-    padding-left: 5px;
-    margin-top: 4mm;
-}
-
-.portfolio-box {
-    margin-top: 3mm;
-    border: 1px solid #ccc;
-    padding: 3mm;
-}
-
-.qr img {
-    width: 60px;
-}
-
-/* ✅ pour impression parfaite */
-@media print {
-    body {
-        transform: scale(0.95);
-        transform-origin: top center;
-        padding: 0;
-        background: white;
-    }
-
-    .cv-page {
-        box-shadow: none;
-    }
-}
-</style>
+        @media(max-width: 700px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
+<div class="container">
 
-<div class="cv-page">
+    <h1>Jules Chupin</h1>
+    <div class="subtitle">Création numérique · Design digital · Développement web</div>
 
-<!-- TON CONTENU RESTE EXACTEMENT IDENTIQUE ICI -->
-<!-- (je ne le modifie pas comme demandé) -->
+    <div class="info">
+        📍 Cholet · 📧 <a href="mailto:juleschupin@outlook.fr">juleschupin@outlook.fr</a> · 📱 06 37 91 62 59  
+        <br>
+        🌐 Portfolio : <a href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">
+            juleschupin2007-rgb.github.io/portfolio-jules/
+        </a>
+    </div>
+
+    <h2>Profil</h2>
+    <p>
+        Étudiant de 18 ans en licence informatique, passionné par la création numérique, le design visuel et le développement web.
+        Je combine compétences techniques (programmation, web, montage vidéo, modélisation 3D) et sens créatif
+        (dessin manga, création d’univers, projets multimédias). Curieux, rigoureux et persévérant, je souhaite intégrer
+        une formation spécialisée en design digital, UI/UX, graphisme et multimédia.
+    </p>
+
+    <h2>Compétences</h2>
+
+    <div class="grid-2">
+        <div class="section">
+            <h3>Création & Design</h3>
+            <ul>
+                <li>Dessin (manga, reproduction fidèle, création de personnages)</li>
+                <li>Création d’univers (Lego, Minecraft)</li>
+                <li>Modélisation 3D (SketchUp)</li>
+                <li>Montage vidéo (DaVinci Resolve)</li>
+                <li>Sens du détail et de la composition</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Développement & Numérique</h3>
+            <ul>
+                <li>HTML / CSS</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>Développement d’un jeu vidéo</li>
+                <li>Création d’un site web (portfolio)</li>
+                <li>Spyder, Thonny, Word, Excel, PowerPoint</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div class="section">
+            <h3>Langues</h3>
+            <ul>
+                <li>Anglais : B1+</li>
+                <li>Espagnol : niveau bac</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Soft Skills</h3>
+            <ul>
+                <li>Autonomie</li>
+                <li>Rigueur</li>
+                <li>Créativité</li>
+                <li>Persévérance</li>
+                <li>Adaptabilité</li>
+                <li>Travail en équipe</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Formation</h2>
+    <ul>
+        <li>2025–2026 — Licence Informatique, Faculté des Sciences, Nantes</li>
+        <li>2022–2025 — Baccalauréat Général (Maths, NSI), Lycée Renaudeau, Cholet</li>
+        <li>2022 — 3e, Collège Colbert, Cholet</li>
+        <li>2019–2021 — Classe Triathlon, Collège Victor Hugo, Issy-les-Moulineaux</li>
+    </ul>
+
+    <h2>Expériences professionnelles</h2>
+    <ul>
+        <li>
+            <strong>Préparateur de commandes & Manutentionnaire — B.Solfin (85)</strong>  
+            23–27 février 2026  
+            <ul>
+                <li>Préparation de commandes (picking, envois de colis)</li>
+                <li>Rangement et remise en stock</li>
+                <li>Manutention</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Stage de 3e — Cabinet d’architecture Grégoire, Cholet</strong>  
+            Janvier 2022  
+            <ul>
+                <li>Modélisation 3D (SketchUp)</li>
+                <li>Réalisation de plans</li>
+                <li>Suivi de chantier</li>
+                <li>Découverte du processus architectural</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Certifications</h2>
+    <ul>
+        <li>Certification PIX 400</li>
+        <li>PSC1 – Premiers secours</li>
+    </ul>
+
+    <h2>Centres d’intérêt</h2>
+    <p>
+        Dessin (manga) · Création d’univers (Lego, Minecraft) · Jeux vidéo · Voyages (Stockholm, Hong Kong, New York,
+        Bangkok, Madrid, Tokyo) · Basket (6 ans) · Triathlon
+    </p>
+
+    <div class="qr">
+        <h3>Accéder au Portfolio</h3>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://juleschupin2007-rgb.github.io/portfolio-jules/&color=4f46e5" alt="QR Code Portfolio">
+    </div>
 
 </div>
-
 </body>
 </html>`;
 
