@@ -340,6 +340,145 @@ body{margin:0;background:var(--bg);color:var(--text);}
   .cta{width:100%;text-align:center;}
   .searchBox{width:100%;}
 }
+/* ===== FOND GRIS + TEXTURE + PIXELS ===== */
+
+body{
+  position:relative;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.65) 0%, rgba(235,235,235,0.95) 45%, rgba(200,200,200,1) 100%),
+    linear-gradient(135deg, #e5e5e5 0%, #cfcfcf 100%);
+}
+
+/* texture granuleuse gris */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.02) 0px,
+      rgba(255,255,255,0.02) 2px,
+      rgba(0,0,0,0.015) 2px,
+      rgba(0,0,0,0.015) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 3px,
+      rgba(0,0,0,0.01) 3px,
+      rgba(0,0,0,0.01) 6px
+    ),
+    radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(0,0,0,0.05));
+  opacity:.6;
+}
+
+/* effet pixels blancs + bords sombres */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    /* colonne pixels gauche */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.7) 0 18px,
+      transparent 18px 36px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 18px,
+      rgba(255,255,255,0.55) 18px 36px
+    ),
+
+    /* diagonales pixels */
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.25) 0 10px,
+      transparent 10px 20px
+    ),
+    repeating-linear-gradient(
+      -35deg,
+      rgba(255,255,255,0.22) 0 10px,
+      transparent 10px 20px
+    ),
+
+    /* zones de pixels diffuses */
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,0.18), transparent 18%),
+    radial-gradient(circle at 20% 70%, rgba(255,255,255,0.18), transparent 22%),
+    radial-gradient(circle at 85% 78%, rgba(255,255,255,0.16), transparent 18%),
+
+    /* assombrissement des bords */
+    radial-gradient(circle at top left, rgba(0,0,0,0.25), transparent 30%),
+    radial-gradient(circle at top right, rgba(0,0,0,0.2), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(0,0,0,0.25), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(0,0,0,0.25), transparent 35%);
+  
+  background-size:
+    40px 100%,
+    80px 100%,
+    420px 420px,
+    420px 420px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  
+  background-position:
+    0 0,
+    18px 0,
+    -80px 340px,
+    calc(100% + 120px) calc(100% - 120px),
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+
+  background-repeat:
+    repeat-y,
+    repeat-y,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+
+  opacity:.85;
+}
+
+/* garder ton contenu au-dessus */
+.topHeader,
+.backArrow,
+.main{
+  position:relative;
+  z-index:1;
+}
+
+/* lisibilité des blocs */
+.banner,
+.ctaBlock,
+.card,
+.pageText,
+.infoCard,
+.timelineItem,
+.skillCard{
+  background:rgba(255,255,255,0.88);
+}
 </style>
 </head>
 <body>
