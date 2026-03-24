@@ -1019,54 +1019,58 @@ function downloadCV(){
     html, body {
       margin: 0;
       padding: 0;
-      background: #dfe3ea;
-      font-family: Arial, sans-serif;
+      background: #e7e9ef;
+      font-family: "Inter", Arial, sans-serif;
       color: #1f2937;
     }
 
     body {
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      padding: 8px 0;
     }
 
     .cv-page {
       width: 210mm;
       height: 297mm;
-      background: white;
+      background: #fff;
       overflow: hidden;
       display: grid;
-      grid-template-columns: 70mm 140mm;
-      box-shadow: 0 0 18px rgba(0,0,0,0.12);
+      grid-template-columns: 72mm 138mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     }
 
     .left {
-      background: linear-gradient(180deg, #4338ca, #312e81);
+      background: linear-gradient(180deg, #4338ca 0%, #312e81 100%);
       color: white;
-      padding: 10mm 7mm 8mm 7mm;
-      height: 297mm;
-      overflow: hidden;
+      padding: 9mm 7mm 8mm 7mm;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .right {
       padding: 9mm 9mm 8mm 9mm;
-      height: 297mm;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .photo-box {
-      width: 34mm;
-      height: 44mm;
-      margin: 0 auto 7mm auto;
-      border-radius: 8px;
+      width: 36mm;
+      height: 46mm;
+      margin: 0 auto 6mm auto;
+      border-radius: 10px;
       overflow: hidden;
-      border: 1.5px solid rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.10);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 10px;
       text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
     }
 
     .photo-box img {
@@ -1076,13 +1080,14 @@ function downloadCV(){
     }
 
     .contact {
-      font-size: 10.5px;
-      line-height: 1.35;
-      margin-bottom: 5mm;
+      font-size: 10.2px;
+      line-height: 1.45;
+      margin-bottom: 4mm;
+      padding: 0 1mm;
     }
 
     .contact div {
-      margin-bottom: 3px;
+      margin-bottom: 2.2mm;
       word-break: break-word;
     }
 
@@ -1093,28 +1098,30 @@ function downloadCV(){
     }
 
     .left-title {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 10.8px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
-      margin: 5mm 0 2.5mm 0;
-      padding-bottom: 1.5mm;
+      letter-spacing: 0.6px;
+      margin: 4mm 0 2mm 0;
+      padding-bottom: 1.2mm;
       border-bottom: 1px solid rgba(255,255,255,0.25);
     }
 
     .right h1 {
       margin: 0;
-      font-size: 25px;
-      line-height: 1.05;
+      font-size: 27px;
+      line-height: 1;
       color: #111827;
+      font-weight: 800;
+      letter-spacing: -0.4px;
     }
 
     .subtitle {
       margin-top: 2mm;
-      color: #4338ca;
-      font-size: 13px;
+      color: #4f46e5;
+      font-size: 12.8px;
       font-weight: 700;
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     .header {
@@ -1124,14 +1131,14 @@ function downloadCV(){
     }
 
     .right-title {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 10.8px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       color: #312e81;
       border-left: 4px solid #4f46e5;
-      padding-left: 6px;
-      margin: 4mm 0 2mm 0;
+      padding-left: 7px;
+      margin: 3.6mm 0 1.8mm 0;
     }
 
     p {
@@ -1139,50 +1146,51 @@ function downloadCV(){
     }
 
     .profile {
-      font-size: 11px;
-      line-height: 1.35;
+      font-size: 10.3px;
+      line-height: 1.38;
       text-align: justify;
     }
 
     ul {
-      margin: 1.5mm 0 0 4mm;
+      margin: 1mm 0 0 4mm;
       padding-left: 4mm;
     }
 
     li {
-      font-size: 10.2px;
-      line-height: 1.25;
-      margin-bottom: 1.2mm;
+      font-size: 9.8px;
+      line-height: 1.28;
+      margin-bottom: 1.05mm;
     }
 
     .skill {
-      margin-bottom: 2.5mm;
+      margin-bottom: 2.2mm;
     }
 
     .skill-row {
       display: flex;
       justify-content: space-between;
-      font-size: 10px;
-      margin-bottom: 1mm;
       gap: 5px;
+      font-size: 9.6px;
+      margin-bottom: 0.9mm;
+      font-weight: 600;
     }
 
     .skill-bar {
       width: 100%;
       height: 5px;
       background: rgba(255,255,255,0.22);
-      border-radius: 99px;
+      border-radius: 999px;
       overflow: hidden;
     }
 
     .skill-fill {
       height: 100%;
-      background: white;
-      border-radius: 99px;
+      background: linear-gradient(90deg, #ffffff 0%, #dbeafe 100%);
+      border-radius: 999px;
     }
 
     .item {
-      margin-bottom: 3mm;
+      margin-bottom: 2.8mm;
     }
 
     .item-head {
@@ -1193,58 +1201,99 @@ function downloadCV(){
     }
 
     .item-title {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 10.8px;
+      font-weight: 800;
       color: #111827;
       line-height: 1.2;
     }
 
     .item-date {
-      font-size: 9.8px;
+      font-size: 9.2px;
       color: #6b7280;
       font-weight: 700;
       white-space: nowrap;
     }
 
     .item-subtitle {
-      font-size: 10px;
+      font-size: 9.7px;
       color: #4b5563;
       font-weight: 600;
       margin-top: 0.5mm;
       margin-bottom: 1mm;
-      line-height: 1.2;
-    }
-
-    .small-list li {
-      font-size: 10px;
-      margin-bottom: 1mm;
-    }
-
-    .portfolio-box {
-      margin-top: 3mm;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      background: #f9fafb;
-      padding: 3mm;
-      font-size: 10px;
       line-height: 1.25;
     }
 
-    .portfolio-box a {
-      color: #4338ca;
-      text-decoration: none;
-      font-weight: 700;
+    .small-list li,
+    .compact-list li {
+      font-size: 9.6px;
+      margin-bottom: 0.9mm;
+    }
+
+    .interest-text {
+      font-size: 10px;
+      line-height: 1.4;
+      margin-top: 0.5mm;
+      text-align: justify;
+    }
+
+    .portfolio-wrap {
+      margin-top: auto;
+      padding-top: 5mm;
+    }
+
+    .portfolio-box {
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      padding: 4mm 3mm 3.5mm 3mm;
+      text-align: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .portfolio-title {
+      font-size: 10.4px;
+      font-weight: 800;
+      margin-bottom: 1.5mm;
+      letter-spacing: 0.3px;
+    }
+
+    .portfolio-link {
+      display: block;
+      font-size: 9px;
+      line-height: 1.3;
+      font-weight: 600;
+      margin-bottom: 3mm;
       word-break: break-word;
+      opacity: 0.98;
     }
 
     .qr {
-      text-align: center;
-      margin-top: 2mm;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2mm;
     }
 
     .qr img {
-      width: 20mm;
-      height: 20mm;
+      width: 24mm;
+      height: 24mm;
+      background: white;
+      padding: 2mm;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+    }
+
+    .portfolio-note {
+      font-size: 8.9px;
+      opacity: 0.95;
+      line-height: 1.3;
+    }
+
+    .bottom-accent {
+      margin-top: 4mm;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.10), rgba(255,255,255,0.35), rgba(255,255,255,0.10));
     }
 
     @media print {
@@ -1269,7 +1318,7 @@ function downloadCV(){
 
     <aside class="left">
       <div class="photo-box">
-        <img src="photocv.jpg" alt="Photo de Jules Chupin">
+        <img src="photo.jpg" alt="Photo de Jules Chupin">
       </div>
 
       <div class="contact">
@@ -1278,7 +1327,7 @@ function downloadCV(){
         <div><strong>📱</strong> 06 37 91 62 59</div>
       </div>
 
-      <div class="left-title">Compétences numériques</div>
+      <div class="left-title">Compétences et outils numériques</div>
 
       <div class="skill">
         <div class="skill-row"><span>HTML</span><span>35%</span></div>
@@ -1310,6 +1359,12 @@ function downloadCV(){
         <div class="skill-bar"><div class="skill-fill" style="width: 25%;"></div></div>
       </div>
 
+      <ul class="compact-list">
+        <li>Utilisation de Spyder</li>
+        <li>Utilisation de Thonny</li>
+        <li>Pack Office : Word, Excel, PowerPoint</li>
+      </ul>
+
       <div class="left-title">Création & design</div>
       <ul>
         <li>Dessin (manga, reproduction fidèle, création de personnages)</li>
@@ -1318,16 +1373,18 @@ function downloadCV(){
         <li>Montage vidéo (DaVinci Resolve)</li>
         <li>Sens du détail et de la composition</li>
         <li>Production de contenu visuel (Canva)</li>
+        <li>Programmation (jeu vidéo, mini-site)</li>
+        <li>Création de sites web (portfolio, Brawl Stars)</li>
       </ul>
 
       <div class="left-title">Langues</div>
-      <ul>
+      <ul class="compact-list">
         <li>Anglais : B1+</li>
         <li>Espagnol : niveau bac</li>
       </ul>
 
       <div class="left-title">Soft skills</div>
-      <ul>
+      <ul class="compact-list">
         <li>Autonomie</li>
         <li>Rigueur</li>
         <li>Créativité</li>
@@ -1337,20 +1394,29 @@ function downloadCV(){
       </ul>
 
       <div class="left-title">Certifications</div>
-      <ul>
+      <ul class="compact-list">
         <li>2025 — Certification PIX : résultat 400</li>
         <li>2024 — PSC1 – Formation aux premiers secours</li>
       </ul>
 
-      <div class="left-title">Centres d’intérêt</div>
-      <ul>
-        <li>Dessin (manga)</li>
-        <li>Création d’univers (Lego, Minecraft)</li>
-        <li>Jeux vidéo</li>
-        <li>Voyages : Stockholm, Hong Kong, New York, Bangkok, Madrid, Tokyo</li>
-        <li>Basket (6 ans)</li>
-        <li>Triathlon</li>
-      </ul>
+      <div class="portfolio-wrap">
+        <div class="portfolio-box">
+          <div class="portfolio-title">Accéder au portfolio</div>
+          <a class="portfolio-link" href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">
+            juleschupin2007-rgb.github.io/portfolio-jules/
+          </a>
+
+          <div class="qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://juleschupin2007-rgb.github.io/portfolio-jules/&color=4f46e5" alt="QR Code Portfolio">
+          </div>
+
+          <div class="portfolio-note">
+            Scanner pour consulter les projets, créations et réalisations.
+          </div>
+        </div>
+
+        <div class="bottom-accent"></div>
+      </div>
     </aside>
 
     <main class="right">
@@ -1430,23 +1496,11 @@ function downloadCV(){
         </ul>
       </div>
 
-      <div class="right-title">Autres compétences</div>
-      <ul class="small-list">
-        <li>Utilisation de Spyder, Thonny, Word, Excel, PowerPoint</li>
-        <li>Programmation (jeu vidéo, mini-site)</li>
-        <li>Création sites webs (portfolio, Brawl Stars)</li>
-      </ul>
-
-      <div class="portfolio-box">
-        <strong>Portfolio :</strong><br>
-        <a href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">
-          juleschupin2007-rgb.github.io/portfolio-jules/
-        </a>
-
-        <div class="qr">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://juleschupin2007-rgb.github.io/portfolio-jules/&color=4f46e5" alt="QR Code Portfolio">
-        </div>
-      </div>
+      <div class="right-title">Centres d’intérêt</div>
+      <p class="interest-text">
+        Dessin (manga), création d’univers (Lego, Minecraft), jeux vidéo, voyages
+        (Stockholm, Hong Kong, New York, Bangkok, Madrid, Tokyo), basket pratiqué pendant 6 ans et triathlon.
+      </p>
     </main>
 
   </div>
