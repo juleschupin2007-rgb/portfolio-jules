@@ -414,7 +414,7 @@ body{
 </div>
 
 <div class="backArrow" id="backArrow">
-  <button onclick="goBack()">← Retour</button>
+  <button onclick="goBack()">← Retour à l'accueil</button>
 </div>
 
 <div class="main">
@@ -471,7 +471,7 @@ body{
 
       <div class="card realisationCard" onclick="showPage('autre')">
         <img src="autre.jpg">
-        <h3>Autres projets</h3>
+        <h3>Visuel Jeux</h3>
       </div>
     </div>
   </div>
@@ -540,7 +540,7 @@ body{
       <div class="card" onclick="showPage('siteweb')"><h3>Sites Web</h3></div>
       <div class="card" onclick="showPage('video')"><h3>Montage Vidéo</h3></div>
       <div class="card" onclick="showPage('troisD')"><h3>3D</h3></div>
-      <div class="card" onclick="showPage('autre')"><h3>Autres projets</h3></div>
+      <div class="card" onclick="showPage('autre')"><h3>Visuel Jeux</h3></div>
     </div>
   </div>
 
@@ -692,7 +692,7 @@ body{
   </div>
 
   <div id="autre" class="page">
-    <div class="banner">Autres projets</div>
+    <div class="banner">Visuel Jeux</div>
     <div class="grid">
       <div class="card searchable-card" id="autre-1"><h3>Projet 1</h3></div>
       <div class="card searchable-card" id="autre-2"><h3>Projet 2</h3></div>
@@ -739,6 +739,14 @@ body{
           <div class="skillTop"><span>JavaScript</span><span>45%</span></div>
           <div class="bar"><div class="fill" style="width:45%;"></div></div>
         </div>
+        <div class="skillItem">
+          <div class="skillTop"><span>JSON</span><span>60%</span></div>
+          <div class="bar"><div class="fill" style="width:60%;"></div></div>
+        </div>
+        <div class="skillItem">
+          <div class="skillTop"><span>C++</span><span>55%</span></div>
+          <div class="bar"><div class="fill" style="width:55%;"></div></div>
+        </div>
       </div>
 
       <div class="skillCard">
@@ -767,6 +775,10 @@ body{
           <div class="skillTop"><span>Anglais</span><span>65%</span></div>
           <div class="bar"><div class="fill" style="width:65%;"></div></div>
         </div>
+        <div class="skillItem">
+          <div class="skillTop"><span>Espagnol</span><span>60%</span></div>
+          <div class="bar"><div class="fill" style="width:60%;"></div></div>
+        </div>
       </div>
 
       <div class="skillCard">
@@ -791,9 +803,8 @@ body{
 
       <div class="skillCard">
         <h3>Certifications / vérifications</h3>
-        <p>
-          À compléter selon ton CV : PIX, certifications, attestations, projets validés, badges ou autres éléments de vérification.
-        </p>
+        <p><strong>PIX :</strong> 400</p>
+        <p><strong>PSC1</strong></p>
       </div>
 
     </div>
@@ -801,9 +812,9 @@ body{
 
   <div id="contact" class="page pageText">
     <h2>Me contacter</h2>
-    <p><strong>Nom :</strong> Jules Chupin</p>
-    <p><strong>Email :</strong> juleschupin@outlook.fr</p>
-    <p><strong>Téléphone :</strong> 06 37 96 62 59</p>
+    <p><strong>Nom :</strong> Jules</p>
+    <p><strong>Email :</strong> tonemail@email.com</p>
+    <p><strong>Téléphone :</strong> 06 XX XX XX XX</p>
   </div>
 
 </div>
@@ -818,37 +829,17 @@ const searchMap = [
   { label: "Profil", page: "profile" },
   { label: "Mes projets", page: "projects" },
   { label: "Dessin", page: "dessin" },
-  { label: "Dessins", page: "dessin" },
-  { label: "Site web", page: "siteweb" },
   { label: "Sites web", page: "siteweb" },
-  { label: "Brawl Stars", page: "siteweb", target: "site-brawlstars" },
+  { label: "Site web", page: "siteweb" },
   { label: "Montage vidéo", page: "video" },
   { label: "Montages vidéo", page: "video" },
   { label: "Vidéo", page: "video" },
   { label: "3D", page: "troisD" },
-  { label: "Autres projets", page: "autre" },
+  { label: "Visuel Jeux", page: "autre" },
   { label: "Compétences", page: "skills" },
-  { label: "Langages informatiques", page: "skills" },
-  { label: "Outils", page: "skills" },
-  { label: "Langues", page: "skills" },
-  { label: "Soft skills", page: "skills" },
   { label: "Contact", page: "contact" },
   { label: "Me contacter", page: "contact" }
 ];
-
-for(let i=1;i<=37;i++){
-  searchMap.push({ label: `Dessin ${i}`, page: "dessin", target: `dessin-${i}` });
-}
-for(let i=1;i<=4;i++){
-  searchMap.push({ label: `Modélisation ${i}`, page: "troisD", target: `modelisation-${i}` });
-}
-for(let i=1;i<=4;i++){
-  searchMap.push({ label: `Vidéo ${i}`, page: "video", target: `video-${i}` });
-}
-searchMap.push({ label: "Portfolio", page: "siteweb", target: "site-portfolio" });
-searchMap.push({ label: "Site vitrine", page: "siteweb", target: "site-vitrine" });
-searchMap.push({ label: "Projet scolaire", page: "siteweb", target: "site-scolaire" });
-searchMap.push({ label: "Application Web", page: "siteweb", target: "site-application" });
 
 let selectedSuggestionIndex = -1;
 
@@ -869,13 +860,13 @@ function showPage(pageId,button=null){
   }
 
   document.getElementById("backArrow").style.display =
-    ["dessin","siteweb","video","troisD","autre"].includes(pageId) ? "block" : "none";
+    pageId === "home" ? "none" : "block";
 
   closeSuggestions();
 }
 
 function goBack(){
-  showPage("projects");
+  showPage("home");
 }
 
 function searchContent(value){
@@ -933,7 +924,7 @@ function handleSearchInput(){
   }
 
   suggestionsBox.innerHTML = matches.map((item, index) => `
-    <div class="suggestionItem" data-page="${item.page}" data-target="${item.target || ''}" data-index="${index}" onclick="goToSuggestion('${item.page}','${item.target || ''}','${escapeQuotes(item.label)}')">
+    <div class="suggestionItem" data-page="${item.page}" data-index="${index}" onclick="goToSuggestion('${item.page}','${escapeQuotes(item.label)}')">
       ${item.label}
     </div>
   `).join("");
@@ -972,21 +963,14 @@ function handleSearchKeydown(event){
 
     const exact = searchMap.find(item => normalize(item.label) === normalize(value));
     if(exact){
-      openTarget(exact.page, exact.target || null);
-      closeSuggestions();
-      return;
-    }
-
-    const direct = parseStructuredSearch(value);
-    if(direct){
-      openTarget(direct.page, direct.target);
+      openTarget(exact.page);
       closeSuggestions();
       return;
     }
 
     const firstMatch = searchMap.find(item => normalize(item.label).includes(normalize(value)));
     if(firstMatch){
-      openTarget(firstMatch.page, firstMatch.target || null);
+      openTarget(firstMatch.page);
       closeSuggestions();
     }
   }
@@ -999,9 +983,9 @@ function updateSuggestionSelection(items){
   }
 }
 
-function goToSuggestion(page, target, label){
+function goToSuggestion(page, label){
   document.getElementById("searchInput").value = label;
-  openTarget(page, target || null);
+  openTarget(page);
 }
 
 function closeSuggestions(){
@@ -1015,30 +999,6 @@ function normalize(str){
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .trim();
-}
-
-function parseStructuredSearch(value){
-  const q = normalize(value);
-
-  let m = q.match(/^dessin\s+(\d{1,2})$/);
-  if(m){
-    const n = Number(m[1]);
-    if(n >= 1 && n <= 37) return { page:"dessin", target:`dessin-${n}` };
-  }
-
-  m = q.match(/^(modelisation|modelisation 3d|3d|modele)\s+(\d{1,2})$/);
-  if(m){
-    const n = Number(m[2]);
-    if(n >= 1 && n <= 4) return { page:"troisD", target:`modelisation-${n}` };
-  }
-
-  m = q.match(/^(video|vidéo)\s+(\d{1,2})$/);
-  if(m){
-    const n = Number(m[2]);
-    if(n >= 1 && n <= 4) return { page:"video", target:`video-${n}` };
-  }
-
-  return null;
 }
 
 function escapeQuotes(str){
