@@ -779,6 +779,22 @@ body{
   <div id="troisD" class="page">
     <div class="banner">Projets 3D</div>
 
+    <div class="grid">
+      <div class="card searchable-card" onclick="showPage('architecture3d')">
+        <h3>3D architecturale</h3>
+        <p>Cliquer pour ouvrir la galerie architecture</p>
+      </div>
+
+      <div class="card searchable-card" onclick="showPage('minecraft3d')">
+        <h3>Minecraft</h3>
+        <p>Cliquer pour ouvrir la galerie Minecraft</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="architecture3d" class="page">
+    <div class="banner">3D architecturale</div>
+
     <div class="pageText" style="margin-bottom:25px;">
       <h3 style="margin-top:0;">3D architecturale</h3>
       <p>
@@ -798,7 +814,7 @@ body{
       </p>
     </div>
 
-    <div class="grid" style="margin-bottom:35px;">
+    <div class="grid">
       <div class="card searchable-card" id="modelisation-1">
         <img src="mod1.jpg" onclick="openModal(this)">
         <h3>Modélisation 1</h3>
@@ -816,6 +832,10 @@ body{
         <h3>Modélisation 4</h3>
       </div>
     </div>
+  </div>
+
+  <div id="minecraft3d" class="page">
+    <div class="banner">Minecraft</div>
 
     <div class="pageText" style="margin-bottom:25px;">
       <h3 style="margin-top:0;">Minecraft</h3>
@@ -840,6 +860,18 @@ body{
       <div class="card searchable-card" id="minecraft-1">
         <img src="mod1.jpg" onclick="openModal(this)">
         <h3>Univers Minecraft</h3>
+      </div>
+      <div class="card searchable-card" id="minecraft-2">
+        <img src="mod2.jpg" onclick="openModal(this)">
+        <h3>Univers Minecraft 2</h3>
+      </div>
+      <div class="card searchable-card" id="minecraft-3">
+        <img src="mod3.jpg" onclick="openModal(this)">
+        <h3>Univers Minecraft 3</h3>
+      </div>
+      <div class="card searchable-card" id="minecraft-4">
+        <img src="mod4.jpg" onclick="openModal(this)">
+        <h3>Univers Minecraft 4</h3>
       </div>
     </div>
   </div>
@@ -1003,6 +1035,8 @@ const searchMap = [
   { label: "Montages vidéo", page: "video" },
   { label: "Vidéo", page: "video" },
   { label: "3D", page: "troisD" },
+  { label: "3D architecturale", page: "architecture3d" },
+  { label: "Minecraft", page: "minecraft3d" },
   { label: "Visuel Jeux", page: "autre" },
   { label: "Compétences", page: "skills" },
   { label: "Contact", page: "contact" },
@@ -1022,7 +1056,7 @@ function showPage(pageId,button=null){
   }else{
     if(pageId==="home") document.querySelectorAll(".catBtn")[0].classList.add("active");
     if(pageId==="profile") document.querySelectorAll(".catBtn")[1].classList.add("active");
-    if(["projects","dessin","siteweb","video","troisD","autre"].includes(pageId)) document.querySelectorAll(".catBtn")[2].classList.add("active");
+    if(["projects","dessin","siteweb","video","troisD","architecture3d","minecraft3d","autre"].includes(pageId)) document.querySelectorAll(".catBtn")[2].classList.add("active");
     if(pageId==="skills") document.querySelectorAll(".catBtn")[3].classList.add("active");
     if(pageId==="contact") document.querySelectorAll(".catBtn")[4].classList.add("active");
   }
@@ -1038,6 +1072,8 @@ function goBack(){
 
   if(["dessin","siteweb","video","troisD","autre"].includes(currentPage)){
     showPage("projects");
+  }else if(["architecture3d","minecraft3d"].includes(currentPage)){
+    showPage("troisD");
   }else{
     showPage("home");
   }
