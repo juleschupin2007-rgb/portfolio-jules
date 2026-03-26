@@ -176,8 +176,7 @@ body{
 .card,
 .formCard,
 .infoMini,
-.chartBlock,
-.projectTextBlock{
+.chartBlock{
   background:rgba(255,255,255,0.88);
   border:1px solid var(--border);
   border-radius:12px;
@@ -210,8 +209,11 @@ body{
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(5,1fr);
   gap:20px;
+}
+.grid.auto{
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 }
 
 .card{
@@ -253,6 +255,8 @@ body{
 
 .pageText{
   padding:25px;
+  margin-bottom:25px;
+  line-height:1.8;
 }
 
 .profileGrid{
@@ -456,6 +460,9 @@ body{
   margin-top:auto;
 }
 
+@media(max-width:1100px){
+  .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+}
 @media(max-width:900px){
   .headerContent{flex-direction:column;gap:15px;}
   .leftHeader{justify-content:center;}
@@ -525,15 +532,14 @@ body{
     </div>
 
     <div class="banner">Domaines de compétences</div>
-    <div class="grid">
-      <div class="card"><h3>Développement Web</h3><p>Créer des sites modernes.</p></div>
-      <div class="card"><h3>Design</h3><p>Améliorer l'identité visuelle.</p></div>
-      <div class="card"><h3>Audiovisuel</h3><p>Produire des montages dynamiques.</p></div>
-      <div class="card"><h3>Communication</h3><p>Présenter des projets impactants.</p></div>
+    <div class="grid auto">
+      <div class="card"><h3>Développement Web</h3></div>
+      <div class="card"><h3>Design graphique</h3></div>
+      <div class="card"><h3>Audiovisuel</h3></div>
     </div>
 
     <div class="banner" style="margin-top:50px;">Mes réalisations</div>
-    <div class="grid" style="grid-template-columns:repeat(5,minmax(0,1fr));">
+    <div class="grid">
       <div class="card realisationCard" onclick="showPage('dessin')">
         <img src="dessin16.jpg" alt="Dessin">
         <h3>Dessin</h3>
@@ -562,6 +568,7 @@ body{
 
     <div class="profileGrid">
       <div class="infoCard">
+        <img src="photo.jpg" alt="Photo Jules" style="width:120px;border-radius:50%;margin-bottom:15px;">
         <h3>Mon profil</h3>
         <p>
           Je m’appelle Jules et je suis passionné par la création numérique sous toutes ses formes :
@@ -587,7 +594,6 @@ body{
     <div class="timeline">
       <div class="timelineItem">
         <h4>À propos</h4>
-        <div class="meta">Présentation générale</div>
         <p>
           Mon parcours m’a permis d’explorer différents domaines :
           montage vidéo et création d’ambiances, modélisation 3D (architecture et univers virtuels),
@@ -606,7 +612,6 @@ body{
 
       <div class="timelineItem">
         <h4>Formation</h4>
-        <div class="meta">Selon le CV</div>
         <p>2025–2026 — Licence Informatique, Faculté des Sciences, Nantes</p>
         <p>2022–2025 — Baccalauréat Général (Maths, NSI), Lycée Renaudeau, Cholet</p>
         <p>2022 — 3e, Collège Colbert, Cholet</p>
@@ -614,25 +619,53 @@ body{
       </div>
 
       <div class="timelineItem">
-        <h4>Expériences professionnelles</h4>
-        <div class="meta">Selon le CV</div>
-        <p><strong>Préparateur de commandes & Manutentionnaire — B.Solfin (85)</strong><br>23–27 février 2026</p>
-        <p><strong>Stage de 3e — Cabinet d’architecture Grégoire, Cholet</strong><br>Janvier 2022</p>
-      </div>
-
-      <div class="timelineItem">
-        <h4>Certifications</h4>
-        <div class="meta">Selon le CV</div>
-        <p><strong>PIX :</strong> 400</p>
-        <p><strong>PSC1</strong></p>
-      </div>
-
-      <div class="timelineItem">
-        <h4>Centres d’intérêt</h4>
-        <div class="meta">À personnaliser</div>
+        <h4>Expérience professionnelle</h4>
         <p>
-          Dessin (manga), création d’univers, modélisation 3D, montage vidéo,
-          jeux vidéo, voyages, basket, triathlon.
+          J’ai effectué mon stage de 3e dans un cabinet d’architecte, où j’ai découvert un environnement à la fois créatif et technique.
+          J’y ai réalisé des modélisations 3D de maisons sur SketchUp, observé le dessin de plans et participé à des visites de chantier.
+          Cette expérience m’a beaucoup intéressé car elle m’a permis de voir comment des idées prennent forme de manière concrète,
+          grâce à des outils visuels et numériques.
+        </p>
+        <p>
+          J’ai aussi travaillé en intérim chez B Solfin, fabricant et commerçant de vêtements made in France.
+          J’y ai réalisé différentes missions comme la préparation de commandes, les envois de colis, le picking,
+          le rangement et la manutention. Cette expérience m’a appris à être rigoureux, organisé et efficace dans un cadre professionnel.
+        </p>
+      </div>
+
+      <div class="timelineItem">
+        <h4>Encadrement</h4>
+        <p>
+          J’ai eu l’occasion de faire quelques baby-sittings, ce qui m’a appris à être attentif, responsable et à m’adapter aux besoins des enfants tout en veillant à leur sécurité.
+          J’ai aussi arbitré ponctuellement des équipes plus jeunes dans le cadre du basket.
+          Cette expérience m’a demandé de faire respecter des règles, de rester calme, juste et concentré, tout en gérant des situations parfois rapides.
+          Même si ces expériences sont restées ponctuelles, elles m’ont permis de développer mon sens des responsabilités et de prendre confiance dans des rôles d’encadrement.
+        </p>
+      </div>
+
+      <div class="timelineItem">
+        <h4>Engagement</h4>
+        <p>
+          J’ai obtenu le PSC1, ce qui m’a permis d’apprendre les gestes de premiers secours et l’importance de savoir réagir rapidement en cas d’urgence.
+          Cette formation m’a sensibilisé à l’entraide, à la responsabilité et à l’attention portée aux autres.
+          J’ai également participé à la Journée Défense et Citoyenneté, qui m’a permis d’aborder les questions de citoyenneté et d’engagement.
+        </p>
+      </div>
+
+      <div class="timelineItem">
+        <h4>Ouverture au monde / Centres d’intérêt</h4>
+        <p>
+          Depuis plusieurs années, le sport occupe une place importante dans ma vie.
+          J’ai suivi tout mon collège en classe triathlon, ce qui m’a appris la rigueur, la persévérance, l’organisation et le goût de l’effort.
+          En 4e, j’ai également participé à un stage de triathlon dans les Alpes, avec de la natation intensive, des épreuves de biathlon, du trail et du bike & run.
+          Cette expérience a renforcé mon endurance, mon sens du dépassement de soi et ma capacité à m’adapter à un cadre exigeant.
+          En parallèle, j’ai pratiqué le basket en club pendant 6 ans, ce qui m’a aussi apporté le sens du collectif, l’engagement et la régularité.
+        </p>
+        <p>
+          Sur le plan culturel, je m’intéresse beaucoup au dessin, en particulier à l’univers du manga, ce qui nourrit aussi mon intérêt pour la création visuelle et numérique.
+          J’aime observer les styles, reproduire des visuels et progresser vers la création de mes propres personnages et univers.
+          Les voyages ont aussi beaucoup compté dans mon ouverture au monde : j’ai eu la chance de découvrir Stockholm, Hong Kong, New York, Bangkok et Madrid, et je partirai prochainement à Tokyo.
+          Ces expériences nourrissent ma curiosité, mon imagination et mon regard sur différents univers culturels et esthétiques.
         </p>
       </div>
     </div>
@@ -644,11 +677,11 @@ body{
     <div class="skillsGrid">
       <div class="skillCard">
         <h3>Outils</h3>
-        <div class="skillItem"><div class="skillTop"><span>Canva</span><span>85%</span></div><div class="bar"><div class="fill" style="width:85%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>DaVinci Resolve</span><span>75%</span></div><div class="bar"><div class="fill" style="width:75%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Thonny</span><span>70%</span></div><div class="bar"><div class="fill" style="width:70%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Spyder</span><span>65%</span></div><div class="bar"><div class="fill" style="width:65%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>GitHub</span><span>60%</span></div><div class="bar"><div class="fill" style="width:60%;"></div></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Canva</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>DaVinci Resolve</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Thonny</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Spyder</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>GitHub</span></div></div>
       </div>
 
       <div class="skillCard">
@@ -662,33 +695,27 @@ body{
 
       <div class="skillCard">
         <h3>Compétences</h3>
-        <div class="skillItem"><div class="skillTop"><span>Création sites web</span><span>80%</span></div><div class="bar"><div class="fill" style="width:80%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Dessin</span><span>80%</span></div><div class="bar"><div class="fill" style="width:80%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Montage vidéo</span><span>75%</span></div><div class="bar"><div class="fill" style="width:75%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Modélisation 3D</span><span>70%</span></div><div class="bar"><div class="fill" style="width:70%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Programmation</span><span>65%</span></div><div class="bar"><div class="fill" style="width:65%;"></div></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Création sites web</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Dessin</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Montage vidéo</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Modélisation 3D</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Programmation</span></div></div>
       </div>
 
       <div class="skillCard">
         <h3>Langues</h3>
-        <div class="skillItem"><div class="skillTop"><span>Anglais</span><span>B1</span></div><div class="bar"><div class="fill" style="width:65%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Espagnol</span><span>Bac</span></div><div class="bar"><div class="fill" style="width:60%;"></div></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Anglais</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Espagnol</span></div></div>
       </div>
 
       <div class="skillCard">
         <h3>Soft skills</h3>
-        <div class="skillItem"><div class="skillTop"><span>Autonomie</span><span>85%</span></div><div class="bar"><div class="fill" style="width:85%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Rigueur</span><span>80%</span></div><div class="bar"><div class="fill" style="width:80%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Persévérance</span><span>80%</span></div><div class="bar"><div class="fill" style="width:80%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Créativité</span><span>85%</span></div><div class="bar"><div class="fill" style="width:85%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Adaptabilité</span><span>75%</span></div><div class="bar"><div class="fill" style="width:75%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Travail en équipe</span><span>70%</span></div><div class="bar"><div class="fill" style="width:70%;"></div></div></div>
-      </div>
-
-      <div class="skillCard">
-        <h3>Certifications / vérifications</h3>
-        <p><strong>PIX :</strong> 400</p>
-        <p><strong>PSC1</strong></p>
+        <div class="skillItem"><div class="skillTop"><span>Autonomie</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Rigueur</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Persévérance</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Créativité</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Adaptabilité</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Travail en équipe</span></div></div>
       </div>
     </div>
   </div>
@@ -706,72 +733,69 @@ body{
 
   <div id="dessin" class="page">
     <div class="banner">Dessin</div>
-    <div class="grid">
-      <div class="card" onclick="showPage('dessin-galerie')">
-        <img src="dessin16.jpg" alt="Dessins">
-        <h3>Réalisations</h3>
-        <p>Vidéo + galerie de tous mes dessins</p>
+
+    <div class="pageText">
+      <h3>Dessin & Illustration</h3>
+      <p>
+        Cette section rassemble mes travaux de dessin d’observation et de reproduction.
+        J’y présente ma méthode : quadrillage, respect des proportions, construction du tracé, gommage et finitions.
+        Ces projets mettent en avant ma précision, mon sens du détail, ma capacité à analyser une image et à structurer un dessin étape par étape.
+      </p>
+    </div>
+
+    <div class="grid auto">
+      <div class="card" onclick="showPage('dessin-video')">
+        <h3>🎥 Vidéo</h3>
+        <p>Méthode complète</p>
       </div>
-      <div class="card" onclick="showPage('dessin-texte')">
-        <img src="dessin16.jpg" alt="Texte dessin">
-        <h3>Texte</h3>
-        <p>Présentation de ma méthode et des compétences mises en avant</p>
+      <div class="card" onclick="showPage('dessin-galerie')">
+        <h3>🖼️ Galerie</h3>
+        <p>Tous mes dessins</p>
       </div>
     </div>
   </div>
 
-  <div id="dessin-galerie" class="page">
-    <div class="banner">Dessin – Réalisations</div>
-
-    <div class="videoBlock" style="margin-bottom:30px;">
+  <div id="dessin-video" class="page">
+    <div class="banner">Dessin – Vidéo</div>
+    <div class="videoBlock">
       <div class="videoBox">
         <video controls>
           <source src="videos/dessin.mp4" type="video/mp4">
         </video>
       </div>
-
       <div class="videoText">
-        <h3>Dessin d’observation – Méthode de travail</h3>
+        <h3>Vidéo Dessin – Reproduction d’après modèle</h3>
         <p>
-          Cette vidéo montre les différentes étapes de ma méthode de reproduction à partir d’un modèle.
-          Je commence par réaliser un quadrillage sur le modèle et sur ma feuille blanche pour assurer la précision.
-          J’effectue ensuite la reproduction à l’échelle en respectant les proportions.
-          Une fois le tracé terminé, je gomme le quadrillage puis j’ajoute les finitions :
-          ombres, détails et mise en valeur du volume.
+          Cette vidéo détaille ma méthode de dessin d’observation : quadrillage, reproduction proportionnée, gommage et finitions.
+        </p>
+        <p><strong>Compétences mises en avant :</strong></p>
+        <p>
+          - observation fine et respect des proportions<br>
+          - méthodologie de travail<br>
+          - gestion des étapes d’un processus créatif<br>
+          - mise en valeur visuelle (ombres, textures)
         </p>
       </div>
     </div>
-
-    <div class="projectGallery" id="dessinsGrid"></div>
   </div>
 
-  <div id="dessin-texte" class="page">
-    <div class="banner">Dessin – Texte</div>
-    <div class="pageText">
-      <h3>Dessin & Illustration</h3>
-      <p>
-        Cette section rassemble mes travaux de dessin d’observation et de reproduction.
-        J’y présente ma méthode : quadrillage, respect des proportions, construction du tracé,
-        gommage et finitions.
-      </p>
-      <p>
-        Ces projets mettent en avant ma précision, mon sens du détail,
-        ma capacité à analyser une image et à structurer un dessin étape par étape.
-      </p>
-      <p><strong>Compétences mises en avant :</strong></p>
-      <p>
-        - précision et sens du détail<br>
-        - observation fine<br>
-        - gestion des proportions<br>
-        - méthodologie de travail<br>
-        - mise en valeur visuelle
-      </p>
-    </div>
+  <div id="dessin-galerie" class="page">
+    <div class="banner">Dessin – Galerie</div>
+    <div class="projectGallery" id="dessinsGrid"></div>
   </div>
 
   <div id="siteweb" class="page">
     <div class="banner">Sites Web</div>
-    <div class="grid">
+
+    <div class="pageText">
+      <h3>Création Web</h3>
+      <p>
+        Dans cette rubrique, je présente mes projets web réalisés en HTML/CSS : minisites thématiques et création de mon portfolio personnel.
+        Ces projets montrent ma capacité à structurer un site, à organiser des contenus variés, à intégrer des éléments multimédias, à travailler le responsive et à concevoir une navigation claire et efficace.
+      </p>
+    </div>
+
+    <div class="grid auto">
       <div class="card" onclick="showPage('site-brawlstars-detail')">
         <img src="Brawl Stars Logo.jpg" alt="Brawl Stars">
         <h3>Site Brawl Stars</h3>
@@ -782,12 +806,6 @@ body{
         <img src="images/site.jpg" alt="Portfolio personnel">
         <h3>Portfolio personnel</h3>
         <p>Un site qui rassemble mes projets et reflète mon parcours.</p>
-      </div>
-
-      <div class="card" onclick="showPage('site-json-detail')">
-        <img src="autre.jpg" alt="Minisite JSON">
-        <h3>Minisite JSON</h3>
-        <p>Transformer des données en une interface simple et lisible.</p>
       </div>
     </div>
   </div>
@@ -833,16 +851,13 @@ body{
       <div class="videoText">
         <h3>Projet web – Création de mon portfolio personnel (HTML/CSS)</h3>
         <p>
-          J’ai conçu et développé mon portfolio personnel en HTML et CSS afin de présenter l’ensemble de mes réalisations :
-          dessins, montages vidéo, projets de programmation, modélisations 3D et créations web.
+          J’ai conçu et développé mon portfolio personnel en HTML et CSS afin de présenter l’ensemble de mes réalisations : dessins, montages vidéo, projets de programmation, modélisations 3D et créations web.
         </p>
         <p>
-          J’ai choisi une mise en page sobre et structurée, tout en intégrant des éléments qui me représentent,
-          comme la bannière illustrant mon enfance et mon goût précoce pour le dessin de mangas.
+          J’ai choisi une mise en page sobre et structurée, tout en intégrant des éléments qui me représentent, comme la bannière illustrant mon enfance et mon goût précoce pour le dessin de mangas.
         </p>
         <p>
-          Le site inclut plusieurs fonctionnalités : téléchargement du CV, barre de recherche, navigation claire,
-          intégration d’images, de vidéos et de sections thématiques.
+          Le site inclut plusieurs fonctionnalités : téléchargement du CV, barre de recherche, navigation claire, intégration d’images, de vidéos et de sections thématiques.
         </p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
@@ -857,40 +872,19 @@ body{
     </div>
   </div>
 
-  <div id="site-json-detail" class="page">
-    <div class="banner">Minisite JSON</div>
-    <div class="videoBlock">
-      <div class="videoBox">
-        <img src="autre.jpg" alt="Minisite JSON">
-        <div style="height:12px;"></div>
-        <a class="cta" onclick="showPage('decheterie')">Ouvrir le projet</a>
-      </div>
-      <div class="videoText">
-        <h3>Projet de programmation – Minisite interactif en JSON (NSI – Première)</h3>
-        <p>
-          Ce projet consistait à créer un minisite capable d’exploiter une base de données en JSON pour afficher des résultats en fonction de variables choisies par l’utilisateur.
-        </p>
-        <p>
-          J’ai conçu un programme permettant de sélectionner un matériau, un type de déchet et une déchèterie, puis d’afficher automatiquement l’année et le tonnage correspondant.
-        </p>
-        <p>
-          Le site génère également un graphique associé aux données.
-        </p>
-        <p><strong>Compétences mises en avant :</strong></p>
-        <p>
-          - manipulation de données en JSON<br>
-          - extraction et affichage dynamique d’informations<br>
-          - génération de graphiques<br>
-          - logique algorithmique<br>
-          - structuration d’un programme et d’une interface simple
-        </p>
-      </div>
-    </div>
-  </div>
-
   <div id="video" class="page">
     <div class="banner">Montages Vidéo</div>
-    <div class="grid">
+
+    <div class="pageText">
+      <h3>Vidéo & Montage</h3>
+      <p>
+        Dans cette rubrique, je présente différents projets vidéo réalisés à partir de captations personnelles, de montages accélérés, de stop motion ou de créations d’univers.
+        Ces projets montrent ma capacité à structurer un récit visuel, à gérer le rythme, à intégrer du son, des transitions, du titrage et parfois une voix off.
+        Ils illustrent mes compétences en montage (DaVinci Resolve), en organisation de rushs, en création d’ambiances et en mise en valeur d’un processus ou d’un univers.
+      </p>
+    </div>
+
+    <div class="grid auto">
       <div class="card" onclick="showPage('video-voyage-detail')">
         <img src="video.jpg" alt="Voyage">
         <h3>Souvenir de voyage</h3>
@@ -911,11 +905,6 @@ body{
         <h3>Minecraft – Vidéo</h3>
         <p>Explorer un univers que j’ai construit bloc après bloc.</p>
       </div>
-      <div class="card" onclick="showPage('video-dessin-detail')">
-        <img src="video.jpg" alt="Dessin vidéo">
-        <h3>Dessin – Reproduction</h3>
-        <p>Construire un dessin avec précision, du croquis aux détails.</p>
-      </div>
     </div>
   </div>
 
@@ -927,9 +916,7 @@ body{
       </div>
       <div class="videoText">
         <h3>Vidéo Souvenir de voyage – Thaïlande, Île de Ko Tao – 2024</h3>
-        <p>
-          J’ai monté plusieurs séquences marines pour créer un souvenir visuel cohérent. Le montage alterne sons naturels, musique douce, fondus et titrage.
-        </p>
+        <p>J’ai monté plusieurs séquences marines pour créer un souvenir visuel cohérent. Le montage alterne sons naturels, musique douce, fondus et titrage.</p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
           - sélection et organisation de rushs<br>
@@ -949,9 +936,7 @@ body{
       </div>
       <div class="videoText">
         <h3>Vidéo LEGO – Stop motion (photos étape par étape)</h3>
-        <p>
-          Cette animation stop motion montre la construction progressive d’un modèle LEGO à partir de photos prises à chaque étape. Le montage accéléré met en valeur la précision du processus.
-        </p>
+        <p>Cette animation stop motion montre la construction progressive d’un modèle LEGO à partir de photos prises à chaque étape. Le montage accéléré met en valeur la précision du processus.</p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
           - organisation d’un flux d’images<br>
@@ -971,9 +956,7 @@ body{
       </div>
       <div class="videoText">
         <h3>Vidéo LEGO – Montage filmé en accéléré</h3>
-        <p>
-          J’ai filmé le montage du set sous plusieurs angles, puis assemblé les séquences en accéléré. Les transitions en fondus permettent d’unifier les variations de cadrage. Le titre indique le nom du set.
-        </p>
+        <p>J’ai filmé le montage du set sous plusieurs angles, puis assemblé les séquences en accéléré. Les transitions en fondus permettent d’unifier les variations de cadrage. Le titre indique le nom du set.</p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
           - captation multi-angles<br>
@@ -993,12 +976,8 @@ body{
       </div>
       <div class="videoText">
         <h3>Vidéo Minecraft – Création d’un univers original</h3>
-        <p>
-          Cette vidéo présente un univers que j’ai conçu dans Minecraft. J’ai travaillé la construction d’espaces cohérents, la mise en scène du parcours et la gestion de la lumière.
-        </p>
-        <p>
-          Le montage inclut une musique d’ambiance et une voix off sous-titrée pour expliquer mes choix.
-        </p>
+        <p>Cette vidéo présente un univers que j’ai conçu dans Minecraft. J’ai travaillé la construction d’espaces cohérents, la mise en scène du parcours et la gestion de la lumière.</p>
+        <p>Le montage inclut une musique d’ambiance et une voix off sous-titrée pour expliquer mes choix.</p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
           - level design et structuration d’un environnement 3D<br>
@@ -1010,31 +989,18 @@ body{
     </div>
   </div>
 
-  <div id="video-dessin-detail" class="page">
-    <div class="banner">Dessin – Reproduction d’après modèle</div>
-    <div class="videoBlock">
-      <div class="videoBox">
-        <video controls preload="metadata"><source src="videos/dessin.mp4" type="video/mp4"></video>
-      </div>
-      <div class="videoText">
-        <h3>Vidéo Dessin – Reproduction d’après modèle</h3>
-        <p>
-          Cette vidéo détaille ma méthode de dessin d’observation : quadrillage, reproduction proportionnée, gommage et finitions.
-        </p>
-        <p><strong>Compétences mises en avant :</strong></p>
-        <p>
-          - observation fine et respect des proportions<br>
-          - méthodologie de travail<br>
-          - gestion des étapes d’un processus créatif<br>
-          - mise en valeur visuelle (ombres, textures)
-        </p>
-      </div>
-    </div>
-  </div>
-
   <div id="troisD" class="page">
     <div class="banner">3D</div>
-    <div class="grid">
+
+    <div class="pageText">
+      <h3>Modélisation 3D</h3>
+      <p>
+        Cette rubrique présente mes projets de modélisation 3D, réalisés aussi bien dans un contexte professionnel (stage en architecture) que dans un univers créatif (Minecraft).
+        J’y montre ma capacité à lire un cahier des charges, à réaliser des plans manuels et numériques, à modéliser des volumes en 3D, à organiser un espace et à concevoir des environnements cohérents.
+      </p>
+    </div>
+
+    <div class="grid auto">
       <div class="card" onclick="showPage('architecture3d-detail')">
         <img src="mod1.jpg" alt="3D architecturale">
         <h3>3D architecturale</h3>
@@ -1056,13 +1022,8 @@ body{
       </div>
       <div class="videoText">
         <h3>Projet de modélisation 3D architecturale – Stage de 3e</h3>
-        <p>
-          Ce projet a été réalisé lors de mon stage dans un cabinet d’architecture, à partir d’un cahier des charges précis fourni par l’architecte.
-          J’ai d’abord dessiné les pièces à la main aux bonnes dimensions, puis réalisé un plan manuel complet.
-        </p>
-        <p>
-          J’ai ensuite produit un plan à plat sur Archicad avant de modéliser la maison en 3D avec SketchUp.
-        </p>
+        <p>Ce projet a été réalisé lors de mon stage dans un cabinet d’architecture, à partir d’un cahier des charges précis fourni par l’architecte. J’ai d’abord dessiné les pièces à la main aux bonnes dimensions, puis réalisé un plan manuel complet.</p>
+        <p>J’ai ensuite produit un plan à plat sur Archicad avant de modéliser la maison en 3D avec SketchUp.</p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
           - lecture et respect d’un cahier des charges<br>
@@ -1085,13 +1046,8 @@ body{
       </div>
       <div class="videoText">
         <h3>Projet 3D – Conception d’un univers architectural dans Minecraft</h3>
-        <p>
-          Ce projet illustre ma capacité à concevoir un environnement 3D complet à partir d’un espace vide.
-          J’ai travaillé la construction des volumes, la cohérence des zones, la circulation entre les espaces et l’harmonie visuelle de l’ensemble.
-        </p>
-        <p>
-          La vidéo sert ici à présenter le résultat, mais l’objectif principal est la création de l’univers lui-même.
-        </p>
+        <p>Ce projet illustre ma capacité à concevoir un environnement 3D complet à partir d’un espace vide. J’ai travaillé la construction des volumes, la cohérence des zones, la circulation entre les espaces et l’harmonie visuelle de l’ensemble.</p>
+        <p>La vidéo sert ici à présenter le résultat, mais l’objectif principal est la création de l’univers lui-même.</p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
           - conception d’espaces 3D cohérents<br>
@@ -1111,13 +1067,23 @@ body{
 
   <div id="autre" class="page">
     <div class="banner">Programmation</div>
-    <div class="grid">
+
+    <div class="pageText">
+      <h3>Programmation</h3>
+      <p>
+        Cette section regroupe mes projets de programmation réalisés en NSI et en licence informatique.
+        Ils illustrent ma maîtrise des bases du code : manipulation de données JSON, création d’interfaces simples, développement d’un mini-jeu en C++, gestion d’interactions, IA basique, visualisation de données et structuration d’un programme.
+        Ces projets montrent ma progression dans la logique algorithmique et la conception d’expériences numériques fonctionnelles.
+      </p>
+    </div>
+
+    <div class="grid auto">
       <div class="card" onclick="showPage('cpp-detail')">
         <img src="autre.jpg" alt="Mini jeu C++">
         <h3>Minijeu C++</h3>
         <p>Créer un jeu minimaliste où chaque symbole a un rôle.</p>
       </div>
-      <div class="card" onclick="showPage('site-json-detail')">
+      <div class="card" onclick="showPage('decheterie-detail')">
         <img src="autre.jpg" alt="Minisite JSON">
         <h3>Minisite JSON</h3>
         <p>Transformer des données en une interface simple et lisible.</p>
@@ -1133,17 +1099,9 @@ body{
       </div>
       <div class="videoText">
         <h3>Projet de programmation – Mini jeu roguelike en C++ (Licence informatique)</h3>
-        <p>
-          Ce projet a été réalisé en équipe de 4 dans le cadre de ma licence informatique.
-          Nous avons développé un mini jeu roguelike en C++, affiché sous forme de grille textuelle.
-        </p>
-        <p>
-          Le personnage « @ » se déplace grâce aux flèches directionnelles, ramasse des équipements représentés par des lettres minuscules
-          et affronte des monstres en majuscules contrôlés par une IA simple.
-        </p>
-        <p>
-          Le jeu est gagné en atteignant la dernière porte, et perdu si les points de vie tombent à zéro ou si le taux de peur dépasse un seuil.
-        </p>
+        <p>Ce projet a été réalisé en équipe de 4 dans le cadre de ma licence informatique. Nous avons développé un mini jeu roguelike en C++, affiché sous forme de grille textuelle.</p>
+        <p>Le personnage « @ » se déplace grâce aux flèches directionnelles, ramasse des équipements représentés par des lettres minuscules et affronte des monstres en majuscules contrôlés par une IA simple.</p>
+        <p>Le jeu est gagné en atteignant la dernière porte, et perdu si les points de vie tombent à zéro ou si le taux de peur dépasse un seuil.</p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
           - programmation en C++<br>
@@ -1156,11 +1114,36 @@ body{
     </div>
   </div>
 
+  <div id="decheterie-detail" class="page">
+    <div class="banner">Minisite JSON</div>
+    <div class="videoBlock">
+      <div class="videoBox">
+        <img src="autre.jpg" alt="Minisite JSON">
+        <div style="height:12px;"></div>
+        <a class="cta" onclick="showPage('decheterie')">Ouvrir le projet</a>
+      </div>
+      <div class="videoText">
+        <h3>Projet de programmation – Minisite interactif en JSON (NSI – Première)</h3>
+        <p>Ce projet consistait à créer un minisite capable d’exploiter une base de données en JSON pour afficher des résultats en fonction de variables choisies par l’utilisateur.</p>
+        <p>J’ai conçu un programme permettant de sélectionner un matériau, un type de déchet et une déchèterie, puis d’afficher automatiquement l’année et le tonnage correspondant.</p>
+        <p>Le site génère également un graphique associé aux données.</p>
+        <p><strong>Compétences mises en avant :</strong></p>
+        <p>
+          - manipulation de données en JSON<br>
+          - extraction et affichage dynamique d’informations<br>
+          - génération de graphiques<br>
+          - logique algorithmique<br>
+          - structuration d’un programme et d’une interface simple
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div id="decheterie" class="page">
     <div class="banner">Projet Déchèterie</div>
 
-    <div class="pageText" style="margin-bottom:25px;">
-      <p style="line-height:1.8;">
+    <div class="pageText">
+      <p>
         Cette interface permet de choisir une déchèterie ou un écopoint, puis un type de déchet,
         afin d’afficher l’évolution du tonnage par année à partir d’une base de données JSON.
       </p>
@@ -1202,10 +1185,14 @@ body{
   </div>
 
   <div id="contact" class="page pageText">
-    <h2>Me contacter</h2>
-    <p><strong>Nom :</strong> Jules</p>
-    <p><strong>Email :</strong> tonemail@email.com</p>
-    <p><strong>Téléphone :</strong> 06 XX XX XX XX</p>
+    <h2>Contact</h2>
+    <p>N’hésitez pas à me contacter pour toute demande ou projet.</p>
+    <p><strong>Email :</strong> juleschupin@outlook.fr</p>
+    <p>
+      <a href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">
+        Voir mon portfolio
+      </a>
+    </p>
   </div>
 </div>
 
@@ -1246,11 +1233,11 @@ function showPage(pageId,button=null){
     if(pageId==="profile") document.querySelectorAll(".catBtn")[1].classList.add("active");
     if(pageId==="skills") document.querySelectorAll(".catBtn")[2].classList.add("active");
     if([
-      "projects","dessin","dessin-galerie","dessin-texte",
-      "siteweb","site-brawlstars-detail","site-portfolio-detail","site-json-detail",
-      "video","video-voyage-detail","video-stopmotion-detail","video-lego-detail","video-minecraft-detail","video-dessin-detail",
+      "projects","dessin","dessin-video","dessin-galerie",
+      "siteweb","site-brawlstars-detail","site-portfolio-detail",
+      "video","video-voyage-detail","video-stopmotion-detail","video-lego-detail","video-minecraft-detail",
       "troisD","architecture3d-detail","minecraft3d-detail",
-      "autre","cpp-detail","decheterie"
+      "autre","cpp-detail","decheterie-detail","decheterie"
     ].includes(pageId)) document.querySelectorAll(".catBtn")[3].classList.add("active");
     if(pageId==="contact") document.querySelectorAll(".catBtn")[4].classList.add("active");
   }
@@ -1265,18 +1252,18 @@ function goBack(){
 
   if(["dessin","siteweb","video","troisD","autre"].includes(currentPage)){
     showPage("projects");
-  }else if(["dessin-galerie","dessin-texte"].includes(currentPage)){
+  }else if(["dessin-video","dessin-galerie"].includes(currentPage)){
     showPage("dessin");
-  }else if(["site-brawlstars-detail","site-portfolio-detail","site-json-detail"].includes(currentPage)){
+  }else if(["site-brawlstars-detail","site-portfolio-detail"].includes(currentPage)){
     showPage("siteweb");
-  }else if(["video-voyage-detail","video-stopmotion-detail","video-lego-detail","video-minecraft-detail","video-dessin-detail"].includes(currentPage)){
+  }else if(["video-voyage-detail","video-stopmotion-detail","video-lego-detail","video-minecraft-detail"].includes(currentPage)){
     showPage("video");
   }else if(["architecture3d-detail","minecraft3d-detail"].includes(currentPage)){
     showPage("troisD");
-  }else if(["cpp-detail"].includes(currentPage)){
+  }else if(["cpp-detail","decheterie-detail"].includes(currentPage)){
     showPage("autre");
   }else if(currentPage==="decheterie"){
-    showPage("site-json-detail");
+    showPage("decheterie-detail");
   }else{
     showPage("home");
   }
