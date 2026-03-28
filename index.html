@@ -33,23 +33,18 @@ body{
 .bgExact{
   position:fixed;
   inset:0;
-  background:url("fond-pixels.png") center center / cover no-repeat;
+  background:var(--bg);
   pointer-events:none;
   z-index:-2;
 }
 
 .bgMask{
   position:fixed;
-  top:110px;
-  left:50%;
-  transform:translateX(-50%);
-  width:640px;
-  height:170px;
-  background:
-    radial-gradient(circle at center, rgba(245,239,230,0.96) 0%, rgba(238,227,208,0.98) 55%, rgba(224,214,200,0.98) 100%);
-  filter:blur(6px);
-  opacity:0.98;
-  border-radius:4px;
+  inset:0;
+  background:var(--bg);
+  filter:none;
+  opacity:1;
+  border-radius:0;
   pointer-events:none;
   z-index:-1;
 }
@@ -471,9 +466,11 @@ body{
   .leftHeader{justify-content:center;}
   .profileGrid{grid-template-columns:1fr;}
   .bgMask{
-    width:72vw;
-    height:120px;
-    top:105px;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    transform:none;
   }
 }
 @media(max-width:700px){
@@ -683,11 +680,11 @@ body{
     <div class="skillsGrid">
       <div class="skillCard">
         <h3>Langages informatiques</h3>
-        <div class="skillItem"><div class="skillTop"><span>HTML / CSS</span><span>75%</span></div><div class="bar"><div class="fill" style="width:75%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Python</span><span>70%</span></div><div class="bar"><div class="fill" style="width:70%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>JSON</span><span>60%</span></div><div class="bar"><div class="fill" style="width:60%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>C++</span><span>55%</span></div><div class="bar"><div class="fill" style="width:55%;"></div></div></div>
-        <div class="skillItem"><div class="skillTop"><span>JavaScript</span><span>45%</span></div><div class="bar"><div class="fill" style="width:45%;"></div></div></div>
+        <div class="skillItem"><div class="skillTop"><span>HTML / CSS</span><span>35%</span></div><div class="bar"><div class="fill" style="width:35%;"></div></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Python</span><span>25%</span></div><div class="bar"><div class="fill" style="width:25%;"></div></div></div>
+        <div class="skillItem"><div class="skillTop"><span>JSON</span><span>25%</span></div><div class="bar"><div class="fill" style="width:25%;"></div></div></div>
+        <div class="skillItem"><div class="skillTop"><span>C++</span><span>25%</span></div><div class="bar"><div class="fill" style="width:25%;"></div></div></div>
+        <div class="skillItem"><div class="skillTop"><span>JavaScript</span><span>25%</span></div><div class="bar"><div class="fill" style="width:25%;"></div></div></div>
       </div>
 
       <div class="skillCard">
@@ -726,11 +723,8 @@ body{
 
       <div class="skillCard">
         <h3>Certifications</h3>
-        <div class="skillItem"><div class="skillTop"><span>PSC1 – Premiers secours</span></div></div>
-        <div class="skillItem"><div class="skillTop"><span>Journée Défense et Citoyenneté</span></div></div>
-        <div style="margin-top:15px;">
-          <a class="cta" href="CV Jules.pdf" download>Télécharger mon CV</a>
-        </div>
+        <div class="skillItem"><div class="skillTop"><span>Certification PIX – 400 points en 2025</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>PSC1 – Formation aux premiers secours en 2024</span></div></div>
       </div>
     </div>
   </div>
