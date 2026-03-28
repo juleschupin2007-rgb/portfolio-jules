@@ -30,23 +30,9 @@ body{
   flex-direction:column;
 }
 
-.bgExact{
-  position:fixed;
-  inset:0;
-  background:var(--bg);
-  pointer-events:none;
-  z-index:-2;
-}
-
+.bgExact,
 .bgMask{
-  position:fixed;
-  inset:0;
-  background:var(--bg);
-  filter:none;
-  opacity:1;
-  border-radius:0;
-  pointer-events:none;
-  z-index:-1;
+  display:none;
 }
 
 .topHeader{
@@ -465,13 +451,6 @@ body{
   .headerContent{flex-direction:column;gap:15px;}
   .leftHeader{justify-content:center;}
   .profileGrid{grid-template-columns:1fr;}
-  .bgMask{
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    transform:none;
-  }
 }
 @media(max-width:700px){
   .videoBlock{flex-direction:column;}
@@ -486,9 +465,6 @@ body{
 </style>
 </head>
 <body>
-
-<div class="bgExact"></div>
-<div class="bgMask"></div>
 
 <div class="topHeader">
   <div class="headerContent">
@@ -591,6 +567,8 @@ body{
           <li>Bac général – spécialités Mathématiques et NSI</li>
           <li>Intérêt pour le web, le design et la vidéo</li>
           <li>Pratique d’outils créatifs et techniques</li>
+          <li>Anglais : niveau B1</li>
+          <li>Espagnol : niveau bac</li>
           <li>Volonté de progresser sur des projets concrets</li>
         </ul>
       </div>
@@ -628,13 +606,13 @@ body{
       <div class="timelineItem">
         <h4>Expérience professionnelle</h4>
         <p>
-          J’ai effectué mon stage de 3e dans un cabinet d’architecte, où j’ai découvert un environnement à la fois créatif et technique.
+          En 2022, j’ai effectué mon stage de 3e dans un cabinet d’architecte, où j’ai découvert un environnement à la fois créatif et technique.
           J’y ai réalisé des modélisations 3D de maisons sur SketchUp, observé le dessin de plans et participé à des visites de chantier.
           Cette expérience m’a beaucoup intéressé car elle m’a permis de voir comment des idées prennent forme de manière concrète,
           grâce à des outils visuels et numériques.
         </p>
         <p>
-          J’ai aussi travaillé en intérim chez B Solfin, fabricant et commerçant de vêtements made in France.
+          En février 2026, j’ai travaillé chez B Solfin, fabricant et commerçant de vêtements made in France.
           J’y ai réalisé différentes missions comme la préparation de commandes, les envois de colis, le picking,
           le rangement et la manutention. Cette expérience m’a appris à être rigoureux, organisé et efficace dans un cadre professionnel.
         </p>
@@ -1211,7 +1189,7 @@ body{
     <h2>Contact</h2>
     <p><strong>Nom prénom :</strong> Jules Chupin</p>
     <p><strong>Mail :</strong> juleschupin@outlook.fr</p>
-    <p><strong>Téléphone :</strong> 06 XX XX XX XX</p>
+    <p><strong>Téléphone :</strong> 06 37 96 62 59</p>
     <div style="margin-top:20px;">
       <a class="cta" href="CV Jules.pdf" download>Télécharger mon CV</a>
     </div>
