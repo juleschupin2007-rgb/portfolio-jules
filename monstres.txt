@@ -1,0 +1,96 @@
+12
+Z 0 0 Garde_Elite
+150 20 10 10 10 20
+0 0
+1 1
+Neutralise 0 0 0 0 0 0 0 1 p 0 0
+Mort_Au_Combat 0 0 0 0 0 0 0 0 0
+8
+
+A 0 0 Agent_Securite
+80 10 5 5 5 10
+0 0
+1 1
+Assomme 0 0 0 0 0 0 0 1 m 0 0
+Alerte_Radio 0 0 0 0 0 0 0 0 0
+6
+
+H 0 0 Chien_Patrouille
+100 25 0 20 0 0
+0 0
+1 1
+Endormi 0 0 0 0 0 0 0 1 o 0 0
+Morsure 0 0 0 0 0 0 0 0 0
+5
+
+O 0 0 Officier_Chef
+120 15 10 5 10 15
+0 0
+1 1
+Corrompu 0 0 0 0 0 0 0 1 l 0 0
+Renforts 0 0 0 0 0 0 0 0 0
+7
+
+M 0 0 Maitre_Chien
+90 15 5 10 5 5
+0 0
+1 1
+Neutralise 0 0 0 0 0 0 0 1 m 0 0
+Chien_Lache 0 0 0 0 0 0 0 0 0
+6
+
+D 0 0 Directeur_Banque
+60 5 5 0 20 0
+0 0
+1 0
+Otage_Pris 0 0 0 0 0 0 0 1 p 0 0
+Panique 0 0 0 0 0 0 0 0 0
+4
+
+C 0 0 Camera_Dome
+40 0 0 0 0 50
+0 0
+1 0
+Desactivee 0 0 0 0 0 0 0 1 r 1 p 0
+Alarme 0 0 0 0 0 0 0 0 0
+10
+
+E 0 0 Vigile_Entree
+70 10 5 0 5 5
+0 0
+1 1
+Discret 0 0 0 0 0 0 0 1 s 0 0
+Repere 0 0 0 0 0 0 0 0 0
+5
+
+F 0 0 Force_Interv
+200 30 20 20 20 20
+0 0
+1 1
+Impossible 0 0 0 0 0 0 0 0 0
+Arrestation 0 0 0 0 0 0 0 0 0
+10
+
+G 0 0 Garde_Porte
+90 15 10 0 5 10
+0 0
+1 0
+Distrait 0 0 0 0 0 0 0 1 a 0 0
+Refus 0 0 0 0 0 0 0 0 0
+4
+
+Q 0 0 Drone_Surv
+30 5 0 0 0 30
+0 0
+1 1
+Pirate 0 0 0 0 0 0 0 1 r 0 0
+Photo_Prise 0 0 0 0 0 0 0 0 0
+12
+
+V 0 0 Voiture_Patrouille
+500 0 0 0 0 0
+0 0
+1 0
+Sabotee 0 0 0 0 0 0 0 1 b 0 0
+Fuite_Bloquee 0 0 0 0 0 0 0 0 0
+1

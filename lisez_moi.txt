@@ -1,0 +1,38 @@
+========================================================================
+PROJET JEU C++ : "BRAQUAGE NOCTURNE" - MODE D'EMPLOI
+========================================================================
+
+--- 1. DESCRIPTION ---
+Ce projet est un jeu d'infiltration en mode console (ASCII) développé en C++.
+Le joueur incarne un voleur qui doit s'infiltrer dans une banque, éviter les
+gardes et les caméras, voler le butin et s'échapper.
+
+--- 2. COMPILATION ---
+Le projet utilise un Makefile (ou une commande g++) et la librairie pdcurses
+incluse via un wrapper.
+
+Commande recommandée (Windows/MinGW) :
+g++ main.cpp affichage.cpp chargement.cpp moteur_jeu.cpp -o jeu.exe -I extlib/pdcurses/include extlib/pdcurses/lib/libpdcurses.a
+(Linux)
+g++ main.cpp affichage.cpp chargement.cpp moteur_jeu.cpp -o jeu.exe -lncurses
+
+--- 3. LANCEMENT ---
+Exécutez simplement :
+./jeu.exe (ou double-cliquez sur jeu.exe)
+
+Assurez-vous que les fichiers suivants sont dans le même dossier :
+- level.txt      (La carte)
+- monstres.txt   (Configuration des ennemis)
+- equipement.txt (Liste des objets)
+- personnage.txt (Stats initiales du joueur)
+
+--- 4. COMMANDES EN JEU ---
+[FLECHES DIRECTIONNELLES] : Se déplacer (Haut, Bas, Gauche, Droite)
+[a] : Abandonner / Quitter la partie
+
+--- 5. FONCTIONNALITES ---
+- Brouillard de guerre : Vous ne voyez que ce qui est proche.
+- IA Monstres : Les gardes ('G', 'A'...) vous traquent s'ils vous voient.
+- Equipement : Ramassez les objets ('k', 'o'...) en marchant dessus.
+- Couleurs : Différents codes couleurs pour les murs, portes et ennemis.
+- HUD : Affichage en temps réel des PV et du butin.

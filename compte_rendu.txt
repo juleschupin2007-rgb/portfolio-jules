@@ -1,0 +1,73 @@
+========================================================================
+COMPTE-RENDU DE PROJET C++
+========================================================================
+
+MEMBRES DU GROUPE :
+- [EPHOEVI-GA Uriel] (E255507A):Lecture de l'état de jeu, monstres , affichage carte , vision et couleurs,
+- [LEFEVRE Pierrick] (E256232N):Chargement des monstres, équipement , gestion des portes et monstres
+- [CHUPIN Jules] : Déplacement du joueur et contraintes
+- [MAKAWA Bright] : Déplacement des monstres et  jeu de test
+
+========================================================================
+1. ARCHITECTURE ET CHOIX TECHNIQUES
+========================================================================
+
+A. Architecture Modulaire
+   Le projet suit une architecture de séparation des responsabilités :
+   - Moteur de Jeu (Logique) : Indépendant de l'affichage.
+   - Affichage (Vue) : Utilise un "Wrapper" pour isoler la librairie ncurses.
+   - Données (Modèle) : Chargement dynamique depuis des fichiers textes.
+
+B. Wrapper ncurses (Point Technique Majeur)
+   Pour contourner les problèmes de redéfinition et de conflits de types
+   avec la librairie fournie, nous avons implémenté une couche d'abstraction.
+   Cela a permis de garantir une compilation propre et sans erreurs de liaison.
+
+========================================================================
+2. FONCTIONNALITES IMPLEMENTEES (CE QUI MARCHE)
+========================================================================
+
+A. Chargement et Rendu
+   - La carte est correctement lue depuis le fichier et affichée à l'écran.
+   - Le personnage est placé correctement au démarrage selon les données.
+   - L'affichage gère les couleurs et le rafraîchissement de la console.
+
+B. Déplacements de base
+   - Le joueur peut se déplacer librement dans les zones vides.
+   - Les collisions de base avec les murs (les '#') sont fonctionnelles :
+     le joueur est bloqué et ne peut pas traverser les parois.
+
+C. Initialisation des Entités
+   - Le programme lit correctement les fichiers de configuration pour
+     identifier les positions initiales des monstres et des équipements.
+
+========================================================================
+3. LIMITES ET FONCTIONNALITES NON IMPLEMENTEES
+========================================================================
+
+Malgré une base solide, certaines fonctionnalités prévues n'ont pas pu être
+finalisées pour le rendu :
+
+A. Système de Portes et Contraintes
+   - Bien que les portes (chiffres sur la carte) soient affichées, la logique
+     d'ouverture (gestion des clés, vérification de l'inventaire, passage
+     conditionnel) n'est pas encore implémentée. Elles agissent actuellement
+     comme des obstacles ou des cases simples selon le cas.
+
+B. Système de Combat
+   - Les interactions offensives entre le joueur et les monstres ne sont pas
+     codées.
+   - Il n'y a pas de gestion de dégâts, de points de vie dynamiques ou de
+     mort du personnage lors d'une rencontre avec un ennemi.
+
+C. IA des Monstres
+   - Les monstres sont positionnés mais leur comportement (déplacement
+     autonome, traque du joueur) n'est pas actif dans cette version.
+
+========================================================================
+4. CONCLUSION
+========================================================================
+Ce projet nous a permis de mettre en place toute l'infrastructure nécessaire
+(lecture de fichiers, boucle de jeu, affichage ncurses via wrapper).
+La structure est prête pour accueillir les logiques de jeu plus complexes
+(combats, IA) qui constituaient la prochaine étape du développement.
