@@ -183,6 +183,9 @@ body{
   cursor:pointer;
   display:inline-block;
 }
+button.cta{
+  font-size:15px;
+}
 .cta:hover{
   background:var(--accent);
   color:#fff;
@@ -508,8 +511,8 @@ body{
       <div style="height:16px;"></div>
       <div class="ctaRow">
         <a class="cta" href="CV Jules.pdf" download>Télécharger mon CV</a>
-        <a class="cta" onclick="showPage('projects')">Mes projets</a>
-        <a class="cta" onclick="showPage('contact')">Me contacter</a>
+        <button class="cta" type="button" onclick="showPage('projects')">Mes projets</button>
+        <button class="cta" type="button" onclick="showPage('contact')">Me contacter</button>
       </div>
     </div>
 
@@ -1140,11 +1143,17 @@ body{
         <video controls>
           <source src="videos/cpp.mp4" type="video/mp4">
         </video>
+
+        <div style="height:12px;"></div>
+
+        <img src="capture_carte_cpp.png" alt="Carte du mini jeu C++">
+
         <div style="height:12px;"></div>
         <a class="cta" href="Projetv2.1.cpp" download>Télécharger le code principal</a>
         <div style="height:10px;"></div>
         <a class="cta" href="lisez_moi.txt" download>Lire le mode d’emploi</a>
       </div>
+
       <div class="videoText">
         <h3>Projet de programmation – Jeu de type roguelike en C++</h3>
         <p>
@@ -1176,7 +1185,7 @@ body{
           <source src="videos/json.mp4" type="video/mp4">
         </video>
         <div style="height:12px;"></div>
-        <a class="cta" onclick="showPage('decheterie')">Ouvrir le projet</a>
+        <button class="cta" type="button" onclick="showPage('decheterie')">Ouvrir le projet</button>
       </div>
       <div class="videoText">
         <h3>Projet de programmation – Mini site interactif en JSON (NSI – Première)</h3>
@@ -1195,12 +1204,12 @@ body{
     </div>
 
     <div class="projectGallery">
-      <div class="card searchable-card">
-        <img src="capture_graphique.png" alt="Résultat graphique" onclick="openModal(this)">
+      <div class="card">
+        <img src="capture_graphique.png" alt="Résultat graphique">
         <h3>Résultat graphique</h3>
       </div>
-      <div class="card searchable-card">
-        <img src="capture_code.png" alt="Code Python" onclick="openModal(this)">
+      <div class="card">
+        <img src="capture_code.png" alt="Code Python">
         <h3>Code Python</h3>
       </div>
     </div>
