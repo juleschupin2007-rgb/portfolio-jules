@@ -1,7 +1,8 @@
 import json
+import matplotlib.pyplot as plt
 
 # Ouvrir le fichier JSON et initialiser le programme. A la fin du programme il se referme automatiquement
-with open("BD_decheteries-ecopoints-nantes-metropole-tonnages.json", "r", encoding="utf-8") as fichier_d:
+with open("BD_decheteries-ecopoints-nantes-metropole-tonnages (1).json", "r", encoding="utf-8") as fichier_d:
     data = json.load(fichier_d)
 
 def choix_lieu():
@@ -72,28 +73,13 @@ def ordre():
     # On retourne les listes triées
     return annee_ord, tonnage_ord
 
-# Pour faire fonctionner le prog tu utile la fonction : ordre()
-# Plus qu'a faire le graphique et le diapo
+annees, tonnages = ordre()
+print(annees)
+print(tonnages)
 
-ordre()
-
-
-      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+plt.plot(annees, tonnages)
+plt.title("Evolution du tonnage")
+plt.xlabel("Années")
+plt.ylabel("Tonnage")
+plt.grid()
+plt.show()
