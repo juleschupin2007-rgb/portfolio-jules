@@ -632,7 +632,9 @@ body{
           Cette formation m’a sensibilisé à l’entraide, à la responsabilité et à l’attention portée aux autres.
           J’ai également participé à la Journée Défense et Citoyenneté, qui m’a permis d’aborder les questions de citoyenneté et d’engagement.
         </p>
-    
+        <p>
+          J’ai créé un jeu de type roguelike en C++ et je l’ai mis en fichier sur GitHub.
+        </p>
       </div>
 
       <div class="timelineItem">
@@ -684,7 +686,7 @@ body{
 
       <div class="skillCard">
         <h3>Langues</h3>
-        <div class="skillItem"><div class="skillTop"><span>Anglais</span><span>Niveau B1</span></div></div>
+        <div class="skillItem"><div class="skillTop"><span>Anglais</span><span>B1</span></div></div>
         <div class="skillItem"><div class="skillTop"><span>Espagnol</span><span>Niveau bac</span></div></div>
       </div>
 
@@ -719,11 +721,26 @@ body{
     </div>
 
     <div class="grid">
-      <div class="card" onclick="showPage('dessin')"><h3>Dessin</h3></div>
-      <div class="card" onclick="showPage('siteweb')"><h3>Sites Web</h3></div>
-      <div class="card" onclick="showPage('video')"><h3>Montages Vidéo</h3></div>
-      <div class="card" onclick="showPage('troisD')"><h3>3D</h3></div>
-      <div class="card" onclick="showPage('autre')"><h3>Programmation</h3></div>
+      <div class="card" onclick="showPage('dessin')">
+        <img src="dessin16.jpg" alt="Dessin">
+        <h3>Dessin</h3>
+      </div>
+      <div class="card" onclick="showPage('siteweb')">
+        <img src="Brawl Stars Logo.jpg" alt="Sites Web">
+        <h3>Sites Web</h3>
+      </div>
+      <div class="card" onclick="showPage('video')">
+        <img src="video.jpg" alt="Montages Vidéo">
+        <h3>Montages Vidéo</h3>
+      </div>
+      <div class="card" onclick="showPage('troisD')">
+        <img src="mod2.jpg" alt="3D">
+        <h3>3D</h3>
+      </div>
+      <div class="card" onclick="showPage('autre')">
+        <img src="autre.jpg" alt="Programmation">
+        <h3>Programmation</h3>
+      </div>
     </div>
   </div>
 
@@ -744,6 +761,13 @@ body{
         <h3>🎥 Vidéo</h3>
         <p>Méthode complète</p>
       </div>
+
+      <div class="card" onclick="showPage('dessin-exemple')">
+        <h3>🖊️ Mon dessin</h3>
+        <img src="dessin1.jpg" alt="Mon dessin">
+        <p>Un exemple de dessin travaillé avec précision et méthode.</p>
+      </div>
+
       <div class="card" onclick="showPage('dessin-galerie')">
         <h3>🖼️ Galerie</h3>
         <p>Tous mes dessins</p>
@@ -771,6 +795,23 @@ body{
           - gestion des étapes d’un processus créatif<br>
           - mise en valeur visuelle (ombres, textures)
         </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="dessin-exemple" class="page">
+    <div class="banner">Dessin – Exemple</div>
+    <div class="pageText">
+      <h3>Mon dessin</h3>
+      <p>
+        Cette partie présente un exemple de dessin réalisé avec une attention particulière aux proportions,
+        au tracé et aux détails.
+      </p>
+    </div>
+    <div class="projectGallery">
+      <div class="card searchable-card">
+        <img src="dessin1.jpg" alt="Dessin exemple" onclick="openModal(this)">
+        <h3>Dessin personnel</h3>
       </div>
     </div>
   </div>
@@ -896,10 +937,12 @@ body{
         <h3>LEGO – Montage filmé</h3>
         <p>Montrer la construction d’un modèle, étape après étape.</p>
       </div>
-      <div class="card" onclick="showPage('video-minecraft-detail')">
-        <img src="video.jpg" alt="Minecraft vidéo">
-        <h3>Minecraft – Vidéo</h3>
-        <p>Explorer un univers que j’ai construit bloc après bloc.</p>
+      <div class="card" onclick="showPage('video-dessin-detail')">
+        <video controls preload="metadata">
+          <source src="videos/dessin.mp4" type="video/mp4">
+        </video>
+        <h3>Dessin – Processus complet</h3>
+        <p>Montrer la réalisation d’un dessin étape par étape.</p>
       </div>
     </div>
   </div>
@@ -964,22 +1007,21 @@ body{
     </div>
   </div>
 
-  <div id="video-minecraft-detail" class="page">
-    <div class="banner">Minecraft – Vidéo</div>
+  <div id="video-dessin-detail" class="page">
+    <div class="banner">Dessin – Vidéo dans Montages</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <video controls preload="metadata"><source src="videos/video4.mp4" type="video/mp4"></video>
+        <video controls preload="metadata"><source src="videos/dessin.mp4" type="video/mp4"></video>
       </div>
       <div class="videoText">
-        <h3>Vidéo Minecraft – Création d’un univers original</h3>
-        <p>Cette vidéo présente un univers que j’ai conçu dans Minecraft. J’ai travaillé la construction d’espaces cohérents, la mise en scène du parcours et la gestion de la lumière.</p>
-        <p>Le montage inclut une musique d’ambiance et une voix off sous-titrée pour expliquer mes choix.</p>
+        <h3>Montage vidéo – Processus de dessin</h3>
+        <p>Cette vidéo montre les différentes étapes de construction d’un dessin, de l’observation aux finitions.</p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
-          - level design et structuration d’un environnement 3D<br>
-          - cohérence visuelle et composition<br>
-          - captation et montage vidéo (accélérés, transitions, titrage)<br>
-          - narration visuelle et audio (voix off + sous-titres)
+          - captation d’un processus créatif<br>
+          - rythme du montage<br>
+          - mise en valeur des étapes de réalisation<br>
+          - présentation claire d’un travail visuel
         </p>
       </div>
     </div>
@@ -1039,6 +1081,10 @@ body{
     <div class="videoBlock">
       <div class="videoBox">
         <img src="mod2.jpg" alt="Minecraft">
+        <div style="height:15px;"></div>
+        <video controls preload="metadata">
+          <source src="videos/video4.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="videoText">
         <h3>Projet 3D – Conception d’un univers architectural dans Minecraft</h3>
@@ -1094,19 +1140,29 @@ body{
         <video controls>
           <source src="videos/cpp.mp4" type="video/mp4">
         </video>
+        <div style="height:12px;"></div>
+        <a class="cta" href="Projetv2.1.cpp" download>Télécharger le code principal</a>
+        <div style="height:10px;"></div>
+        <a class="cta" href="lisez_moi.txt" download>Lire le mode d’emploi</a>
       </div>
       <div class="videoText">
-        <h3>Projet de programmation – Mini jeu roguelike en C++ (Licence informatique)</h3>
-        <p>Ce projet a été réalisé en équipe de 4 dans le cadre de ma licence informatique. Nous avons développé un mini jeu roguelike en C++, affiché sous forme de grille textuelle.</p>
-        <p>Le personnage « @ » se déplace grâce aux flèches directionnelles, ramasse des équipements représentés par des lettres minuscules et affronte des monstres en majuscules contrôlés par une IA simple.</p>
-        <p>Le jeu est gagné en atteignant la dernière porte, et perdu si les points de vie tombent à zéro ou si le taux de peur dépasse un seuil.</p>
+        <h3>Projet de programmation – Jeu de type roguelike en C++</h3>
+        <p>
+          J’ai créé un jeu de type roguelike en C++ en mode console. Le fichier principal du projet se trouve dans
+          <strong>Projetv2.1.cpp</strong>.
+        </p>
+        <p>
+          Le joueur incarne un voleur qui doit s’infiltrer dans une banque, éviter les gardes et les caméras,
+          récupérer du butin puis s’échapper. Le jeu utilise une carte ASCII, des déplacements au clavier,
+          un système de vision, des monstres, des objets et une interface HUD.
+        </p>
         <p><strong>Compétences mises en avant :</strong></p>
         <p>
           - programmation en C++<br>
-          - conception d’un moteur de jeu minimaliste<br>
-          - IA basique pour les déplacements ennemis<br>
-          - gestion d’un inventaire et de statistiques<br>
-          - travail en équipe et intégration du code
+          - conception d’un jeu en mode console<br>
+          - gestion d’une carte, de collisions et de déplacements<br>
+          - chargement de données depuis plusieurs fichiers<br>
+          - logique de jeu, monstres, inventaire et affichage HUD
         </p>
       </div>
     </div>
@@ -1135,6 +1191,17 @@ body{
           - logique algorithmique<br>
           - structuration d’un programme et d’une interface simple
         </p>
+      </div>
+    </div>
+
+    <div class="projectGallery">
+      <div class="card searchable-card">
+        <img src="capture_graphique.png" alt="Résultat graphique" onclick="openModal(this)">
+        <h3>Résultat graphique</h3>
+      </div>
+      <div class="card searchable-card">
+        <img src="capture_code.png" alt="Code Python" onclick="openModal(this)">
+        <h3>Code Python</h3>
       </div>
     </div>
   </div>
@@ -1210,6 +1277,7 @@ const searchMap = [
   { label: "Compétences", page: "skills" },
   { label: "Projets", page: "projects" },
   { label: "Dessin", page: "dessin" },
+  { label: "Dessin – Exemple", page: "dessin-exemple" },
   { label: "Sites Web", page: "siteweb" },
   { label: "Montages Vidéo", page: "video" },
   { label: "3D", page: "troisD" },
@@ -1232,9 +1300,9 @@ function showPage(pageId,button=null){
     if(pageId==="profile") document.querySelectorAll(".catBtn")[1].classList.add("active");
     if(pageId==="skills") document.querySelectorAll(".catBtn")[2].classList.add("active");
     if([
-      "projects","dessin","dessin-video","dessin-galerie",
+      "projects","dessin","dessin-video","dessin-exemple","dessin-galerie",
       "siteweb","site-brawlstars-detail","site-portfolio-detail",
-      "video","video-voyage-detail","video-stopmotion-detail","video-lego-detail","video-minecraft-detail",
+      "video","video-voyage-detail","video-stopmotion-detail","video-lego-detail","video-dessin-detail",
       "troisD","architecture3d-detail","minecraft3d-detail",
       "autre","cpp-detail","decheterie-detail","decheterie"
     ].includes(pageId)) document.querySelectorAll(".catBtn")[3].classList.add("active");
@@ -1251,11 +1319,11 @@ function goBack(){
 
   if(["dessin","siteweb","video","troisD","autre"].includes(currentPage)){
     showPage("projects");
-  }else if(["dessin-video","dessin-galerie"].includes(currentPage)){
+  }else if(["dessin-video","dessin-exemple","dessin-galerie"].includes(currentPage)){
     showPage("dessin");
   }else if(["site-brawlstars-detail","site-portfolio-detail"].includes(currentPage)){
     showPage("siteweb");
-  }else if(["video-voyage-detail","video-stopmotion-detail","video-lego-detail","video-minecraft-detail"].includes(currentPage)){
+  }else if(["video-voyage-detail","video-stopmotion-detail","video-lego-detail","video-dessin-detail"].includes(currentPage)){
     showPage("video");
   }else if(["architecture3d-detail","minecraft3d-detail"].includes(currentPage)){
     showPage("troisD");
