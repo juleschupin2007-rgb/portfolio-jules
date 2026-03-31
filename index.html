@@ -1505,7 +1505,7 @@ function afficherMessageDecheterie(message, ok=false){
 
 async function chargerJSONDecheterie() {
   try{
-    const response = await fetch("BD_decheteries-ecopoints-nantes-metropole-tonnages.json");
+    const response = await fetch("BD_decheteries-ecopoints-nantes-metropole-tonnages%20(1).json");
     if(!response.ok) throw new Error("Erreur HTTP " + response.status);
     decheterieData = await response.json();
     remplirLieuxDecheterie();
