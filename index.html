@@ -226,16 +226,27 @@ button.cta{
   object-fit:contain;
 }
 .card h3{
-  min-height:48px;
+  min-height:52px;
   display:flex;
   align-items:center;
   justify-content:center;
+  margin:0 0 8px 0;
+}
+.cardThumb{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  object-position:center;
+  background:#fff;
+  border-radius:8px;
+  margin-bottom:10px;
+  display:block;
 }
 
 .realisationCard img{
   width:100%;
   height:220px;
-  object-fit:contain;
+  object-fit:cover;
   object-position:center;
   background:#fff;
   border-radius:8px;
@@ -532,23 +543,23 @@ button.cta{
     <div class="banner" style="margin-top:50px;">Mes réalisations</div>
     <div class="grid">
       <div class="card realisationCard" onclick="showPage('dessin')">
-        <img src="dessin16.jpg" alt="Dessin">
+        <img src="dessinpres.png" alt="Dessin" class="cardThumb">
         <h3>Dessin</h3>
       </div>
       <div class="card realisationCard" onclick="showPage('siteweb')">
-        <img src="Brawl Stars Logo.jpg" alt="Site Web">
+        <img src="capture_home_portfolio.png" alt="Site Web" class="cardThumb">
         <h3>Site Web</h3>
       </div>
       <div class="card realisationCard" onclick="showPage('video')">
-        <img src="video.jpg" alt="Vidéo">
+        <img src="montagevideolego1.png" alt="Vidéo" class="cardThumb">
         <h3>Montages Vidéo</h3>
       </div>
       <div class="card realisationCard" onclick="showPage('troisD')">
-        <img src="mod1.jpg" alt="3D">
+        <img src="minecraftvue1.png" alt="3D" class="cardThumb">
         <h3>3D</h3>
       </div>
       <div class="card realisationCard" onclick="showPage('autre')">
-        <img src="autre.jpg" alt="Programmation">
+        <img src="capture_carte_cpp.png" alt="Programmation" class="cardThumb">
         <h3>Programmation</h3>
       </div>
     </div>
@@ -731,23 +742,23 @@ button.cta{
 
     <div class="grid">
       <div class="card" onclick="showPage('dessin')">
-        <img src="dessin16.jpg" alt="Dessin">
+        <img src="dessinpres.png" alt="Dessin" class="cardThumb">
         <h3>Dessin</h3>
       </div>
       <div class="card" onclick="showPage('siteweb')">
-        <img src="Brawl Stars Logo.jpg" alt="Sites Web">
+        <img src="capture_home_portfolio.png" alt="Sites Web" class="cardThumb">
         <h3>Sites Web</h3>
       </div>
       <div class="card" onclick="showPage('video')">
-        <img src="video.jpg" alt="Montages Vidéo">
+        <img src="montagevideolego1.png" alt="Montages Vidéo" class="cardThumb">
         <h3>Montages Vidéo</h3>
       </div>
       <div class="card" onclick="showPage('troisD')">
-        <img src="mod2.jpg" alt="3D">
+        <img src="minecraftvue1.png" alt="3D" class="cardThumb">
         <h3>3D</h3>
       </div>
       <div class="card" onclick="showPage('autre')">
-        <img src="autre.jpg" alt="Programmation">
+        <img src="capture_carte_cpp.png" alt="Programmation" class="cardThumb">
         <h3>Programmation</h3>
       </div>
     </div>
@@ -767,19 +778,19 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('dessin-video')">
-        <img src="capture_video_dessin.png" alt="Capture vidéo dessin">
+        <img src="capture_video_dessin.png" alt="Capture vidéo dessin" class="cardThumb">
         <h3>Vidéo</h3>
         <p>Méthode complète</p>
       </div>
 
       <div class="card" onclick="showPage('dessin-exemple')">
-        <img src="dessin1.jpg" alt="Mon dessin">
+        <img src="dessinpres.png" alt="Mon dessin" class="cardThumb">
         <h3>Mon dessin</h3>
         <p>Présentation de l’illustration créée pour le CV et le portfolio.</p>
       </div>
 
       <div class="card" onclick="showPage('dessin-galerie')">
-        <img src="dessin16.jpg" alt="Galerie dessin">
+        <img src="dessinpres.png" alt="Galerie dessin" class="cardThumb">
         <h3>Galerie</h3>
         <p>Capture et présentation</p>
       </div>
@@ -793,8 +804,6 @@ button.cta{
         <video controls>
           <source src="videos/dessin.mp4" type="video/mp4">
         </video>
-        <div style="height:12px;"></div>
-        <a class="cta" href="https://www.youtube.com/" target="_blank">Lien YouTube</a>
       </div>
       <div class="videoText">
         <h3>Vidéo Dessin – Reproduction d’après modèle</h3>
@@ -816,7 +825,7 @@ button.cta{
     <div class="banner">Dessin – Présentation</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <img src="dessin1.jpg" alt="Dessin créé">
+        <img src="dessinpres.png" alt="Dessin créé">
       </div>
       <div class="videoText">
         <h3>Mon dessin créé</h3>
@@ -838,12 +847,8 @@ button.cta{
     <div class="banner">Dessin – Galerie</div>
     <div class="projectGallery">
       <div class="card searchable-card">
-        <img src="dessin16.jpg" alt="Capture galerie" onclick="openModal(this)">
-        <h3>Capture</h3>
-      </div>
-      <div class="card searchable-card">
-        <img src="dessin1.jpg" alt="Présentation dessin" onclick="openModal(this)">
-        <h3>Présentation</h3>
+        <img src="dessinpres.png" alt="Capture et présentation" onclick="openModal(this)">
+        <h3>Capture et présentation</h3>
       </div>
     </div>
   </div>
@@ -861,13 +866,13 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('site-brawlstars-detail')">
-        <img src="Brawl Stars Logo.jpg" alt="Brawl Stars">
+        <img src="Brawl Stars Logo.jpg" alt="Brawl Stars" class="cardThumb">
         <h3>Site Brawl Stars</h3>
         <p>Mini site responsive HTML/CSS</p>
       </div>
 
       <div class="card" onclick="showPage('site-portfolio-detail')">
-        <img src="capture_home_portfolio.png" alt="Portfolio personnel">
+        <img src="capture_home_portfolio.png" alt="Portfolio personnel" class="cardThumb">
         <h3>Portfolio personnel</h3>
         <p>Un site qui rassemble mes projets et reflète mon parcours.</p>
       </div>
@@ -950,22 +955,22 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('video-voyage-detail')">
-        <img src="capture_video_voyage.png" alt="Voyage">
+        <img src="capture_video_voyage.png" alt="Voyage" class="cardThumb">
         <h3>Souvenir de voyage</h3>
         <p>Capturer un moment et en recréer l’atmosphère.</p>
       </div>
       <div class="card" onclick="showPage('video-stopmotion-detail')">
-        <img src="capture_video_stopmotion.png" alt="Stop motion">
+        <img src="montagevideolego1.png" alt="Stop motion" class="cardThumb">
         <h3>LEGO – Stop motion</h3>
         <p>Faire naître un objet image après image.</p>
       </div>
       <div class="card" onclick="showPage('video-lego-detail')">
-        <img src="capture_video_lego.png" alt="LEGO montage">
+        <img src="capture_video_lego.png" alt="LEGO montage" class="cardThumb">
         <h3>LEGO – Montage filmé</h3>
         <p>Montrer la construction d’un modèle, étape après étape.</p>
       </div>
       <div class="card" onclick="showPage('video-dessin-detail')">
-        <img src="capture_video_dessin.png" alt="Dessin vidéo">
+        <img src="capture_video_dessin.png" alt="Dessin vidéo" class="cardThumb">
         <h3>Dessin – Processus complet</h3>
         <p>Montrer la réalisation d’un dessin étape par étape.</p>
       </div>
@@ -1000,7 +1005,7 @@ button.cta{
     <div class="banner">LEGO – Stop motion</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <img src="capture_video_stopmotion.png" alt="Capture stop motion">
+        <img src="montagevideolego1.png" alt="Capture stop motion">
         <div style="height:12px;"></div>
         <video controls preload="metadata"><source src="videos/video2.mp4" type="video/mp4"></video>
         <div style="height:12px;"></div>
@@ -1081,12 +1086,12 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('architecture3d-detail')">
-        <img src="plan_architectural.jpg" alt="3D architecturale">
+        <img src="plan_architectural.jpg" alt="3D architecturale" class="cardThumb">
         <h3>3D architecturale</h3>
         <p>De l’esquisse au volume</p>
       </div>
       <div class="card" onclick="showPage('minecraft3d-detail')">
-        <img src="capture_minecraft.png" alt="Minecraft">
+        <img src="minecraftvue1.png" alt="Minecraft" class="cardThumb">
         <h3>Minecraft</h3>
         <p>Création d’un univers 3D cohérent</p>
       </div>
@@ -1123,7 +1128,7 @@ button.cta{
     <div class="banner">Minecraft</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <img src="capture_minecraft.png" alt="Minecraft">
+        <img src="minecraftvue1.png" alt="Minecraft">
         <div style="height:15px;"></div>
         <video controls preload="metadata">
           <source src="videos/video4.mp4" type="video/mp4">
@@ -1144,9 +1149,9 @@ button.cta{
       </div>
     </div>
     <div class="projectGallery">
-      <div class="card searchable-card"><img src="mod1.jpg" alt="Univers Minecraft 1" onclick="openModal(this)"><h3>Vue 1</h3></div>
-      <div class="card searchable-card"><img src="mod2.jpg" alt="Univers Minecraft 2" onclick="openModal(this)"><h3>Vue 2</h3></div>
-      <div class="card searchable-card"><img src="mod3.jpg" alt="Univers Minecraft 3" onclick="openModal(this)"><h3>Vue 3</h3></div>
+      <div class="card searchable-card"><img src="minecraftvue1.png" alt="Univers Minecraft 1" onclick="openModal(this)"><h3>Vue 1</h3></div>
+      <div class="card searchable-card"><img src="minecraftvue2.png" alt="Univers Minecraft 2" onclick="openModal(this)"><h3>Vue 2</h3></div>
+      <div class="card searchable-card"><img src="minecraftvue3.png" alt="Univers Minecraft 3" onclick="openModal(this)"><h3>Vue 3</h3></div>
     </div>
   </div>
 
@@ -1164,12 +1169,12 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('cpp-detail')">
-        <img src="capture_carte_cpp.png" alt="Mini jeu C++">
+        <img src="capture_carte_cpp.png" alt="Mini jeu C++" class="cardThumb">
         <h3>Minijeu C++</h3>
         <p>Créer un jeu minimaliste où chaque symbole a un rôle.</p>
       </div>
       <div class="card" onclick="showPage('decheterie-detail')">
-        <img src="capture_graphique.png" alt="Mini site JSON">
+        <img src="capture_graphique.png" alt="Mini site JSON" class="cardThumb">
         <h3>Mini site JSON</h3>
         <p>Transformer des données en une interface simple et lisible.</p>
       </div>
@@ -1239,17 +1244,6 @@ button.cta{
           - logique algorithmique<br>
           - structuration d’un programme et d’une interface simple
         </p>
-      </div>
-    </div>
-
-    <div class="projectGallery">
-      <div class="card">
-        <img src="capture_graphique.png" alt="Résultat graphique">
-        <h3>Résultat graphique</h3>
-      </div>
-      <div class="card">
-        <img src="capture_code.png" alt="Code Python">
-        <h3>Code Python</h3>
       </div>
     </div>
   </div>
@@ -1495,28 +1489,26 @@ document.addEventListener("click", function(e){
   }
 });
 
-const dessinsGridContainer = document.getElementById("dessinsGrid");
-if(dessinsGridContainer){
-  for(let i=1;i<=37;i++){
-    dessinsGridContainer.innerHTML += `
-      <div class="card searchable-card" id="dessin-${i}">
-        <img src="dessin${i}.jpg" alt="Dessin ${i}" onclick="openModal(this)">
-        <h3>Dessin ${i}</h3>
-      </div>
-    `;
-  }
-}
-
 const architectureGrid = document.getElementById("architectureGrid");
 if(architectureGrid){
-  for(let i=1;i<=4;i++){
-    architectureGrid.innerHTML += `
-      <div class="card searchable-card" id="modelisation-${i}">
-        <img src="mod${i}.jpg" alt="Modélisation ${i}" onclick="openModal(this)">
-        <h3>Modélisation ${i}</h3>
-      </div>
-    `;
-  }
+  architectureGrid.innerHTML = `
+    <div class="card searchable-card" id="modelisation-4">
+      <img src="mod4.jpg" alt="Modélisation 4" onclick="openModal(this)">
+      <h3>Modélisation 4</h3>
+    </div>
+    <div class="card searchable-card" id="modelisation-2">
+      <img src="mod2.jpg" alt="Modélisation 2" onclick="openModal(this)">
+      <h3>Modélisation 2</h3>
+    </div>
+    <div class="card searchable-card" id="modelisation-3">
+      <img src="mod3.jpg" alt="Modélisation 3" onclick="openModal(this)">
+      <h3>Modélisation 3</h3>
+    </div>
+    <div class="card searchable-card" id="modelisation-1">
+      <img src="mod1.jpg" alt="Modélisation 1" onclick="openModal(this)">
+      <h3>Modélisation 1</h3>
+    </div>
+  `;
 }
 
 let decheterieData = [];
@@ -1541,6 +1533,7 @@ const chartBlockDecheterie = document.getElementById("chartBlockDecheterie");
 const chartCanvasDecheterie = document.getElementById("chartCanvasDecheterie");
 
 function afficherMessageDecheterie(message, ok=false){
+  if(!statusDecheterie) return;
   statusDecheterie.style.display = "block";
   statusDecheterie.className = ok ? "messageBox ok" : "messageBox";
   statusDecheterie.textContent = message;
