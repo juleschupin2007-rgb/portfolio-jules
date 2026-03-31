@@ -225,6 +225,12 @@ button.cta{
   background:#000;
   object-fit:contain;
 }
+.card h3{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
 .realisationCard img{
   width:100%;
@@ -510,7 +516,7 @@ button.cta{
       </p>
       <div style="height:16px;"></div>
       <div class="ctaRow">
-        <a class="cta" href="CV Jules.pdf" download>Télécharger mon CV</a>
+        <a class="cta" href="Copie%20de%20CV%20Jules%20(2).pdf" download>Télécharger mon CV</a>
         <button class="cta" type="button" onclick="showPage('projects')">Mes projets</button>
         <button class="cta" type="button" onclick="showPage('contact')">Me contacter</button>
       </div>
@@ -761,19 +767,21 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('dessin-video')">
-        <h3>🎥 Vidéo</h3>
+        <img src="capture_video_dessin.png" alt="Capture vidéo dessin">
+        <h3>Vidéo</h3>
         <p>Méthode complète</p>
       </div>
 
       <div class="card" onclick="showPage('dessin-exemple')">
-        <h3>🖊️ Mon dessin</h3>
         <img src="dessin1.jpg" alt="Mon dessin">
-        <p>Un exemple de dessin travaillé avec précision et méthode.</p>
+        <h3>Mon dessin</h3>
+        <p>Présentation de l’illustration créée pour le CV et le portfolio.</p>
       </div>
 
       <div class="card" onclick="showPage('dessin-galerie')">
-        <h3>🖼️ Galerie</h3>
-        <p>Tous mes dessins</p>
+        <img src="dessin16.jpg" alt="Galerie dessin">
+        <h3>Galerie</h3>
+        <p>Capture et présentation</p>
       </div>
     </div>
   </div>
@@ -785,6 +793,8 @@ button.cta{
         <video controls>
           <source src="videos/dessin.mp4" type="video/mp4">
         </video>
+        <div style="height:12px;"></div>
+        <a class="cta" href="https://www.youtube.com/" target="_blank">Lien YouTube</a>
       </div>
       <div class="videoText">
         <h3>Vidéo Dessin – Reproduction d’après modèle</h3>
@@ -803,25 +813,39 @@ button.cta{
   </div>
 
   <div id="dessin-exemple" class="page">
-    <div class="banner">Dessin – Exemple</div>
-    <div class="pageText">
-      <h3>Mon dessin</h3>
-      <p>
-        Cette partie présente un exemple de dessin réalisé avec une attention particulière aux proportions,
-        au tracé et aux détails.
-      </p>
-    </div>
-    <div class="projectGallery">
-      <div class="card searchable-card">
-        <img src="dessin1.jpg" alt="Dessin exemple" onclick="openModal(this)">
-        <h3>Dessin personnel</h3>
+    <div class="banner">Dessin – Présentation</div>
+    <div class="videoBlock">
+      <div class="videoBox">
+        <img src="dessin1.jpg" alt="Dessin créé">
+      </div>
+      <div class="videoText">
+        <h3>Mon dessin créé</h3>
+        <p>
+          Ce dessin réinterprèe une photo d’enfance où je dessinais Naruto à la craie dans la rue. J’y ai intégré des briques LEGO et Minecraft et une pixelisation pour évoquer la construction, l’assemblage et la création d’univers. Cette illustration m’a servie de base graphique et de fil conducteur pour mon CV et portfolio.
+        </p>
+        <p><strong>Compétences mises en avant :</strong></p>
+        <p>
+          Observation et analyse d’image : à partir d’une photo d’enfance<br>
+          Réinterprétation et recomposition visuelle : transformer une scène réelle en illustration<br>
+          Création d’une identité graphique : utiliser le dessin comme base visuelle<br>
+          Lien entre tradition et numérique : relier un souvenir d’enfance à un parcours actuel en digital
+        </p>
       </div>
     </div>
   </div>
 
   <div id="dessin-galerie" class="page">
     <div class="banner">Dessin – Galerie</div>
-    <div class="projectGallery" id="dessinsGrid"></div>
+    <div class="projectGallery">
+      <div class="card searchable-card">
+        <img src="dessin16.jpg" alt="Capture galerie" onclick="openModal(this)">
+        <h3>Capture</h3>
+      </div>
+      <div class="card searchable-card">
+        <img src="dessin1.jpg" alt="Présentation dessin" onclick="openModal(this)">
+        <h3>Présentation</h3>
+      </div>
+    </div>
   </div>
 
   <div id="siteweb" class="page">
@@ -843,7 +867,7 @@ button.cta{
       </div>
 
       <div class="card" onclick="showPage('site-portfolio-detail')">
-        <img src="images/site.jpg" alt="Portfolio personnel">
+        <img src="capture_home_portfolio.png" alt="Portfolio personnel">
         <h3>Portfolio personnel</h3>
         <p>Un site qui rassemble mes projets et reflète mon parcours.</p>
       </div>
@@ -884,7 +908,7 @@ button.cta{
     <div class="banner">Portfolio personnel</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <img src="images/site.jpg" alt="Portfolio personnel">
+        <img src="capture_home_portfolio.png" alt="Portfolio personnel">
         <div style="height:12px;"></div>
         <a class="cta" href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">Voir le site</a>
       </div>
@@ -926,24 +950,22 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('video-voyage-detail')">
-        <img src="video.jpg" alt="Voyage">
+        <img src="capture_video_voyage.png" alt="Voyage">
         <h3>Souvenir de voyage</h3>
         <p>Capturer un moment et en recréer l’atmosphère.</p>
       </div>
       <div class="card" onclick="showPage('video-stopmotion-detail')">
-        <img src="video.jpg" alt="Stop motion">
+        <img src="capture_video_stopmotion.png" alt="Stop motion">
         <h3>LEGO – Stop motion</h3>
         <p>Faire naître un objet image après image.</p>
       </div>
       <div class="card" onclick="showPage('video-lego-detail')">
-        <img src="video.jpg" alt="LEGO montage">
+        <img src="capture_video_lego.png" alt="LEGO montage">
         <h3>LEGO – Montage filmé</h3>
         <p>Montrer la construction d’un modèle, étape après étape.</p>
       </div>
       <div class="card" onclick="showPage('video-dessin-detail')">
-        <video controls preload="metadata">
-          <source src="videos/dessin.mp4" type="video/mp4">
-        </video>
+        <img src="capture_video_dessin.png" alt="Dessin vidéo">
         <h3>Dessin – Processus complet</h3>
         <p>Montrer la réalisation d’un dessin étape par étape.</p>
       </div>
@@ -954,7 +976,11 @@ button.cta{
     <div class="banner">Vidéo souvenir de voyage</div>
     <div class="videoBlock">
       <div class="videoBox">
+        <img src="capture_video_voyage.png" alt="Capture voyage">
+        <div style="height:12px;"></div>
         <video controls preload="metadata"><source src="videos/video1.mp4" type="video/mp4"></video>
+        <div style="height:12px;"></div>
+        <a class="cta" href="https://www.youtube.com/" target="_blank">Lien YouTube</a>
       </div>
       <div class="videoText">
         <h3>Vidéo Souvenir de voyage – Thaïlande, Île de Ko Tao – 2024</h3>
@@ -974,7 +1000,11 @@ button.cta{
     <div class="banner">LEGO – Stop motion</div>
     <div class="videoBlock">
       <div class="videoBox">
+        <img src="capture_video_stopmotion.png" alt="Capture stop motion">
+        <div style="height:12px;"></div>
         <video controls preload="metadata"><source src="videos/video2.mp4" type="video/mp4"></video>
+        <div style="height:12px;"></div>
+        <a class="cta" href="https://www.youtube.com/" target="_blank">Lien YouTube</a>
       </div>
       <div class="videoText">
         <h3>Vidéo LEGO – Stop motion (photos étape par étape)</h3>
@@ -994,7 +1024,11 @@ button.cta{
     <div class="banner">LEGO – Montage filmé</div>
     <div class="videoBlock">
       <div class="videoBox">
+        <img src="capture_video_lego.png" alt="Capture LEGO montage">
+        <div style="height:12px;"></div>
         <video controls preload="metadata"><source src="videos/video3.mp4" type="video/mp4"></video>
+        <div style="height:12px;"></div>
+        <a class="cta" href="https://www.youtube.com/" target="_blank">Lien YouTube</a>
       </div>
       <div class="videoText">
         <h3>Vidéo LEGO – Montage filmé en accéléré</h3>
@@ -1014,7 +1048,11 @@ button.cta{
     <div class="banner">Dessin – Vidéo dans Montages</div>
     <div class="videoBlock">
       <div class="videoBox">
+        <img src="capture_video_dessin.png" alt="Capture dessin vidéo">
+        <div style="height:12px;"></div>
         <video controls preload="metadata"><source src="videos/dessin.mp4" type="video/mp4"></video>
+        <div style="height:12px;"></div>
+        <a class="cta" href="https://www.youtube.com/" target="_blank">Lien YouTube</a>
       </div>
       <div class="videoText">
         <h3>Montage vidéo – Processus de dessin</h3>
@@ -1043,12 +1081,12 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('architecture3d-detail')">
-        <img src="mod1.jpg" alt="3D architecturale">
+        <img src="plan_architectural.jpg" alt="3D architecturale">
         <h3>3D architecturale</h3>
         <p>De l’esquisse au volume</p>
       </div>
       <div class="card" onclick="showPage('minecraft3d-detail')">
-        <img src="mod2.jpg" alt="Minecraft">
+        <img src="capture_minecraft.png" alt="Minecraft">
         <h3>Minecraft</h3>
         <p>Création d’un univers 3D cohérent</p>
       </div>
@@ -1059,6 +1097,8 @@ button.cta{
     <div class="banner">3D architecturale</div>
     <div class="videoBlock">
       <div class="videoBox">
+        <img src="plan_architectural.jpg" alt="Plan architectural">
+        <div style="height:12px;"></div>
         <img src="mod1.jpg" alt="Projet architectural">
       </div>
       <div class="videoText">
@@ -1083,7 +1123,7 @@ button.cta{
     <div class="banner">Minecraft</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <img src="mod2.jpg" alt="Minecraft">
+        <img src="capture_minecraft.png" alt="Minecraft">
         <div style="height:15px;"></div>
         <video controls preload="metadata">
           <source src="videos/video4.mp4" type="video/mp4">
@@ -1124,12 +1164,12 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('cpp-detail')">
-        <img src="autre.jpg" alt="Mini jeu C++">
+        <img src="capture_carte_cpp.png" alt="Mini jeu C++">
         <h3>Minijeu C++</h3>
         <p>Créer un jeu minimaliste où chaque symbole a un rôle.</p>
       </div>
       <div class="card" onclick="showPage('decheterie-detail')">
-        <img src="autre.jpg" alt="Mini site JSON">
+        <img src="capture_graphique.png" alt="Mini site JSON">
         <h3>Mini site JSON</h3>
         <p>Transformer des données en une interface simple et lisible.</p>
       </div>
@@ -1140,14 +1180,11 @@ button.cta{
     <div class="banner">Minijeu C++</div>
     <div class="videoBlock">
       <div class="videoBox">
+        <img src="capture_carte_cpp.png" alt="Carte du mini jeu C++">
+        <div style="height:12px;"></div>
         <video controls>
           <source src="videos/cpp.mp4" type="video/mp4">
         </video>
-
-        <div style="height:12px;"></div>
-
-        <img src="capture_carte_cpp.png" alt="Carte du mini jeu C++">
-
         <div style="height:12px;"></div>
         <a class="cta" href="Projetv2.1.cpp" download>Télécharger le code principal</a>
         <div style="height:10px;"></div>
@@ -1181,10 +1218,12 @@ button.cta{
     <div class="banner">Mini site JSON</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <video controls>
-          <source src="videos/json.mp4" type="video/mp4">
-        </video>
+        <img src="capture_graphique.png" alt="Résultat graphique">
         <div style="height:12px;"></div>
+        <a class="cta" href="mini_site_decheterie.py" download>Télécharger le code principal</a>
+        <div style="height:10px;"></div>
+        <a class="cta" href="lisez_moi_decheterie.txt" download>Lire le mode d’emploi</a>
+        <div style="height:10px;"></div>
         <button class="cta" type="button" onclick="showPage('decheterie')">Ouvrir le projet</button>
       </div>
       <div class="videoText">
@@ -1266,7 +1305,7 @@ button.cta{
     <p><strong>Mail :</strong> juleschupin@outlook.fr</p>
     <p><strong>Téléphone :</strong> 06 37 96 62 59</p>
     <div style="margin-top:20px;">
-      <a class="cta" href="CV Jules.pdf" download>Télécharger mon CV</a>
+      <a class="cta" href="Copie%20de%20CV%20Jules%20(2).pdf" download>Télécharger mon CV</a>
     </div>
   </div>
 </div>
@@ -1286,7 +1325,7 @@ const searchMap = [
   { label: "Compétences", page: "skills" },
   { label: "Projets", page: "projects" },
   { label: "Dessin", page: "dessin" },
-  { label: "Dessin – Exemple", page: "dessin-exemple" },
+  { label: "Dessin – Présentation", page: "dessin-exemple" },
   { label: "Sites Web", page: "siteweb" },
   { label: "Montages Vidéo", page: "video" },
   { label: "3D", page: "troisD" },
@@ -1456,24 +1495,28 @@ document.addEventListener("click", function(e){
   }
 });
 
-const dessinsGrid = document.getElementById("dessinsGrid");
-for(let i=1;i<=37;i++){
-  dessinsGrid.innerHTML += `
-    <div class="card searchable-card" id="dessin-${i}">
-      <img src="dessin${i}.jpg" alt="Dessin ${i}" onclick="openModal(this)">
-      <h3>Dessin ${i}</h3>
-    </div>
-  `;
+const dessinsGridContainer = document.getElementById("dessinsGrid");
+if(dessinsGridContainer){
+  for(let i=1;i<=37;i++){
+    dessinsGridContainer.innerHTML += `
+      <div class="card searchable-card" id="dessin-${i}">
+        <img src="dessin${i}.jpg" alt="Dessin ${i}" onclick="openModal(this)">
+        <h3>Dessin ${i}</h3>
+      </div>
+    `;
+  }
 }
 
 const architectureGrid = document.getElementById("architectureGrid");
-for(let i=1;i<=4;i++){
-  architectureGrid.innerHTML += `
-    <div class="card searchable-card" id="modelisation-${i}">
-      <img src="mod${i}.jpg" alt="Modélisation ${i}" onclick="openModal(this)">
-      <h3>Modélisation ${i}</h3>
-    </div>
-  `;
+if(architectureGrid){
+  for(let i=1;i<=4;i++){
+    architectureGrid.innerHTML += `
+      <div class="card searchable-card" id="modelisation-${i}">
+        <img src="mod${i}.jpg" alt="Modélisation ${i}" onclick="openModal(this)">
+        <h3>Modélisation ${i}</h3>
+      </div>
+    `;
+  }
 }
 
 let decheterieData = [];
@@ -1518,6 +1561,7 @@ async function chargerJSONDecheterie() {
 }
 
 function remplirLieuxDecheterie(){
+  if(!lieuSelect) return;
   let noms = [];
   for(const objet of decheterieData){
     const nom = objet["decheterie_ecopoint"];
@@ -1534,6 +1578,7 @@ function remplirLieuxDecheterie(){
 }
 
 function remplirDechetsDecheterie(){
+  if(!dechetSelect) return;
   dechetSelect.innerHTML = `<option value="">Sélectionnez un déchet</option>`;
   dechetsListe.forEach(dechet=>{
     const option = document.createElement("option");
@@ -1568,6 +1613,7 @@ function ordreDecheterie(lieu, dechet){
 }
 
 function afficherTableauDecheterie(annees, tonnages){
+  if(!tableZoneDecheterie) return;
   let html = `
     <table class="resultsTable">
       <thead>
@@ -1586,6 +1632,7 @@ function afficherTableauDecheterie(annees, tonnages){
 }
 
 function afficherGraphiqueDecheterie(annees, tonnages, dechet){
+  if(!chartCanvasDecheterie) return;
   const ctx = chartCanvasDecheterie.getContext("2d");
   if(decheterieChart) decheterieChart.destroy();
 
@@ -1612,36 +1659,38 @@ function afficherGraphiqueDecheterie(annees, tonnages, dechet){
   });
 }
 
-btnAfficherDecheterie.addEventListener("click", ()=>{
-  const lieu = lieuSelect.value;
-  const dechet = dechetSelect.value;
+if(btnAfficherDecheterie){
+  btnAfficherDecheterie.addEventListener("click", ()=>{
+    const lieu = lieuSelect.value;
+    const dechet = dechetSelect.value;
 
-  if(!lieu){
-    afficherMessageDecheterie("Choisis une déchetterie ou un écopoint.", false);
-    return;
-  }
-  if(!dechet){
-    afficherMessageDecheterie("Choisis un déchet.", false);
-    return;
-  }
+    if(!lieu){
+      afficherMessageDecheterie("Choisis une déchetterie ou un écopoint.", false);
+      return;
+    }
+    if(!dechet){
+      afficherMessageDecheterie("Choisis un déchet.", false);
+      return;
+    }
 
-  const resultat = ordreDecheterie(lieu, dechet);
-  selectedLieu.textContent = lieu;
-  selectedDechet.textContent = dechet;
-  nbAnnees.textContent = resultat.annee_ord.length;
+    const resultat = ordreDecheterie(lieu, dechet);
+    selectedLieu.textContent = lieu;
+    selectedDechet.textContent = dechet;
+    nbAnnees.textContent = resultat.annee_ord.length;
 
-  if(resultat.annee_ord.length === 0){
-    tableZoneDecheterie.innerHTML = "";
-    chartBlockDecheterie.style.display = "none";
-    afficherMessageDecheterie("Aucune donnée trouvée pour cette sélection.", false);
-    return;
-  }
+    if(resultat.annee_ord.length === 0){
+      tableZoneDecheterie.innerHTML = "";
+      chartBlockDecheterie.style.display = "none";
+      afficherMessageDecheterie("Aucune donnée trouvée pour cette sélection.", false);
+      return;
+    }
 
-  afficherTableauDecheterie(resultat.annee_ord, resultat.tonnage_ord);
-  afficherGraphiqueDecheterie(resultat.annee_ord, resultat.tonnage_ord, dechet);
-  chartBlockDecheterie.style.display = "block";
-  afficherMessageDecheterie("Données affichées avec succès.", true);
-});
+    afficherTableauDecheterie(resultat.annee_ord, resultat.tonnage_ord);
+    afficherGraphiqueDecheterie(resultat.annee_ord, resultat.tonnage_ord, dechet);
+    chartBlockDecheterie.style.display = "block";
+    afficherMessageDecheterie("Données affichées avec succès.", true);
+  });
+}
 
 chargerJSONDecheterie();
 </script>
