@@ -565,7 +565,7 @@ button.cta{
         <h3>Montages Vidéo</h3>
       </div>
       <div class="card realisationCard" onclick="showPage('troisD')">
-        <img src="minecraftvue1.png" alt="3D" class="cardThumb">
+        <img src="mod4.jpg" alt="3D" class="cardThumb">
         <h3>3D</h3>
       </div>
       <div class="card realisationCard" onclick="showPage('autre')">
@@ -764,7 +764,7 @@ button.cta{
         <h3>Montages Vidéo</h3>
       </div>
       <div class="card" onclick="showPage('troisD')">
-        <img src="minecraftvue1.png" alt="3D" class="cardThumb">
+        <img src="mod4.jpg" alt="3D" class="cardThumb">
         <h3>3D</h3>
       </div>
       <div class="card" onclick="showPage('autre')">
@@ -800,9 +800,9 @@ button.cta{
       </div>
 
       <div class="card" onclick="showPage('dessin-galerie')">
-        <img src="dessinpres.png" alt="Galerie dessin" class="cardThumb">
+        <img src="dessin1.jpg" alt="Galerie dessin" class="cardThumb">
         <h3>Galerie</h3>
-        <p>Capture et présentation</p>
+        <p>Tous mes dessins</p>
       </div>
     </div>
   </div>
@@ -855,12 +855,7 @@ button.cta{
 
   <div id="dessin-galerie" class="page">
     <div class="banner">Dessin – Galerie</div>
-    <div class="projectGallery">
-      <div class="card searchable-card">
-        <img src="dessinpres.png" alt="Capture et présentation" onclick="openModal(this)">
-        <h3>Capture et présentation</h3>
-      </div>
-    </div>
+    <div class="projectGallery" id="dessinsGrid"></div>
   </div>
 
   <div id="siteweb" class="page">
@@ -882,7 +877,7 @@ button.cta{
       </div>
 
       <div class="card" onclick="showPage('site-portfolio-detail')">
-        <img src="capture_home_portfolio.png" alt="Portfolio personnel" class="cardThumb">
+        <img src="mod4.jpg" alt="Portfolio personnel" class="cardThumb">
         <h3>Portfolio personnel</h3>
         <p>Un site qui rassemble mes projets et reflète mon parcours.</p>
       </div>
@@ -923,7 +918,7 @@ button.cta{
     <div class="banner">Portfolio personnel</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <img src="capture_home_portfolio.png" alt="Portfolio personnel">
+        <img src="mod4.jpg" alt="Portfolio personnel">
         <div style="height:12px;"></div>
         <a class="cta" href="https://juleschupin2007-rgb.github.io/portfolio-jules/" target="_blank">Voir le site</a>
       </div>
@@ -1096,7 +1091,7 @@ button.cta{
 
     <div class="grid auto">
       <div class="card" onclick="showPage('architecture3d-detail')">
-        <img src="plan_architectural.jpg" alt="3D architecturale" class="cardThumb">
+        <img src="mod4.jpg" alt="3D architecturale" class="cardThumb">
         <h3>3D architecturale</h3>
         <p>De l’esquisse au volume</p>
       </div>
@@ -1112,7 +1107,7 @@ button.cta{
     <div class="banner">3D architecturale</div>
     <div class="videoBlock">
       <div class="videoBox">
-        <img src="plan_architectural.jpg" alt="Plan architectural">
+        <img src="mod4.jpg" alt="Plan architectural">
         <div style="height:12px;"></div>
         <img src="mod1.jpg" alt="Projet architectural">
       </div>
@@ -1330,6 +1325,7 @@ const searchMap = [
   { label: "Projets", page: "projects" },
   { label: "Dessin", page: "dessin" },
   { label: "Dessin – Présentation", page: "dessin-exemple" },
+  { label: "Dessin – Galerie", page: "dessin-galerie" },
   { label: "Sites Web", page: "siteweb" },
   { label: "Montages Vidéo", page: "video" },
   { label: "3D", page: "troisD" },
@@ -1498,6 +1494,18 @@ document.addEventListener("click", function(e){
     closeSuggestions();
   }
 });
+
+const dessinsGrid = document.getElementById("dessinsGrid");
+if(dessinsGrid){
+  for(let i=1;i<=37;i++){
+    dessinsGrid.innerHTML += `
+      <div class="card searchable-card" id="dessin-${i}">
+        <img src="dessin${i}.jpg" alt="Dessin ${i}" onclick="openModal(this)">
+        <h3>Dessin ${i}</h3>
+      </div>
+    `;
+  }
+}
 
 const architectureGrid = document.getElementById("architectureGrid");
 if(architectureGrid){
